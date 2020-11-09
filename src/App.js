@@ -1,11 +1,16 @@
 import './App.css';
-import NewUserForm from './components/NewUserForm.js'
+// import NewUserForm from './components/NewUserForm.js'
+import LoginButton from './components/LoginButton'
+import LogoutButton from './components/LogoutButton'
+import Profile from './components/Profile'
 
 function App() {
   return (
-   <div className="container">
-     <NewUserForm />
-    </div>
+    <>
+  <LoginButton />
+  <LogoutButton />
+  <Profile />
+    </>
   );
 }
 

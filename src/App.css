@@ -1,20 +1,16 @@
-@media (max-width: 1440px) {
-	body {
-		background-color: #cbf7ed;
-	}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 
-	.container {
-		margin-top: 50px;
-		width: 400px;
-		border-radius: 4px;
-		background-color: #8ea8c3;
-	}
+body {
+	padding: 2rem
+}
 
-	form {
-		padding: 10px;
-	}
-
-	.btn {
-		background-color: #406e8e;
-	}
+button {
+	margin: 2rem 0;
+	padding: 1rem 2rem;
+	width: 130px;
+	cursor: pointer;
 }
