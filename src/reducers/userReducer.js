@@ -1,6 +1,6 @@
 import React from 'react'
 
-const userReducer = () => {
+const userReducer = (state = {users: []}) => {
 
 }
 
