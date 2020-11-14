@@ -16,7 +16,6 @@ export default class RegisterPage extends Component {
   
 	handleChange(event) {
 		const {name, value} = event.target;
-		const {user} = this.state.user;
 		this.setState({
       user : {
         ...this.state.user,
