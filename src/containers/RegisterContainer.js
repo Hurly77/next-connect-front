@@ -1,16 +1,12 @@
 import React, { Component } from 'react'
-import registerNewUser from '../actions/registerNewUser'
-import RegisterPage from '../RegisterPage/RegisterPage'
+import registerNewUser from '../Redux/actions/authAction'
+import RegisterPage from '../components/RegisterPage'
 import { connect } from 'react-redux'
 
 class RegisterContainer extends Component {
 
-  componentDidMount() {
-    console.log(this.props)
-    this.props.registerNewUser()
-  }
-
   render() {
+    console.log(this.props)
     return (
       <div>
         <RegisterPage register={this.props.registerNewUser}/>
@@ -22,7 +18,7 @@ class RegisterContainer extends Component {
 const mapStateToProps = state => {
   return {
     user: state.user,
-    registerNewUser: state.registerNewUser
+    loading: state.loading
   }
 }
 
