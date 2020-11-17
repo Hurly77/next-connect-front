@@ -1,13 +1,18 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import authReducer from './reducers/authReducer'
+import thunk from 'redux-thunk'
+import reduxLogger from 'redux-logger'
 
 const rootReducer = combineReducers({
-  authReducer,
+  auth: authReducer,
 })
+
+const middleware = [thunk, reduxLogger]
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  window._REDUX_DEVTOOLS_EXTENSION_ && window._REDUX_DEVTOOLS_EXTENSION_()
+  composeEnhancers(applyMiddleware(...middleware))
 );
 
 export default store
