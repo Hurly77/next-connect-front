@@ -1,60 +1,42 @@
 import React, {Component} from 'react';
+import signup from '../Redux/actions/authActions'
+import { connect } from 'react-redux';
 
 class RegisterPage extends Component {
-	constructor() {
-		super();
-		this.state = {
-			user : {
-				first_name            : '',
-				last_name             : '',
-				email                 : '',
-				password              : '',
-				password_confirmation : '',
-			},
-		};
+	state = {
+		first_name            : '',
+		last_name             : '',
+		email                 : '',
+		password              : '',
+		password_confirmation : '',
 	}
-
-	handleChange = (event) => {
-		const {name, value} = event.target;
+	
+	
+	handleChange = e => {
 		this.setState({
-			user : {
-				...this.state.user,
-				[name] : value,
-			},
-		}, () => console.log(this.state.user));
+			[e.target.name] : e.target.value,
+		});
 	}
-
-	handleSubmit = (event) => {
-		event.preventDefault();
-		if (this.state.user.password === this.state.user.password_confirmation) {
-      this.props.register(this.state.user);
-      this.setState({
-        user : {
-          first_name            : '',
-          last_name             : '',
-          email                 : '',
-          password              : '',
-          password_confirmation : '',
-        }
-      })
-		} else {
-			console.log('error');
+	
+	handleSubmit = e => {
+		e.preventDefault();
+		if (this.state.password === this.state.password_confirmation) {
+			this.props.signup(this.state, this.props.history);
 		}
 	}
-
+	
 	render() {
-		console.log(this.props)
 		return (
 			<div className="container">
-				<form onSubmit={(event) => this.handleSubmit(event)}>
+				<form onSubmit={ this.handleSubmit }>
           <label htmlFor="first_name">First Name</label>
 					<div className="form-group">
             <input  className="form-control"
             type="text" 
             name="first_name" 
             placeholder="first name" 
-            value={this.state.user.first_name} 
-            onChange={(event) => this.handleChange(event)} />
+            value={this.state.first_name} 
+            onChange={ this.handleChange } />
 					</div>
 
           <label htmlFor="last_name">Last Name</label>
@@ -63,8 +45,8 @@ class RegisterPage extends Component {
             type="text" 
             name="last_name" 
            placeholder="last name" 
-            value={this.state.user.last_name} 
-           onChange={(event) => this.handleChange(event)} />
+            value={this.state.last_name} 
+           onChange={ this.handleChange } />
 					</div>
 
           <label htmlFor="email">Email Address</label>
@@ -73,8 +55,8 @@ class RegisterPage extends Component {
             type="text" 
             name="email"
             placeholder="your_name@example.com" 
-            value={this.state.user.email} 
-            onChange={(event) => this.handleChange(event)} />
+            value={this.state.email} 
+            onChange={ this.handleChange } />
 					</div>
 
           <label htmlFor="password">Password</label>
@@ -84,8 +66,8 @@ class RegisterPage extends Component {
             autoComplete="password"
             name="password" 
             placeholder="Password" 
-            value={this.state.user.password} 
-            onChange={(event) => this.handleChange(event)} required />
+            value={this.state.password} 
+            onChange={ this.handleChange } required />
 					</div>
 
           <label htmlFor="password_confirmation">Confirm Password</label>
@@ -95,8 +77,8 @@ class RegisterPage extends Component {
 							type="password"
 							name="password_confirmation"
 							placeholder="Password Confirmation"
-							value={this.state.user.password_confirmation}
-							onChange={(event) => this.handleChange(event)}
+							value={this.state.password_confirmation}
+							onChange={ this.handleChange }
 							required
 						/>
 					</div>
@@ -109,4 +91,4 @@ class RegisterPage extends Component {
 	}
 }
 
-export default RegisterPage
+export default connect(null, {signup})(RegisterPage)
