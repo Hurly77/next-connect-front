@@ -26,10 +26,11 @@ export const login = (user, history) => {
       method: 'POST',
       headers: {'Content-type': 'appliction/json'},
       credentials: 'include',
-      body: JSON.stringify({user: user})
+      body: JSON.stringify(user)
     })
     .then((res) => res.json())
     .then((data) => {
+      console.log(data)
       dispatch({
         type: 'AUTH_SUCCESS',
         payload: {loggedIn: data.logged_in, currentUser: data.user}
@@ -46,7 +47,7 @@ export const checkLoggedIn = (callback) => {
       .then((res) => res.json())
       .then((data) => {
         dispatch({
-          type: 'AUTH_SUCCESSFUL',
+          type: 'AUTH_SUCCESS',
           payload: { loggedIn: data.logged_in, currentUser: data.user },
         });
         callback();
