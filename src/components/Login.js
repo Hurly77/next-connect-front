@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { login } from '../Redux/actions/authActions'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 
 class Login extends Component {
   state = {
@@ -23,13 +24,14 @@ class Login extends Component {
     render() {
       return (
         <div>
+        <br />
           <form onSubmit={this.handleOnSubmit}>
             <label>Email</label>
             <input
               name="email"
+              type="text"
               value={this.state.email}
               onChange={this.handleOnChange}
-              type="text"
             />
             <br />
             <label>Password</label>
@@ -42,6 +44,8 @@ class Login extends Component {
             <br />
             <button type="submit">Login</button>
           </form>
+          <br />
+          <Link to="/signup">Signup</Link>
         </div>
       );
     }
