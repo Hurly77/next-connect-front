@@ -1,7 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 
-export const Profile = () => {
+export const Profile = ({user}) => {
+  console.log(user.LoggedIn)
   return (
     <div>
         <h1>Profile</h1>
@@ -9,4 +11,10 @@ export const Profile = () => {
   )
 }
 
-export default Profile
+const mapStateToProps = state => {
+  return {
+    user: state.auth.currentUser
+  }
+}
+
+export default connect(mapStateToProps)(Profile)
