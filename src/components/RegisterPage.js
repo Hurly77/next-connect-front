@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import signup from '../Redux/actions/authActions'
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 class RegisterPage extends Component {
 	state = {
@@ -86,6 +87,8 @@ class RegisterPage extends Component {
 						Sign Up
 					</button>
 				</form>
+				<br />
+				<Link to="login">Login</Link>
 			</div>
 		);
 	}
