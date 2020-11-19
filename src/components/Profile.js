@@ -7,6 +7,8 @@ export const Profile = ({user}) => {
   return (
     <div>
         <h1>Profile</h1>
+        <div className="container">
+      </div>
     </div>
   )
 }
