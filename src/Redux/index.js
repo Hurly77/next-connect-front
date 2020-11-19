@@ -1,10 +1,12 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux'
 import authReducer from './reducers/authReducer'
+import commentReducer from './reducers/commentReducer'
 import thunk from 'redux-thunk'
 import reduxLogger from 'redux-logger'
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  comment: commentReducer,
 })
 
 const middleware = [thunk, reduxLogger]
