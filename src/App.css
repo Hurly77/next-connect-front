@@ -23,3 +23,24 @@ button {
 	width: 130px;
 	cursor: pointer;
 }
+
+.logout{
+	color: cornsilk;
+	
+}
+
+
+.primarySearch {
+	margin: 10px;
+}
+
+.nav {
+	margin: 0px;
+}
+
+.menu-icon:hover {
+	border: solid;
+	border-width: 1px;
+	border-color: #23395B;
+	background-color: #406E8E;
+}
