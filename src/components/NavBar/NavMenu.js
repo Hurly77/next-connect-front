@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {logout} from '../../Redux/actions/authActions';
 import {withRouter} from 'react-router-dom'
+import Logout from './Logout'
 
 
 import Menu from '@material-ui/core/Menu';
@@ -42,6 +43,10 @@ const NavMenu = ({loggedIn}) => {
 
 						<MenuItem onClick={handleClose}>
 							<NavLink to="/profile" exact>Your Profile</NavLink>
+						</MenuItem>
+
+						<MenuItem onClick={handleClose}>
+							<Logout />
 						</MenuItem>
 						</Menu>
 				</div>
