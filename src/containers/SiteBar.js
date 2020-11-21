@@ -2,19 +2,26 @@ import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'
-import Logout from '../components/NavBar/Logout'
 import PrimarySearchBar from '../components/NavBar/PrimarySearchBar'
+import { makeStyles } from '@material-ui/core/styles'
 
-export default class SiteBar extends Component {
-  render() {
+const useStyles = makeStyles({
+  root: {
+    background: '#406E8E'
+  }
+})
+
+const SiteBar = () => {
+
+    const classes = useStyles()
     return (
-      <AppBar position="static">
+      <AppBar position="static" className={classes.root}>
         <ToolBar>
               <NavMenu />
               <PrimarySearchBar />
-              <Logout />
         </ToolBar>
       </AppBar>
     )
   }
-}
+
+export default SiteBar
