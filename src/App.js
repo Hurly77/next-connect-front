@@ -5,11 +5,11 @@ import {connect} from 'react-redux';
 import RegisterPage from './registration/RegisterPage';
 import Login from './registration/Login'
 import Home from './components/Home/Home'
-import Feed from './components/Feed/Feed'
+import FeedPage from './Pages/FeedPage'
 import Profile from './components/Profile/Profile';
 import SiteBar from './containers/SiteBar'
+import Inbox from './components/Inbox/Inbox'
 import {checkLoggedIn} from './Redux/actions/authActions';
-import Logout from './components/NavBar/Logout';
 
 class App extends Component {
 	state = {
@@ -29,13 +29,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Router>
-					<SiteBar />
+					{this.props.loggedIn ? <SiteBar /> : null}
 					<Switch>
 						<Route
 							path="/feed"
 							render={(props) => {
 								if (this.props.loggedIn) {
-									return <Feed {...props} />;
+									return <FeedPage {...props} />;
 								} else {
 									return <Redirect to="/login" />;
 								}
@@ -44,6 +44,7 @@ class App extends Component {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/signup" component={RegisterPage} />
 						<Route exact path="/login" component={Login} />
+						<Route exact path="/inbox" component={Inbox} />
 						<Route exact path="/profile" component={Profile} />
 					</Switch>
 				</Router>
