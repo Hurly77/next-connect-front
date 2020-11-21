@@ -3,12 +3,13 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import RegisterPage from './registration/RegisterPage';
-import Login from './registration/Login';
-import Home from './components/Home'
-import Feed from './containers/Feed'
-import Profile from './components/Profile';
-import NavBar from './components/NavBar';
+import Login from './registration/Login'
+import Home from './components/Home/Home'
+import Feed from './components/Feed/Feed'
+import Profile from './components/Profile/Profile';
+import SiteBar from './containers/SiteBar'
 import {checkLoggedIn} from './Redux/actions/authActions';
+import Logout from './components/NavBar/Logout';
 
 class App extends Component {
 	state = {
@@ -28,13 +29,13 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Router>
-					<NavBar />
+					<SiteBar />
 					<Switch>
 						<Route
-							path="/profile"
+							path="/feed"
 							render={(props) => {
 								if (this.props.loggedIn) {
-									return <Profile {...props} />;
+									return <Feed {...props} />;
 								} else {
 									return <Redirect to="/login" />;
 								}
@@ -43,7 +44,7 @@ class App extends Component {
 						<Route exact path="/" component={Home} />
 						<Route exact path="/signup" component={RegisterPage} />
 						<Route exact path="/login" component={Login} />
-						<Route exact path="/feed" component={Feed} />
+						<Route exact path="/profile" component={Profile} />
 					</Switch>
 				</Router>
 			</div>
