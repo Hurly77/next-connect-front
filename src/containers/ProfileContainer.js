@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Profile from '../components/Profile'
+import Profile from '../components/Profile/Profile'
 
 export default class ProfileContainer extends Component {
   render() {
