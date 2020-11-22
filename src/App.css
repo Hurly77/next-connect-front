@@ -9,11 +9,21 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: #CBF7ED;
 }
 
+
 body {
-	padding: 5rem;
-	background-color: #CBF7ED;
+	background-color: #8ea8c3;
+}
+
+/* buttons */
+button[type=submit]:hover {
+border:none;
+}
+
+button[type=submit]:focus {
+	outline: none;
 }
 
 button {
@@ -24,17 +34,87 @@ button {
 	cursor: pointer;
 }
 
-.primarySearch {
-	margin: 10px;
+.btn-comment-submit {
+	padding: 0px;
+	margin: 0px;
+	width: 30px;
+	height: 100%;
+	border-radius: 10px;
+	border-left: solid #CBF7ED 1px;
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
+	background-color: transparent;
+
 }
 
+
+/* input */
+input[type=text]:focus {
+	outline: none;
+}
+
+input[type=text]:active {
+	outline: none;
+}
+
+/* search */
+.search {
+	margin: 10px;
+	color: #CBF7ED;
+	background-color: transparent;
+	border: none;
+	
+}
+
+.search:hover {
+	border: none;
+	border-bottom: solid #CBF7ED 1px;
+}
+
+
+/* nav */
 .nav {
 	margin: 0px;
 }
+
+/* icons */
 
 .menu-icon:hover {
 	border: solid;
 	border-width: 1px;
 	border-color: #23395B;
+	background-color: #406E8E;
+}
+
+::placeholder {
+	color: #CBF7ED
+}
+
+/* comment */
+
+.comment-card {
+	padding-left: 5px;
+	width: 100px;
+	background-color: transparent;
+	border: none;
+}
+
+.comment {
+	margin-top: 10px;
+	padding: 0px;
+	display: inline-block;
+	border: solid #CBF7ED 1px;
+	border-radius: 10px;
+}
+
+/* post*/
+.posted {
+	border-radius: 5px;
+	padding: 20px;
+	margin-left: 150px;
+	margin-right: 150px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 	background-color: #406E8E;
 }
