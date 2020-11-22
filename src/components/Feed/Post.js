@@ -1,13 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import CommentCard from './CommentCard'
 
-class Post extends Component {
-  render() {
+const props = {text: "hello I'm wonderful today what about you"}
+
+const Post = () => {
     return (
-      <div>
-       
+      <div className="post-text"> 
+        <p>{props.text}</p>
+
+        <div>
+          lorem ipsum text
+        </div>
+          <CommentCard />
       </div>
     )
-  }
 }
 
 export default Post
