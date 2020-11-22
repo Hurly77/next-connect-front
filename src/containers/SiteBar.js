@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'
@@ -7,7 +7,8 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
   root: {
-    background: '#406E8E'
+    width: '100%',
+    background: ' #406E8E',
   }
 })
 
