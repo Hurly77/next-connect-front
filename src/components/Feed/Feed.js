@@ -7,7 +7,6 @@ class Feed extends Component {
     return (
       <div>
         <h1>{this.props.user.first_name}</h1>
-        <Post />
       </div>
     )
     }
