@@ -3,10 +3,12 @@ import authReducer from './reducers/authReducer'
 import commentReducer from './reducers/commentReducer'
 import thunk from 'redux-thunk'
 import reduxLogger from 'redux-logger'
+import postReducer  from './reducers/postReducer'
 
 const rootReducer = combineReducers({
   auth: authReducer,
   comment: commentReducer,
+  post: postReducer
 })
 
 const middleware = [thunk, reduxLogger]
