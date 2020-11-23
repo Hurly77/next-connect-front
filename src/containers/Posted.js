@@ -1,12 +1,36 @@
-import React, { Component } from 'react'
-import Post from '../components/Feed/Post'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import Posts from '../components/Feed/Posts';
+import {fetchPosts} from '../Redux/actions/postActions';
 
-export default class Posted extends Component {
-  render() {
-    return (
-      <div className="posted">
-        <Post />
-      </div>
-    )
-  }
+class Posted extends Component {
+
+	componentDidMount() {
+		this.props.fetchPosts();
+	}
+
+	renderPosts = () => {
+		const posts = this.props.posts;
+		return posts.map((post) => {
+			return (
+        <div key={post.id} className="posted">
+          <Posts text={post.text} />
+        </div>
+      )
+		});
+	};
+
+	render() {
+		return (
+      <>{this.renderPosts()}</>
+		);
+	}
 }
+
+const mapStateToProps = (state) => {
+	return {
+		posts : state.post.posts,
+	};
+};
+
+export default connect(mapStateToProps, {fetchPosts})(Posted);
