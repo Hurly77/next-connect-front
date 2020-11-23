@@ -37,6 +37,7 @@ export const login = (user, history) => {
 			});
 	};
 };
+
 export const checkLoggedIn = (callback) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/logged_in`, {
