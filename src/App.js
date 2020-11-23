@@ -3,8 +3,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import RegisterPage from './registration/RegisterPage';
-import Login from './registration/Login'
-import Home from './components/Home/Home'
+import HomePage from './Pages/HomePage'
 import FeedPage from './Pages/FeedPage'
 import Profile from './components/Profile/Profile';
 import SiteBar from './containers/SiteBar'
@@ -37,13 +36,12 @@ class App extends Component {
 								if (this.props.loggedIn) {
 									return <FeedPage {...props} />;
 								} else {
-									return <Redirect to="/login" />;
+									return <Redirect to="/" />;
 								}
 							}}
 						/>
-						<Route exact path="/" component={Home} />
+						<Route exact path="/" component={HomePage} />
 						<Route exact path="/signup" component={RegisterPage} />
-						<Route exact path="/login" component={Login} />
 						<Route exact path="/inbox" component={Inbox} />
 						<Route exact path="/profile" component={Profile} />
 					</Switch>
