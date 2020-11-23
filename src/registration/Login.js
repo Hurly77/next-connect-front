@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {login} from '../Redux/actions/authActions';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom'
 import {Link} from 'react-router-dom';
 
 class Login extends Component {
@@ -21,6 +22,7 @@ class Login extends Component {
 	};
 
 	render() {
+		console.log(this.props)
 		return (
 			<div>
 				<br />
@@ -40,4 +42,4 @@ class Login extends Component {
 	}
 }
 
-export default connect(null, {login})(Login);
+export default withRouter(connect(null, {login})(Login))
