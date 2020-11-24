@@ -1,13 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Login from '../registration/Login'
+import Login from '../components/Home/Login'
+import Home from '../components/Home/Home'
 
 
 const HomePage = ({state}) => {
   console.log(state)
   return (
-    <div className="home-login-card">
+    <div className="home-login-container">
+      <div className="home-login">
+      <Home />
       <Login  />
+      </div>
     </div>
   )
 }
