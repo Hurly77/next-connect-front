@@ -63,7 +63,7 @@ export const logout = (history) => {
 			.then((res) => res.json())
 			.then((data) => {
 				dispatch({type: 'LOGOUT'});
-				history.push('/login');
+				history.push('/');
 			});
 	};
 };
