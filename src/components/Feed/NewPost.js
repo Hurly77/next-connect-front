@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
 import { createPost } from '../../Redux/actions/postActions'
  
 class NewPost extends Component {
@@ -21,7 +22,6 @@ class NewPost extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="new-post-card">
         <form onSubmit={this.handleSubmit}>
@@ -46,4 +46,4 @@ const mapPropsToState = state => {
   }
 }
 
-export default connect(mapPropsToState, { createPost })(NewPost)
+export default withRouter(connect(mapPropsToState, { createPost })(NewPost))
