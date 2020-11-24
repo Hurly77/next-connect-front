@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    background: ' #406E8E',
+    background: '#161925',
   }
 })
 
@@ -19,7 +19,7 @@ const SiteBar = ({loggedIn}) => {
     return (
       <AppBar position="static" className={classes.root}>
         <ToolBar>
-              {loggedIn ? <NavMenu />:null}
+              <NavMenu />
               <PrimarySearchBar />
         </ToolBar>
       </AppBar>
