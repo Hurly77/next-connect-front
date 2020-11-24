@@ -14,7 +14,7 @@
 
 
 body {
-	background-color: #8ea8c3;
+	background-color: #406E8E;
 }
 
 /* buttons */
@@ -78,6 +78,11 @@ input[type=text]:active {
 	margin: 0px;
 }
 
+.nav-link {
+	text-decoration: none;
+	color: #161925;
+}
+
 /* icons */
 
 .menu-icon:hover {
@@ -88,7 +93,7 @@ input[type=text]:active {
 }
 
 ::placeholder {
-	color: #CBF7ED
+	color: #487697
 }
 
 /* comment */
@@ -102,7 +107,7 @@ input[type=text]:active {
 .comment {
 	height: 30px;
 	margin-top: 10px;
-	background-color: #8ea8c3;
+	background-color: #406E8E;
 	padding: 0px;
 	border-radius: 10px;
 }
@@ -115,7 +120,8 @@ input[type=text]:active {
 	margin-right: 150px;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	background-color: #406E8E;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #23395B;
 }
 
 /* new post */
@@ -126,7 +132,8 @@ input[type=text]:active {
 	margin-right: 150px;
 	padding: 20px;
 	padding-bottom: 3px;
-	background-color: #406E8E;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #23395B;
 }
 
 /* post multi-media selected */
@@ -137,7 +144,11 @@ input[type=text]:active {
 	padding-left: 5px;
 	border:none;
 	border-radius: 10px;
-	background-color: #8ea8c3;
+	background-color: #406E8E;
+}
+
+.text-for-new-post:hover {
+	background-color: #487697;
 }
 
 .multi-media-select {
@@ -156,6 +167,87 @@ input[type=text]:active {
 
 
 /* Home-Page */
-.home-login-card {
-	margin: 20px;
+
+.logo-home {
+	margin-right: auto;
 }
+
+.logo-home > h1 {
+	margin-right: auto;
+	text-shadow: #23395B 3px 3px;	
+	font-size: 75px;
+}
+
+.home-login-container {
+	margin-top: 100px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.home-login {
+	padding-left: 20px;
+	padding-right: 20px;
+	display: flex;
+	justify-content: center;
+}
+
+.login-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 400px;
+	background-color: #23395B;
+	border-radius: 5px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 10px;
+}
+
+.login-card > form > input {
+	border: none;
+	width: 350px;
+	height: 50px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding-left: 5px;
+	color: black;
+	background-color: #CBF7ED;
+}
+
+.login-btn {
+	width: 350px;
+	height: 50px;
+	background-color: #4891c5;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+}
+
+.signup-btn {
+	width: 350px;
+	height: 50px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: solid #CBF7ED 1px;
+	background-color: #161925;
+	text-decoration: none;
+	color: #CBF7ED;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+}
+
+.signup-btn-contain {
+	border-top: solid #CBF7ED 1px;
+}
+
+.signup-link {
+	text-decoration: none;
+	color: #CBF7ED;
+}
+
+.signup-link:hover {
+	text-decoration: none;
+	color: #CBF7ED;
+}
+
