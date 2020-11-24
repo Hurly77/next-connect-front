@@ -1,18 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { checkLoggedIn } from '../../Redux/actions/authActions';
 
 const Home = () => {
   return (
-    <>
-    </>
+    <div className="logo-home">
+      <h1>Next Connect</h1>
+    </div>
   )
 }
 
-const mapStateToProps = state => {
-  return {
-    loggedIn: state.auth.loggedIn
-  }
-}
-
-export default connect(mapStateToProps, {checkLoggedIn})(Home)
+export default Home
