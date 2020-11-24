@@ -34,15 +34,15 @@ const NavMenu = ({loggedIn}) => {
         		onClose={handleClose}>
 
 						<MenuItem onClick={handleClose}>
-						<NavLink to="/feed" exact>Feed</NavLink>
+						<NavLink className="nav-link" to="/feed" exact>Feed</NavLink>
 						</MenuItem>
 
 						<MenuItem onClick={handleClose}>
-							<NavLink to="/inbox" exact>Inbox</NavLink>
+							<NavLink className="nav-link" to="/inbox" exact>Inbox</NavLink>
 						</MenuItem>
 
 						<MenuItem onClick={handleClose}>
-							<NavLink to="/profile" exact>Your Profile</NavLink>
+							<NavLink className="nav-link" to="/profile" exact>Your Profile</NavLink>
 						</MenuItem>
 
 						<MenuItem onClick={handleClose}>
