@@ -9,21 +9,16 @@ class Posted extends Component {
 		this.props.fetchPosts();
 	}
 
-	renderPosts = () => {
-		const posts = this.props.posts;
-		return posts.map((post) => {
-			return (
-        <div key={post.id} className="posted">
-          <Posts text={post.text} />
-        </div>
-      )
-		});
-	};
-
 	render() {
-		return (
-      <>{this.renderPosts()}</>
-		);
+		const posts = this.props.posts;
+		console.log(posts, "Rendered ---------------------------------------")
+		return posts.map((post) => {
+		 return (
+			 <div key={post.id} className="posted">
+				 <Posts text={post.text} />
+			 </div>
+		 )
+	 });
 	}
 }
 
