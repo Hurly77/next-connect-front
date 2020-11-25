@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {login} from '../../Redux/actions/authActions';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom'
-import {Link} from 'react-router-dom';
+import SignupButton from './SignupButton';
 
 class Login extends Component {
 	state = {
@@ -21,6 +21,12 @@ class Login extends Component {
 		this.props.login(this.state, this.props.history);
 	};
 
+	togglePopup = () => {
+		return <div>
+			hello
+		</div>
+	}
+
 	render() {
 		return (
 			<div className="login-card">
@@ -33,11 +39,6 @@ class Login extends Component {
 					<button type="submit" className="login-btn">Login</button>
 				</form>
 				<br />
-				<div className="signup-btn-contain">
-				<button className="signup-btn">
-				<Link className="signup-link" to="/signup">Signup</Link>
-				</button>
-				</div>
 			</div>
 		);
 	}
