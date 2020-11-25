@@ -169,13 +169,18 @@ input[type=text]:active {
 /* Home-Page */
 
 .logo-home {
-	margin-right: auto;
+	margin-right: 20%;
+	margin-left: auto;
+}
+
+.logo-home > p {
+	font-size: 20px;
+	text-shadow: #23395B 2px 2px;
 }
 
 .logo-home > h1 {
-	margin-right: auto;
 	text-shadow: #23395B 3px 3px;	
-	font-size: 75px;
+	font-size: 50px;
 }
 
 .home-login-container {
@@ -194,13 +199,14 @@ input[type=text]:active {
 .login-card {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
 	width: 400px;
+	height: 350px;
 	background-color: #23395B;
 	border-radius: 5px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding: 10px;
+	margin-right: auto;
 }
 
 .login-card > form > input {
@@ -223,7 +229,7 @@ input[type=text]:active {
 	outline: none;
 }
 
-.signup-btn {
+.open-popup {
 	width: 350px;
 	height: 50px;
 	margin-top: 20px;
@@ -238,16 +244,15 @@ input[type=text]:active {
 }
 
 .signup-btn-contain {
-	border-top: solid #CBF7ED 1px;
+	padding-right: 150px;
+	background-color: #23395B;
 }
 
-.signup-link {
-	text-decoration: none;
-	color: #CBF7ED;
+.bg-modal {
+  width: 100%;
+  height: 100%;
+  background-color: #161925;
+  opacity: 0.7;
+  position: absolute;
+  top: 0;
 }
-
-.signup-link:hover {
-	text-decoration: none;
-	color: #CBF7ED;
-}
-
