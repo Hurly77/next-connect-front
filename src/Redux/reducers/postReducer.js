@@ -1,9 +1,10 @@
-export const createPost = (state = {post: {}, posts: []}, action) => {
+export const createPost = (state = {posts: []}, action) => {
   switch(action.type){
     case 'NEW_POST':
+      const newpost = action.payload.posts
       return {
         ...state,
-        post: action.payload.post
+        posts: [newpost, ...state.posts]
       };
 
     case 'POSTS':
