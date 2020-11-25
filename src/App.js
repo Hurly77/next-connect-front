@@ -2,7 +2,6 @@ import './App.css';
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
-import RegisterPage from './registration/RegisterPage';
 import HomePage from './Pages/HomePage'
 import FeedPage from './Pages/FeedPage'
 import Profile from './components/Profile/Profile';
@@ -41,7 +40,6 @@ class App extends Component {
 							}}
 						/>
 						<Route exact path="/" component={HomePage} />
-						<Route exact path="/signup" component={RegisterPage} />
 						<Route exact path="/inbox" component={Inbox} />
 						<Route exact path="/profile" component={Profile} />
 					</Switch>
