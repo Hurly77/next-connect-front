@@ -7,9 +7,7 @@ export const SignupButton = () => {
   return (
     <div className="signup-btn-contain">
     <button className="open-popup" onClick={() => setIsOpen(true)}>Create New Profile</button>
-    <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        form
-      </Modal>						
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} />						
   </div>
   )
 }
