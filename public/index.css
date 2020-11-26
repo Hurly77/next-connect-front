@@ -12,11 +12,6 @@ body {
   min-height: 100%;
 }
 
-#root {
-  overflow: auto;
-  padding-bottom: 180px;
-  /* must be same height as the footer */
-}
 
 .footer {
   position: relative;
@@ -51,3 +46,12 @@ p.copyright {
 	font-size: 0.7em;
 }
 
+.overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, .6);
+  width: 100%;
+  height: 100%;
+}
+#portal {
+  height: 0;
+}
