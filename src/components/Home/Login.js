@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {login} from '../../Redux/actions/authActions';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router-dom'
+import {withRouter} from 'react-router-dom';
 import SignupButton from './SignupButton';
 
 class Login extends Component {
@@ -22,10 +22,8 @@ class Login extends Component {
 	};
 
 	togglePopup = () => {
-		return <div>
-			hello
-		</div>
-	}
+		return <div>hello</div>;
+	};
 
 	render() {
 		return (
@@ -39,9 +37,10 @@ class Login extends Component {
 					<button type="submit" className="login-btn">Login</button>
 				</form>
 				<br />
+				<SignupButton />
 			</div>
 		);
 	}
 }
 
-export default withRouter(connect(null, {login})(Login))
+export default withRouter(connect(null, {login})(Login));
