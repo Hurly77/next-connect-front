@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import signup from '../Redux/actions/authActions'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class RegisterPopup extends Component {
 	state = {
@@ -29,51 +29,39 @@ class RegisterPopup extends Component {
 	render() {
 		return (
 			<>
+			<h1>Sign Up</h1>
+			<p>It's easy</p>
 				<form onSubmit={ this.handleSubmit }>
-          <label htmlFor="first_name">First Name</label>
-					<div className="form-group">
-            <input  className="form-control"
+            <input className="grid first-name"
             type="text" 
             name="first_name" 
             placeholder="first name" 
             value={this.state.first_name} 
             onChange={ this.handleChange } />
-					</div>
 
-          <label htmlFor="last_name">Last Name</label>
-					<div className="form-group">
-            <input className="form-control" 
+            <input className="last-name"
             type="text" 
             name="last_name" 
            placeholder="last name" 
             value={this.state.last_name} 
            onChange={ this.handleChange } />
-					</div>
 
-          <label htmlFor="email">Email Address</label>
-					<div className="form-group">
-            <input className="form-control"
+            <input className="email"
             type="text" 
             name="email"
             placeholder="your_name@example.com" 
             value={this.state.email} 
             onChange={ this.handleChange } />
-					</div>
 
-          <label htmlFor="password">Password</label>
-					<div className="form-group">
-            <input className="form-control" 
+            <input className="password"
             type="password" 
             autoComplete="password"
             name="password" 
             placeholder="Password" 
             value={this.state.password} 
             onChange={ this.handleChange } required />
-					</div>
-
-          <label htmlFor="password_confirmation">Confirm Password</label>
-					<div className="form-group">
-            <input className="form-control"
+			
+            <input className="password-confirm"
               autoComplete="password"
 							type="password"
 							name="password_confirmation"
@@ -82,16 +70,16 @@ class RegisterPopup extends Component {
 							onChange={ this.handleChange }
 							required
 						/>
+					<div className="disclaimer">
+					<p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
 					</div>
-					<button className="btn btn-primary" type="submit">
+					<button className="btn-submit-signup" type="submit">
 						Sign Up
 					</button>
 				</form>
-				<br />
-				<Link to="login">Login</Link>
 			</>
 		);
 	}
 }
 
-export default connect(null, {signup})(RegisterPopup)
+export default withRouter(connect(null, {signup})(RegisterPopup))
