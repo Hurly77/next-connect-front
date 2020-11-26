@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Login from '../components/Home/Login'
 import Home from '../components/Home/Home'
-import SignupButton from '../components/Home/SignupButton'
 
 
 const HomePage = ({state}) => {
@@ -15,7 +14,6 @@ const HomePage = ({state}) => {
       <Login  />
       </div>
     </div>
-      <SignupButton />
   </>
   )
 }
