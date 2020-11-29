@@ -4,58 +4,21 @@ import {NavLink} from 'react-router-dom';
 import {logout} from '../../Redux/actions/authActions';
 import {withRouter} from 'react-router-dom'
 import Logout from './Logout'
-
-
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import MenuIcon from '@material-ui/icons/Menu';
+import InboxButton from '../Inbox/InboxButton'
 
 
 
 const NavMenu = ({loggedIn}) => {
-	const [anchorEl, setAnchorEl] = React.useState(null);
-
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-	};
-	
-	const handleClose = () => {
-		setAnchorEl(null);
-	};
 		if (loggedIn) {
 			return (
 				<div className="nav">
-        		<MenuIcon className="menu-icon" onClick={handleClick} />
-					<Menu
-        		id="navagation"
-        		anchorEl={anchorEl}
-        		keepMounted
-        		open={Boolean(anchorEl)}
-        		onClose={handleClose}>
+					<NavLink to="/profile" className="nav-link">Profile</NavLink>
+					<NavLink to="/feed" className="nav-link">Feed</NavLink>
+					<InboxButton />
+					<Logout />
 
-						<MenuItem onClick={handleClose}>
-						<NavLink className="nav-link" to="/feed" exact>Feed</NavLink>
-						</MenuItem>
-
-						<MenuItem onClick={handleClose}>
-							<NavLink className="nav-link" to="/inbox" exact>Inbox</NavLink>
-						</MenuItem>
-
-						<MenuItem onClick={handleClose}>
-							<NavLink className="nav-link" to="/profile" exact>Your Profile</NavLink>
-						</MenuItem>
-
-						<MenuItem onClick={handleClose}>
-							<Logout />
-						</MenuItem>
-						</Menu>
 				</div>
 			);
-		} else {
-			return (
-				<>
-				</>
-			)
 		}
 }
 
