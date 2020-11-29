@@ -13,6 +13,10 @@ body {
 	background-color: #406E8E;
 }
 
+#main {
+	margin-top: 64px;
+}
+
 /* buttons */
 button[type=submit]:hover {
 border:none;
@@ -314,4 +318,108 @@ input[type=text]:active {
 .disclaimer > p {
 font-size: 12px;
 color: #CBF7ED;
+}
+
+/* PROFILE ROUTE */
+
+/* Profile Avatar */
+.Avatar {
+	transform: translate(-15px, 30px);
+	border: solid #CBF7ED 5px;
+	background-color: #406E8E;
+	width:150px;
+	background-size: cover;
+  height:150px;
+	overflow: hidden;
+  border-radius:50%;
+}
+
+.upload-avatar
+{
+	padding: 5px;
+	border-radius: 100%;
+	transform: translate(14px, 106px);
+	background-color: transparent;
+	color: #161925;
+	font-weight: 600;
+}
+
+.upload-avatar:hover {
+	background-color: #4891c5;
+}
+
+.avatar-photo {
+	object-fit: cover;
+	border-radius: 100%;
+	width: 150px;
+	height: 150px;
+
+}
+
+.profile-banner {
+	background-image: url('https://www.thefilmagazine.com/wp-content/uploads/2016/07/bourne-banner.jpg');
+	margin-bottom: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	border-radius: 5px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+
+}
+
+
+.profile-name {
+	transform: translate(-20px, 250px);
+	color: #CBF7ED;
+}
+/* profile nav */
+.profile-page {
+	background-image: linear-gradient(#161925, #457597);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-tabs {	
+	background-color: transparent;
+	border-top: solid #CBF7ED 1px;
+	margin-right: 110px;
+	margin-left: 110px;
+	margin-top: 100px;
+	padding-top: 10px;
+	display: flex;
+}
+
+.profile-tabs > a {
+	padding: 15px;
+	align-content: center;
+	align-items: center;
+}
+
+.profile-tabs > a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #CBF7ED;
+
+}
+
+.profile-tabs > a:active {
+	text-decoration: none;
+	background-color: #3b6888
+}
+
+.tab-link-tab-active {
+	border-bottom: solid #4891c5 3px;
+}
+
+.profile-tabs > a.tab-link-tab-inactive:hover {
+	border-radius: 5px;
+	background-color: #457597;
+}
+
+.link:hover {
+	text-decoration: none;
+	color: #CBF7ED;
+}
+
+.link:focus {
+	border-bottom: solid #161925 3px;
 }
