@@ -6,8 +6,6 @@ import HomePage from './Pages/HomePage'
 import FeedPage from './Pages/FeedPage'
 import ProfilePage from './Pages/ProfilePage'
 import SiteBar from './containers/SiteBar'
-import Inbox from './components/Inbox/Inbox'
-import Friends from './components/Profile/Friends'
 import {checkLoggedIn} from './Redux/actions/authActions';
 
 class App extends Component {
@@ -42,7 +40,6 @@ class App extends Component {
 							}}
 						/>
 						<Route exact path="/" component={HomePage} />
-						<Route exact path="/inbox" component={Inbox} />
 						<Route path="/profile" component={ProfilePage} />
 					</Switch>
 				</div>
