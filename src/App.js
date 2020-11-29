@@ -4,9 +4,10 @@ import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom
 import {connect} from 'react-redux';
 import HomePage from './Pages/HomePage'
 import FeedPage from './Pages/FeedPage'
-import Profile from './components/Profile/Profile';
+import ProfilePage from './Pages/ProfilePage'
 import SiteBar from './containers/SiteBar'
 import Inbox from './components/Inbox/Inbox'
+import Friends from './components/Profile/Friends'
 import {checkLoggedIn} from './Redux/actions/authActions';
 
 class App extends Component {
@@ -28,6 +29,7 @@ class App extends Component {
 			<div className="App">
 				<Router>
 					{this.props.loggedIn ? <SiteBar /> : null}
+				<div id="main">
 					<Switch>
 						<Route
 							path="/feed"
@@ -41,8 +43,9 @@ class App extends Component {
 						/>
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/inbox" component={Inbox} />
-						<Route exact path="/profile" component={Profile} />
+						<Route path="/profile" component={ProfilePage} />
 					</Switch>
+				</div>
 				</Router>
 			</div>
 		);
