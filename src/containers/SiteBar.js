@@ -21,10 +21,10 @@ const SiteBar = ({loggedIn}) => {
 
     const classes = useStyles()
     return (
-      <AppBar className={classes.root}>
-        <ToolBar>
-              <NavMenu />
+      <AppBar className={classes.root} >
+        <ToolBar id="nav-bar">
               <PrimarySearchBar />
+              <NavMenu />
         </ToolBar>
       </AppBar>
     )
