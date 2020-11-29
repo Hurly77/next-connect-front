@@ -11,7 +11,6 @@ class Posted extends Component {
 
 	render() {
 		const posts = this.props.posts;
-		console.log(posts, "Rendered ---------------------------------------")
 		return posts.map((post) => {
 		 return (
 			 <div key={post.id} className="posted">
