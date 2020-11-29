@@ -1,5 +1,60 @@
  @media (min-width: 992px){
-  }
+	}
+	
+	html,
+	body {
+		height: 100%;
+	}
+	
+	#wrap {
+		min-height: 100%;
+	}
+	
+	
+	.footer {
+		position: relative;
+		margin-top: -180px;
+		/* negative value of footer height */
+		height: 180px;
+		clear: both;
+		background-color: #487697;
+	}
+	
+	
+	/* Opera Fix thanks to Maleika (Kohoutec) */
+	
+	body:before {
+		content: "";
+		height: 100%;
+		float: left;
+		width: 0;
+		margin-top: -32767px;
+		/* thank you Erik J - negate effect of float*/
+	}
+	
+	footer.footer {
+		height: 300px;
+		width: 100%;
+		background-color: #161925;
+	}
+	
+	p.copyright {
+		color: #cbf7ed;
+		line-height: 40px;
+		font-size: 0.7em;
+	}
+	
+	.overlay {
+		position: absolute;
+		background-color: rgba(0, 0, 0, .6);
+		width: 100%;
+		height: 100%;
+	}
+	
+	#portal {
+		height: 0;
+	}
+
 
 * {
 	margin: 0;
@@ -74,13 +129,23 @@ input[type=text]:active {
 
 
 /* nav */
+
 .nav {
 	margin: 0px;
 }
 
 .nav-link {
 	text-decoration: none;
-	color: #161925;
+	color: #CBF7ED;
+	float: right;
+	padding: 10px;
+	padding-left:15px;
+	padding-right: 15px;
+	margin: 0;
+}
+
+.nav-link:hover {
+	color: #CBF7ED;
 }
 
 /* icons */
@@ -422,4 +487,19 @@ color: #CBF7ED;
 
 .link:focus {
 	border-bottom: solid #161925 3px;
+}
+
+/* Inbox */
+
+.open-inbox {
+	color: #CBF7ED;
+	background-color: transparent;
+	border: none;
+	padding: 10px;
+	margin: 0;
+	width: initial;
+}
+
+.open-inbox:focus {
+	outline: none;
 }
