@@ -9,7 +9,7 @@ class Logout extends Component {
       return (
         <div className="logout-div">
          <Link to="#" onClick={() => this.props.logout(this.props.history)}>
-              <button type="button" className="btn btn-primary logout">Logout</button>
+              <button type="button" className="btn-logout">Logout</button>
           </Link>
         </div>
       )
