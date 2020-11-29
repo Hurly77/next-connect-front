@@ -1,6 +1,5 @@
 const apiUrl = 'http://localhost:3000';
 export const signup = (user, history) => {
-	debugger
 	return (dispatch) => {
 		fetch(`${apiUrl}/registrations`, {
 			method      : 'POST',
@@ -15,7 +14,7 @@ export const signup = (user, history) => {
 						type    : 'AUTH_SUCCESS',
 						payload : {loggedIn: data.logged_in, currentUser: data.user},
 					}),
-				history.push('/profile'),
+				history.push('/feed'),
 			);
 	};
 };
