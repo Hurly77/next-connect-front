@@ -4,11 +4,13 @@ import commentReducer from './reducers/commentReducer'
 import thunk from 'redux-thunk'
 import reduxLogger from 'redux-logger'
 import postReducer  from './reducers/postReducer'
+import searchReducer from './reducers/searchReducer'
 
 const rootReducer = combineReducers({
   auth: authReducer,
   comment: commentReducer,
-  post: postReducer
+  post: postReducer,
+  search: searchReducer
 })
 
 const middleware = [thunk, reduxLogger]
