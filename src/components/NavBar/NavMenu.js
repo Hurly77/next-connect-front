@@ -5,19 +5,23 @@ import {logout} from '../../Redux/actions/authActions';
 import {withRouter} from 'react-router-dom'
 import Logout from './Logout'
 import InboxButton from '../Inbox/InboxButton'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faUser, faHome} from '@fortawesome/free-solid-svg-icons'
 
 
 const NavMenu = ({loggedIn}) => {
+	const profile = <FontAwesomeIcon size="2x" icon={faUser} />
+	const home = <FontAwesomeIcon size="2x" icon={faHome}/>
 		if (loggedIn) {
 			return (
+			<>
 				<div className="nav">
-					<NavLink to="/profile" className="nav-link">Profile</NavLink>
-					<NavLink to="/feed" className="nav-link">Feed</NavLink>
+					<NavLink to="/feed" className="nav-link">{home}</NavLink>
+					<NavLink to="/profile" className="nav-link">{profile}</NavLink>
 					<InboxButton />
-					<Logout />
-
 				</div>
+					<Logout />
+			</>
 			);
 		}
 }
