@@ -5,6 +5,10 @@
 	body {
 		height: 100%;
 	}
+
+	body.blocked {
+		overflow: hidden;
+	}
 	
 	#wrap {
 		min-height: 100%;
@@ -13,29 +17,16 @@
 	
 	.footer {
 		position: relative;
-		margin-top: -180px;
+		margin-top: relative;
 		/* negative value of footer height */
-		height: 180px;
+		height: 10px;
 		clear: both;
-		background-color: #487697;
 	}
 	
-	
-	/* Opera Fix thanks to Maleika (Kohoutec) */
-	
-	body:before {
-		content: "";
-		height: 100%;
-		float: left;
-		width: 0;
-		margin-top: -32767px;
-		/* thank you Erik J - negate effect of float*/
-	}
 	
 	footer.footer {
-		height: 300px;
+		height: 20px;
 		width: 100%;
-		background-color: #161925;
 	}
 	
 	p.copyright {
@@ -69,7 +60,7 @@ body {
 }
 
 #main {
-	margin-top: 64px;
+	margin-top: 94px;
 }
 
 /* buttons */
@@ -103,6 +94,20 @@ button {
 
 }
 
+.btn-logout {
+	background-color: transparent;
+	float: right;
+	border:none;
+	padding: 10px;
+	width: fit-content;
+}
+
+.logout {
+	padding: 10px;
+	margin: 20px;
+	float: right;
+}
+
 
 /* input */
 input[type=text]:focus {
@@ -131,7 +136,10 @@ input[type=text]:active {
 /* nav */
 
 .nav {
-	margin: 0px;
+	margin: auto;
+	margin-left: 10px;
+	width: auto;
+	align-items: center;
 }
 
 .nav-link {
@@ -141,7 +149,7 @@ input[type=text]:active {
 	padding: 10px;
 	padding-left:15px;
 	padding-right: 15px;
-	margin: 0;
+	margin: 20px;
 }
 
 .nav-link:hover {
@@ -389,7 +397,7 @@ color: #CBF7ED;
 
 /* Profile Avatar */
 .Avatar {
-	transform: translate(-15px, 30px);
+	transform: translate(-20px, 175px);
 	border: solid #CBF7ED 5px;
 	background-color: #406E8E;
 	width:150px;
@@ -423,10 +431,14 @@ color: #CBF7ED;
 
 .profile-banner {
 	background-image: url('https://www.thefilmagazine.com/wp-content/uploads/2016/07/bourne-banner.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 	margin-bottom: 50px;
 	margin-left: 100px;
 	margin-right: 100px;
 	border-radius: 5px;
+	height: 350px;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 
@@ -434,11 +446,13 @@ color: #CBF7ED;
 
 
 .profile-name {
-	transform: translate(-20px, 250px);
+	transform: translate(-20px, 375px);
 	color: #CBF7ED;
 }
 /* profile nav */
 .profile-page {
+	padding-left: 15%;
+	padding-right: 15%;
 	background-image: linear-gradient(#161925, #457597);
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -489,14 +503,50 @@ color: #CBF7ED;
 	border-bottom: solid #161925 3px;
 }
 
+/* Profile About Page */
+.about-main {
+	display: flex;
+	padding-left: 20%;
+	padding-right: 15%;
+}
+
+.about-container-1 {
+	margin-left:  100px;
+	margin-right: 100px;
+	margin-top: 10px;
+	margin-bottom: 200px;
+	padding: 30px;
+	border-radius: 5px;
+	width: 1000px;
+	height: 700px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: #457597;
+}
+
+.about-details {
+	display: block;
+}
+
+/*  */
+
 /* Inbox */
+.inbox-modal {
+	position: fixed;
+	border-radius: 5px;
+	height: 500px;
+	width: 400px;
+	margin: auto;
+	bottom: 0;
+	right: 100px;
+	background-color: #23395B;
+}
 
 .open-inbox {
 	color: #CBF7ED;
 	background-color: transparent;
 	border: none;
 	padding: 10px;
-	margin: 0;
+	margin: 20px;
 	width: initial;
 }
 
