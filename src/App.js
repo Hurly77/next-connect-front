@@ -7,6 +7,7 @@ import FeedPage from './Pages/FeedPage'
 import ProfilePage from './Pages/ProfilePage'
 import SiteBar from './containers/SiteBar'
 import {checkLoggedIn} from './Redux/actions/authActions';
+import {SearchPage} from './Pages/SearchPage'
 
 class App extends Component {
 	state = {
@@ -41,6 +42,7 @@ class App extends Component {
 						/>
 						<Route exact path="/" component={HomePage} />
 						<Route path="/profile" component={ProfilePage} />
+						<Route exact path="/results" component={SearchPage} />
 					</Switch>
 				</div>
 				</Router>
@@ -50,7 +52,10 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-	return {loggedIn: state.auth.loggedIn};
+	return {
+		loggedIn: state.auth.loggedIn,
+		results: state.search.results
+	};
 };
 
 export default connect(mapStateToProps, {checkLoggedIn})(App);
