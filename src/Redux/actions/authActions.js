@@ -14,7 +14,7 @@ export const signup = (user, history) => {
 						type    : 'AUTH_SUCCESS',
 						payload : {loggedIn: data.logged_in, currentUser: data.user},
 					}),
-				history.push('/feed'),
+				history.push('/profile')
 			);
 	};
 };
