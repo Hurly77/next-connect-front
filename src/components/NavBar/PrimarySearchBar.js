@@ -17,21 +17,16 @@ class PrimarySearchBar extends Component {
   }
 
   handleSubmit = (e) => {
+    console.log(this.props)
     e.preventDefault()
-    query(this.state.query)
-    this.props.history.push('/results')
-    this.setState({
-      ...this.state,
-      query: ''
-    })
+    this.props.query(this.state.query, this.props.history)
   }
   
   render() {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="search" placeholder="Search" className="search" onChange={this.handleChange} />
-          <button type="submit">fdfd</button>
+          <input type="text" name="search" placeholder="Search" className="search" onChange={this.handleChange} value={this.state.query}/>
         </form>
       </div>
     )
