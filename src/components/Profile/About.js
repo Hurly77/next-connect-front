@@ -7,8 +7,7 @@ import {
   faHandHoldingHeart, 
   faMapMarkerAlt, 
   faHome, 
-  faClock,
-  faEdit  
+  faClock  
 } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -19,7 +18,6 @@ const About = ({user}) => {
   const lives = <FontAwesomeIcon size="3x" icon={faMapMarkerAlt} />
   const from = <FontAwesomeIcon size="3x" icon={faHome} />
   const joined = <FontAwesomeIcon size="3x" icon={faClock} />
-  const editIcon = <FontAwesomeIcon size="lg" icon={faEdit} />
 
   console.log(user)
   return (
@@ -32,6 +30,7 @@ const About = ({user}) => {
         <div>{lives}{user.lives}</div>
         <div>{from}{user.from}</div>
         <div>{joined}{user.joined}</div>
+  <p>{user.c_id}</p>
     </div>
   </div>
   )
