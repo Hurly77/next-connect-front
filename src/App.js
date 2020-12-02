@@ -22,6 +22,10 @@ class App extends Component {
 		this.props.checkLoggedIn(this.toggleLoading);
 	}
 
+	UserId = (id) => {
+
+	}
+	
 	render() {
 		if (this.state.loading) return <h1>Loading...</h1>;
 		return (
@@ -42,7 +46,7 @@ class App extends Component {
 						/>
 						<Route exact path="/" component={HomePage} />
 						<Route path="/profile" component={ProfilePage} />
-						<Route exact path="/results" component={SearchPage} />
+						<Route path="/results" component={SearchPage} />
 					</Switch>
 				</div>
 				</Router>
