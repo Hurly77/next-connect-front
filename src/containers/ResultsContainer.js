@@ -1,29 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Result from '../components/NavBar/Result';
-import  friends from '../Redux/actions/friendActions';
+import Results from '../components/NavBar/Results'
+import friends from '../Redux/actions/friendActions';
 
 class ResultsContainer extends Component {
 
-	componentDidMount(){
-	
-	}
-
 	render() {
-		const users = this.props.results;	
-		return users.map((user) => {
+		const users = this.props.results;
 			return (
-				<div key={user.id} className="search-card">
-					<Result user={user} />
-				</div>
+				<>
+					<Results users={users}
+					/>
+				</>
 			);
-		});
 	}
 }
 
 const mapStateToProps = (state) => {
 	return {
-		results: state.search.results,
+		results        : state.search.results,
 	};
 };
 
