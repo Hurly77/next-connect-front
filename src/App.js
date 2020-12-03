@@ -7,6 +7,7 @@ import FeedPage from './Pages/FeedPage'
 import ProfilePage from './Pages/ProfilePage'
 import SiteBar from './containers/SiteBar'
 import {checkLoggedIn} from './Redux/actions/authActions';
+import {checkFriends} from './Redux/actions/friendActions'
 import {SearchPage} from './Pages/SearchPage'
 
 class App extends Component {
@@ -20,10 +21,6 @@ class App extends Component {
 
 	componentDidMount() {
 		this.props.checkLoggedIn(this.toggleLoading);
-	}
-
-	UserId = (id) => {
-
 	}
 	
 	render() {
@@ -58,8 +55,9 @@ class App extends Component {
 const mapStateToProps = (state) => {
 	return {
 		loggedIn: state.auth.loggedIn,
-		results: state.search.results
+		results: state.search.results,
+		currentUser: state.auth.currentUser
 	};
 };
 
-export default connect(mapStateToProps, {checkLoggedIn})(App);
+export default connect(mapStateToProps, {checkLoggedIn, checkFriends})(App);
