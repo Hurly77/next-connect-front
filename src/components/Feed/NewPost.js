@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
+import UploadImageButton from './UploadImageButton'
 
 class NewPost extends Component {
 	state = {
@@ -46,9 +47,9 @@ class NewPost extends Component {
 				</form>
 				<div>
 					<div className="multi-media-select">
-						<div className="mm">♂ photo/video</div>
-						<div className="mm">♫ music</div>
-						<div className="mm">♪ emoticon</div>
+						<UploadImageButton />
+						<button></button>
+						<button></button>
 					</div>
 				</div>
 			</div>
