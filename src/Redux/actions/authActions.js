@@ -31,7 +31,7 @@ export const login = (user, history) => {
 			.then((data) => {
 				dispatch({
 					type    : 'AUTH_SUCCESS',
-					payload : {loggedIn: data.logged_in, currentUser: data.user},
+					payload : {loggedIn: data.logged_in, currentUser: data.user, friends: data.friends, pendingFriends: data.pendingFriends},
 				});
 				history.push('/feed');
 			});
