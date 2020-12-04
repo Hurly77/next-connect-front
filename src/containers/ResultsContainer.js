@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Results from '../components/NavBar/Results'
-import friends from '../Redux/actions/friendActions';
 
 class ResultsContainer extends Component {
 
@@ -9,8 +8,7 @@ class ResultsContainer extends Component {
 		const users = this.props.results;
 			return (
 				<>
-					<Results users={users}
-					/>
+					<Results users={users}/>
 				</>
 			);
 	}
@@ -22,4 +20,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps, {friends})(ResultsContainer);
+export default connect(mapStateToProps)(ResultsContainer);
