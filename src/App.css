@@ -60,7 +60,7 @@ body {
 }
 
 #main {
-	margin-top: 94px;
+	margin-top: 93px;
 }
 
 /* buttons */
@@ -106,6 +106,13 @@ button {
 	padding: 10px;
 	margin: 20px;
 	float: right;
+}
+
+#fa-video {
+	margin-left: 30px;
+	background-color: transparent;
+	border: none;
+	width: fit-content;
 }
 
 
@@ -242,26 +249,60 @@ input[type=text]:active {
 
 /* post*/
 .posted {
-	border-radius: 5px;
-	padding: 20px;
-	margin-left: 150px;
-	margin-right: 150px;
+	width: fit-content;
+	border-radius: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: #23395B;
 }
 
+.posted-text {
+	padding: 20px;
+	padding-bottom: 0px;
+}
+
+#time-posted {
+	padding-bottom: 2px;
+	border-bottom: solid #3b6888 1px;
+}
+
+.posted-by {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.posted-by > img {
+	border-radius: 100px;
+	background-color: #161925;
+	margin-bottom: 10px;
+}
+
+.post-text > img {
+	border: solid #161925 .06px;
+	margin-left: 0;
+	width: 750px;
+	height: 800px;
+	justify-content: center;
+	align-content: center;
+}
+
+
 /* new post */
 .new-post-card {
-	border-radius: 5px;
-	margin-top: 20px;
-	margin-left: 150px;
-	margin-right: 150px;
+	border-radius: 10px;
+	margin-top: 120px;
+	margin-left: auto;
+	margin-right: auto;
 	padding: 20px;
 	padding-bottom: 3px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	background-color: #23395B;
+	width:  750px;	
 }
 
 /* post multi-media selected */
@@ -273,6 +314,8 @@ input[type=text]:active {
 	border:none;
 	border-radius: 10px;
 	background-color: #406E8E;
+	align-content: center;
+	justify-content: center;
 }
 
 .text-for-new-post:hover {
@@ -292,7 +335,6 @@ input[type=text]:active {
 	padding-left:  40px;
 	padding-right: 40px;
 }
-
 
 /* Home-Page */
 
@@ -415,9 +457,11 @@ input[type=text]:active {
 }
 
 .password-confirm {
+	grid-column: 1;
 	grid-row: 3;
 	
 }
+
 
 .btn-submit-signup {
 	grid-row: 5;
@@ -466,7 +510,7 @@ color: #CBF7ED;
 {
 	padding: 5px;
 	border-radius: 100%;
-	transform: translate(14px, 106px);
+	transform: translate(24px, 106px);
 	background-color: transparent;
 	color: #161925;
 	font-weight: 600;
@@ -477,6 +521,7 @@ color: #CBF7ED;
 }
 
 .avatar-photo {
+	transform: translate(-1px, -47px);
 	object-fit: cover;
 	border-radius: 100%;
 	width: 150px;
@@ -490,8 +535,8 @@ color: #CBF7ED;
 	background-position: center;
 	background-size: cover;
 	margin-bottom: 50px;
-	margin-left: 100px;
-	margin-right: 100px;
+	margin-left: auto;
+	margin-right: auto;
 	border-radius: 5px;
 	height: 350px;
 	border-top-left-radius: 0;
@@ -559,6 +604,7 @@ color: #CBF7ED;
 }
 
 /* Profile About Page */
+
 .about-main {
 	display: flex;
 	padding-left: 20%;
@@ -566,8 +612,8 @@ color: #CBF7ED;
 }
 
 .about-container-1 {
-	margin-left:  100px;
-	margin-right: 100px;
+	margin-left:  auto;
+	margin-right: auto;
 	margin-top: 10px;
 	margin-bottom: 200px;
 	padding: 30px;
@@ -582,11 +628,88 @@ color: #CBF7ED;
 	display: block;
 }
 
-/*  */
+.open-edit-btn {
+	background-color:transparent;
+	border: none;
+	width: fit-content;
+}
+
+.edit-modal-btn {
+	background-color: transparent;
+	border: none;
+	width: fit-content;
+	height: fit-content;
+}
+
+/* about modal */
+.edit-modal {
+	position: fixed;
+	margin: auto;
+	height: fit-content;
+	width: 700px;
+	right: 30%;
+	left: 30%;
+	bottom: 25%;
+	border-radius: 5px;
+	background-color: #23395B;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.edit-about-modal{
+	padding: 25px;
+	display: grid;
+	grid-gap: 10px;
+}
+
+.edit-about-modal > input{
+	margin-top: 10px;
+	height: 50px;
+	padding-left: 5px;
+	border-radius: 5px;
+	border: none;
+	color: #161925;
+	font-size: 18px;
+	background-color: #CBF7ED;
+}
+
+.edit-about-modal > button {
+	grid-row: 6;
+	background-color: forestgreen;
+	border-radius: 10px;
+	height: 50px;
+	width: 100%;
+	border: none
+}
+
+#about-item-1 {
+	grid-row: 1;
+}
+
+#about-item-2 {
+	grid-row: 2;
+
+}
+
+#about-item-3 {
+	grid-row: 3;
+
+}
+
+#about-item-4 {
+	grid-row: 4;
+
+}
+
+#about-item-5 {
+	grid-row: 5;
+
+}
+
 
 /* Inbox */
 .inbox-modal {
 	position: fixed;
+	overflow: hidden;
 	margin: auto;
 	height: 500px;
 	width: 400px;
@@ -594,7 +717,12 @@ color: #CBF7ED;
 	bottom: 0;
 	border-radius: 5px;
 	background-color: #23395B;
+	padding: 10px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dailog {
+	background-color: #4891c5;
 }
 
 .open-inbox {
