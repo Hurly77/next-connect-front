@@ -9,7 +9,6 @@ export default class AboutContainer extends Component {
 				<div className="about-main">
 					<div className="about-container-1">
 						<About />
-            <EditButton />
 					</div>
 				</div>
 			</>
