@@ -8,8 +8,8 @@ export const EditButton = () => {
   const [isOpen, setIsOpen] = useState(false)
   const Edit = <FontAwesomeIcon size="2x" icon={faEdit} />
   return (
-    <div className="Edit-button">
-    <button className="open-Edit" onClick={() => setIsOpen(true)}>
+    <div className="edit-button">
+    <button className="open-edit-btn" onClick={() => setIsOpen(true)}>
       {Edit}
     </button>
       <EditModal open={isOpen} onClose={() => setIsOpen(false)} />						
