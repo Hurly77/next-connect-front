@@ -4,12 +4,15 @@ import CommentCard from '../Feed/CommentCard'
 
 const mapPosts = (posts) => {
   return posts.map(post => {
-    return (<div className="posted">
+    if (post.id === currentUser.id){
+      return (<div className="posted">
         <div className="post-text">
             <p>{post.text}</p>
             <CommentCard />
         </div>
     </div>)
+    }
+    
   })
 }
 
@@ -25,7 +28,8 @@ export const Posts = ({posts}) => {
 
 const mapStateToProps = state => {
   return {
-    posts: state.post.posts
+    posts: state.post.posts,
+    currentUser: state.auth.currentUser
   }
 }
 
