@@ -7,9 +7,15 @@ class RegisterPopup extends Component {
 	state = {
 		first_name            : '',
 		last_name             : '',
+		work: '',
+		education: '',
+		relationship: '',
+		lives: '',
+		from: '',
 		email                 : '',
 		password              : '',
 		password_confirmation : '',
+
 	}
 	
 	
@@ -70,6 +76,7 @@ class RegisterPopup extends Component {
 							onChange={ this.handleChange }
 							required
 						/>
+					
 					<div className="disclaimer">
 					<p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</p>
 					</div>
