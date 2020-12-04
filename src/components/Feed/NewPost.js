@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
 import UploadImageButton from './UploadImageButton'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faVideo} from '@fortawesome/free-solid-svg-icons'
 
 class NewPost extends Component {
 	state = {
@@ -34,6 +36,7 @@ class NewPost extends Component {
 	render() {
 		return (
 			<div className="new-post-card">
+				<h4>Whats on Your Mind?</h4>
         <form onSubmit={this.handleSubmit}>
 
           <input 
@@ -48,8 +51,9 @@ class NewPost extends Component {
 				<div>
 					<div className="multi-media-select">
 						<UploadImageButton />
-						<button></button>
-						<button></button>
+						<button id="fa-video">
+							<FontAwesomeIcon icon={faVideo} size="2x" />
+						</button>
 					</div>
 				</div>
 			</div>
