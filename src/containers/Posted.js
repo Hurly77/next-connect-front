@@ -14,7 +14,7 @@ class Posted extends Component {
 		return posts.map((post) => {
 		 return (
 			 <div key={post.id} className="posted">
-				 <Posts text={post.text} />
+				 <Posts post={post}/>
 			 </div>
 		 )
 	 });
