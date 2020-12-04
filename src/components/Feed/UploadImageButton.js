@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faClock} from '@fortawesome/free-solid-svg-icons'
+import {faImage} from '@fortawesome/free-solid-svg-icons'
 
 export default class UploadImageButton extends Component {
   state = {
@@ -18,8 +18,8 @@ export default class UploadImageButton extends Component {
   render() {
     return (
       <div>
-          <label htmlFor="actual-btn"><FontAwesomeIcon icon={faClock} /></label>
-          <input type="file" onChange={this.fileSelectAvatar} />
+          <label htmlFor="actual-btn"><FontAwesomeIcon size="2x" icon={faImage} /></label>
+          <input type="file" onChange={this.fileSelectAvatar} hidden />
         </div>
     )
   }
