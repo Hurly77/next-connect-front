@@ -4,8 +4,6 @@ import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'
 import PrimarySearchBar from '../components/NavBar/PrimarySearchBar'
 import { makeStyles } from '@material-ui/core/styles'
-import { connect } from 'react-redux'
-import { Hidden } from '@material-ui/core'
 
 const useStyles = makeStyles({
   root: {
@@ -17,7 +15,7 @@ const useStyles = makeStyles({
   }
 })
 
-const SiteBar = ({loggedIn}) => {
+const SiteBar = () => {
 
     const classes = useStyles()
     return (
@@ -30,10 +28,4 @@ const SiteBar = ({loggedIn}) => {
     )
   }
 
-  const mapStateToProps = state => {
-    return {
-      loggedIn: state.auth.logg
-    }
-  }
-
-export default connect(mapStateToProps)(SiteBar)
+export default (SiteBar)
