@@ -19,6 +19,25 @@ export const signup = (user, history) => {
 	};
 };
 
+export const updateUser = (user, history) => {
+	return (dispatch) => {
+		fetch(`${apiUrl}/api/v1/users/${user.id}`, {
+			method      : 'PUT',
+			headers     : {'Content-Type': 'application/json'},
+			body        : JSON.stringify({user: user}),
+		})
+			.then((res) => res.json())
+			.then(
+				(data) =>
+					dispatch({
+						type    : 'AUTH_SUCCESS',
+						payload : {loggedIn: data.logged_in, currentUser: data.user},
+					}),
+				history.push('/profile')
+			);
+	};
+};
+
 export const login = (user, history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/sessions`, {
