@@ -10,14 +10,23 @@ class Inbox extends Component {
   }
 
   render() {
-    return this.props.pendingFriends.map(r => {
+    if(this.props.pendingFriends.length > 0){
+      return this.props.pendingFriends.map(r => {
       return (
-        <dive>
+        <div className="dialog">
           <h1>{r.first_name}</h1>
+          helo
           <button>accept</button>
-        </dive>
+        </div>
       )
     })
+  }
+  else {
+   return (
+   <div>
+      <h5>no, messages or requests</h5>
+    </div>
+    )}
   }
 }
 
