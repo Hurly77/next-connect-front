@@ -1,25 +1,31 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+import {updateUser} from '../../Redux/actions/authActions'
 
-export default class ProfileImage extends Component {
-
-  state = {
-    file: null
-  }
+class ProfileImage extends Component {
   
   fileSelectAvatar = (e) => {
-    this.setState({
-      ...this.state,
-      file: URL.createObjectURL(e.target.files[0])
-    })
+    let newInfo = {...this.props.currentUser}
+    newInfo.avatar = URL.createObjectURL(e.target.files[0])
+    this.props.updateUser(newInfo, this.props.history)
   }
-
+  
   render() {
     return (
-        <div className="Avatar">
-          <img id="fileUpload" src={this.state.file} alt='0' className="avatar-photo"/>
+      <div className="Avatar">
           <label className="upload-avatar" htmlFor="actual-btn">Upload</label>
           <input type="file" onChange={this.fileSelectAvatar} id="actual-btn" hidden />
+          <img id="fileUpload" src={this.props.currentUser.avatar} alt='0' className="avatar-photo"/>
         </div>
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    currentUser: state.auth.currentUser,
+  }
+}
+
+export default withRouter(connect(mapStateToProps, {updateUser})(ProfileImage))
