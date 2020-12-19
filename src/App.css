@@ -506,22 +506,33 @@ color: #CBF7ED;
   border-radius:50%;
 }
 
+#uploaded > path {
+	color: transparent;
+}
+
 .upload-avatar
 {
-	padding: 5px;
+	padding: 50px;
 	border-radius: 100%;
-	transform: translate(24px, 106px);
-	background-color: transparent;
-	color: #161925;
+	transform: translate(0, -150px);
+	width: 150px;
+	height: 150px;
+	align-content: center;
+	align-items: center;
 	font-weight: 600;
 }
 
+.upload-avatar:hover #uploaded > path {
+	background-color: #16192586;
+	color: #cbf7ed;
+}
+
+
 .upload-avatar:hover {
-	background-color: #4891c5;
+	background-color: #16192586;
 }
 
 .avatar-photo {
-	transform: translate(-1px, -47px);
 	object-fit: cover;
 	border-radius: 100%;
 	width: 150px;
