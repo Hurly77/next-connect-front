@@ -9,7 +9,7 @@ export const Results = ({users, props}) => {
 				{user.first_name}
 				<p><span>Joined</span>{user.joined}</p>
 				<Result user={user} />
-				<img src={user.avatar} className="search-avatar"></img>
+				<img src={user.avatar} alt="1" className="search-avatar"></img>
 			</div>
 		);
 	});
