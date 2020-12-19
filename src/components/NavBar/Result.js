@@ -3,7 +3,8 @@ import RequestButton from './RequestButton'
 
 class Result extends Component {
 	render() {
-   return( 
+      console.log(this.props)
+   return(
       <div>
       <RequestButton key={this.props.user.id} />
     </div>)
