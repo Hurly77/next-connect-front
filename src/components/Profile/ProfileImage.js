@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import {updateUser} from '../../Redux/actions/authActions'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faPencilAlt} from '@fortawesome/free-solid-svg-icons'
 
 class ProfileImage extends Component {
   
@@ -13,11 +15,13 @@ class ProfileImage extends Component {
   
   render() {
     return (
+      <>
       <div className="Avatar">
-          <label className="upload-avatar" htmlFor="actual-btn">Upload</label>
           <input type="file" onChange={this.fileSelectAvatar} id="actual-btn" hidden />
           <img id="fileUpload" src={this.props.currentUser.avatar} alt='0' className="avatar-photo"/>
+          <label className="upload-avatar" htmlFor="actual-btn"><FontAwesomeIcon icon={faPencilAlt} size="2x" id="uploaded"/></label>
         </div>
+      </>
     )
   }
 }
