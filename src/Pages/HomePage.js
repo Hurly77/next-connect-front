@@ -1,11 +1,11 @@
 import React from 'react'
+import '../styles/home.css'
 import { connect } from 'react-redux'
 import Login from '../components/Home/Login'
 import Home from '../components/Home/Home'
 
 
 const HomePage = ({state}) => {
-  console.log(state)
   return (
   <> 
     <div className="home-login-container">
