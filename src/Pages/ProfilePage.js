@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/profile.css'
 import ProfileHead from '../containers/ProfileHead';
 import {Link, useLocation, Switch, Route, useRouteMatch} from 'react-router-dom';
 import AboutContainer from '../containers/AboutContainer'

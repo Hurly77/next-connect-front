@@ -1,10 +1,11 @@
 import React from 'react'
-import ResultContainer from '../containers/ResultsContainer'
+import '../styles/search.css'
+import ResultsContainer from '../containers/ResultsContainer'
 
 export const SearchPage = () => {
   return (
-    <div>
-      <ResultContainer />
-    </div>
+    <>
+      <ResultsContainer />
+    </>
   )
 }
