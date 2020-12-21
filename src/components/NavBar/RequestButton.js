@@ -1,32 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
+import request from '../../Redux/actions/friendActions'
 
-export default class RequestButton extends Component {
-    state = {
-      isFriends: false
-    }
-  
-  handlePendingFriends = () => {
-
-  }
-  
-  handleClick = () => {
-    this.setState(previousState =>{
-      return{isFriends: !previousState.isFriends}
-    })
-  }
-
-  render() {
-    if(!this.state.isFriends){
-      return (  
-        <button onClick={this.handleClick}>
-          add Friend
-        </button>
-    )
-    }else {
-      return(<button onClick={this.handleClick}>
-        requested
-      </button>)
-    }
-    
-  }
+export const RequestButton = ({handleClick}) => {
+  return (
+      <button onClick={handleClick}>add Friend</button>
+  )
 }
+
+export default RequestButton
+
