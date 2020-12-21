@@ -1,7 +1,8 @@
 const friendsReducer = (
 	state = {
     friends: [],
-    pendingFriends: []
+		pendingFriends: [],
+		requests: []
 	},
 	action,
 ) => {
@@ -11,6 +12,7 @@ const friendsReducer = (
 				...state,
 				friends        : action.payload.friends,
 				pendingFriends : action.payload.pendingFriends,
+				requests: action.payload.requests
 			};
 			
 		default:
