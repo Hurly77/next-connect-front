@@ -1,13 +1,17 @@
-import React, {Component} from 'react';
-import RequestButton from './RequestButton'
+import React from 'react';
 
-class Result extends Component {
-	render() {
-      console.log(this.props)
-   return(
-      <div>
-      <RequestButton key={this.props.user.id} />
-    </div>)
-	}
-}
+const Result = ({user, button}) => {
+   return (
+      <div key={user.id} className="search-card">
+			{user.first_name}
+			<p>
+				<span>Joined</span>
+				{user.joined}
+			</p>
+         {button}
+			<img src={user.avatar} alt="1" className="search-avatar" />
+		</div>
+	);
+};
+
 export default Result;
