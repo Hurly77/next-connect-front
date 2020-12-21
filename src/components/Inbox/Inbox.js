@@ -10,8 +10,8 @@ class Inbox extends Component {
   }
 
   render() {
-    if(this.props.pendingFriends.length > 0){
-      return this.props.pendingFriends.map(r => {
+    if(this.props.requests.length > 0){
+      return this.props.requests.map(r => {
       return (
         <div className="dialog">
           <h1>{r.first_name}</h1>
@@ -32,7 +32,7 @@ class Inbox extends Component {
 
 const mapStateToProps = state => {
   return {
-    pendingFriends: state.friends.pendingFriends,
+    requests: state.friends.requests,
     currentUser: state.auth.currentUser
   }
 }
