@@ -17,7 +17,6 @@ class PrimarySearchBar extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log(this.props)
     e.preventDefault()
     this.props.query(this.state.query, this.props.history)
   }
