@@ -1,0 +1,229 @@
+/* Profile Avatar */
+.Avatar {
+  transform: translate(-20px, 175px);
+  border: solid #CBF7ED 5px;
+  background-color: #406E8E;
+  width:150px;
+  background-size: cover;
+  height:150px;
+  overflow: hidden;
+  border-radius:50%;
+}
+
+#uploaded > path {
+  color: transparent;
+}
+
+.upload-avatar
+{
+  padding: 50px;
+  border-radius: 100%;
+  transform: translate(0, -150px);
+  width: 150px;
+  height: 150px;
+  align-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.upload-avatar:hover #uploaded > path {
+  background-color: #16192586;
+  color: #cbf7ed;
+}
+
+
+.upload-avatar:hover {
+  background-color: #16192586;
+}
+
+.avatar-photo {
+  object-fit: cover;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+
+}
+
+/* Banner */
+
+.profile-banner {
+  background-image: url('https://www.thefilmagazine.com/wp-content/uploads/2016/07/bourne-banner.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  height: 350px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+
+}
+
+/* Profile Name */
+
+.profile-name {
+  transform: translate(-20px, 375px);
+  color: #CBF7ED;
+}
+
+/* profile nav */
+.profile-page {
+  padding-left: 15%;
+  padding-right: 15%;
+  background-image: linear-gradient(#161925, #457597);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-tabs {	
+  background-color: transparent;
+  border-top: solid #CBF7ED 1px;
+  margin-right: 110px;
+  margin-left: 110px;
+  margin-top: 100px;
+  padding-top: 10px;
+  display: flex;
+}
+
+.profile-tabs > a {
+  padding: 15px;
+  align-content: center;
+  align-items: center;
+}
+
+.profile-tabs > a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #CBF7ED;
+
+}
+
+.profile-tabs > a:active {
+  text-decoration: none;
+  background-color: #3b6888
+}
+
+.tab-link-tab-active {
+  border-bottom: solid #4891c5 3px;
+}
+
+.profile-tabs > a.tab-link-tab-inactive:hover {
+  border-radius: 5px;
+  background-color: #457597;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #CBF7ED;
+}
+
+.link:focus {
+  border-bottom: solid #161925 3px;
+}
+
+/* Profile About Page */
+
+.about-main {
+  display: flex;
+  padding-left: 20%;
+  padding-right: 15%;
+}
+
+.about-container-1 {
+  margin-left:  auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 200px;
+  padding: 30px;
+  border-radius: 5px;
+  width: 1000px;
+  height: 700px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #457597;
+}
+
+.about-details {
+  display: block;
+}
+
+.open-edit-btn {
+  background-color:transparent;
+  border: none;
+  width: fit-content;
+}
+
+.edit-modal-btn {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* about modal */
+.edit-modal {
+  position: fixed;
+  margin: auto;
+  height: fit-content;
+  width: 700px;
+  right: 30%;
+  left: 30%;
+  bottom: 25%;
+  border-radius: 5px;
+  background-color: #23395B;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.edit-about-modal{
+  padding: 25px;
+  display: grid;
+  grid-gap: 10px;
+}
+
+.edit-about-modal > input{
+  margin-top: 10px;
+  height: 50px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: none;
+  color: #161925;
+  font-size: 18px;
+  background-color: #CBF7ED;
+}
+
+.edit-about-modal > button {
+  grid-row: 6;
+  background-color: forestgreen;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  border: none
+}
+
+#about-item-1 {
+  grid-row: 1;
+}
+
+#about-item-2 {
+  grid-row: 2;
+
+}
+
+#about-item-3 {
+  grid-row: 3;
+
+}
+
+#about-item-4 {
+  grid-row: 4;
+
+}
+
+#about-item-5 {
+  grid-row: 5;
+
+}
+
+/* friends */
+
+/* profile-Posts */
