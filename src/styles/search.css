@@ -1,0 +1,52 @@
+.search-avatar {
+  margin-top: 5px;
+  border: solid #CBF7ED 5px;
+  background-color: #406E8E;
+  width:75px;
+  background-size: cover;
+  height: 75px;
+  overflow: hidden;
+  border-radius:50%;
+}
+
+.search-card > p > span {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.search-card > p{
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* search Results */
+.search-card {
+  background-color: #23395B;
+  display: block;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 30px;
+  height: 200px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20pxpx;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.search-card:nth-child(1) {
+  margin-top: 120px
+}
+
+.search-card  button {
+  transform: translate(-20px, -40px);
+  background-color: #4891c5;
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  border: none
+}
+
+.search-card > button:focus {
+  outline: none;
+}
