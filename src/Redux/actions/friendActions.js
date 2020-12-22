@@ -6,18 +6,16 @@ export const request = (active_user, passive_user) => {
 			method  : 'POST',
 			headers : {'Content-Type': 'application/json'},
 			body    : JSON.stringify({
-				active_user_id  : active_user.id,
-				passive_user_id : passive_user.id,
+				active_user_id  : active_user,
+				passive_user_id : passive_user,
 			}),
 		})
 			.then((res) => res.json())
 			.then((data) =>
 				dispatch({
-					type    : 'FREINDS',
+					type    : 'REQUEST',
 					payload : {
-						friends        : data.friends,
 						pendingFriends : data.pending_friends,
-						requests			 : data.requests
 					},
 				}),
 			);
@@ -42,8 +40,6 @@ export const accept_request = (passive_user, active_user) => {
 					type    : 'FRIENDS',
 					payload : {
 						friends        : data.friends,
-						pendingFriends : data.pending_friends,
-						requests			 : data.requests
 					},
 				});
 			})
@@ -53,22 +49,21 @@ export const accept_request = (passive_user, active_user) => {
 
 export const deny = (active_user, passive_user) => {
 	return (dispatch) => {
-		fetch(`${apiUrl}/friendships/${passive_user.id}`, {
+		fetch(`${apiUrl}/users/${passive_user}`, {
 			method      : 'DELETE',
 			headers     : {'Content-Type': 'application/json'},
 			credentials : 'include',
 			body        : JSON.stringify({
-				active_user_id  : active_user.id,
-				passive_user_id : passive_user.id,
+				active_user_id  : active_user,
+				passive_user_id : passive_user,
 				status          : 'DENIED',
 			}),
 		})
 			.then((r) => r.json())
 			.then((data) => {
 				dispatch({
-					type    : 'FRIENDS',
+					type    : 'DENY',
 					payload : {
-						friends        : data.friends,
 						pendingFriends : data.pending_friends,
 						requests			 : data.requests
 					},
