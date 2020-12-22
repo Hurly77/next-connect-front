@@ -1,9 +1,8 @@
 import React from 'react'
-import request from '../../Redux/actions/friendActions'
 
-export const RequestButton = ({handleClick}) => {
+export const RequestButton = ({request, aU, pU, history}) => {
   return (
-      <button onClick={handleClick}>add Friend</button>
+      <button onClick={() => request(aU, pU, history)}>add Friend</button>
   )
 }
 
