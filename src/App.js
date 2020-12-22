@@ -43,7 +43,14 @@ class App extends Component {
 						/>
 						<Route exact path="/" component={HomePage} />
 						<Route path="/profile" component={ProfilePage} />
-						<Route path="/results" component={SearchPage} />
+						<Route path="/results" 
+							render={(props) => {
+								if(this.props.results.length !== 0){
+									return <SearchPage {...props} /> 
+								} else {
+									return <Redirect to="/feed" />
+								}
+							}} />
 					</Switch>
 				</div>
 				</Router>
