@@ -14,10 +14,29 @@ const friendsReducer = (
 				pendingFriends : action.payload.pendingFriends,
 				requests: action.payload.requests
 			};
+
+		case 'DENY':
+			return {
+				...state,
+				pendingFriends: action.payload.pendingFriends,
+				requests: action.payload.requests,
+			}
 			
+			case 'ACCEPTED':
+				return {
+					...state,
+					friends: action.payload.friends,
+				}
+
+			case 'REQUEST':
+				return {
+					...state,
+					pendingFriends: action.payload.friends,
+				}
+
 		default:
-			return state;
-	}
+					return state;
+			}
 };
 
 export default friendsReducer;
