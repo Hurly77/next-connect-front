@@ -1,11 +1,11 @@
 import React from 'react'
 
-const AcceptFriend = ({deny, accept, aU, pU}) => {
+const AcceptFriend = ({deny, accept, aU, pU, history}) => {
   
   return (
     <>
-    <button onClick={accept(aU, pU)}>accept</button>
-    <button onClick={deny(aU, pU)}>deny</button>
+    <button onClick={() => accept(aU, pU, history)}>accept</button>
+    <button onClick={() => deny(aU, pU, history)}>deny</button>
     </>
   )
 }
