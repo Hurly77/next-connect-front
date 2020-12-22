@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Unfriend = ({unfriend, aU, pU}) => {
+const Unfriend = ({unfriend, aU, pU, history}) => {
   return (
-    <button onClick={unfriend(aU, pU)}>unfriend</button>
+    <button onClick={() => unfriend(aU, pU, history)}>unfriend</button>
   )
 }
 
