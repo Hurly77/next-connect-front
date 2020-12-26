@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CancelButton = ({cancel, aU, pU, history}) => {
+const CancelButton = ({cancel, aU, pU}) => {
   return (
-      <button onClick={() => cancel(aU, pU, history)}>cancel Request</button>
+      <button onClick={() => cancel(aU, pU)}>cancel Request</button>
   )
 }
 export default CancelButton
