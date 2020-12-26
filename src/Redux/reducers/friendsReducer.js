@@ -1,8 +1,8 @@
 const friendsReducer = (
 	state = {
-    friends: [],
-		pendingFriends: [],
-		requests: []
+		friends        : [],
+		pendingFriends : [],
+		requests       : [],
 	},
 	action,
 ) => {
@@ -12,31 +12,36 @@ const friendsReducer = (
 				...state,
 				friends        : action.payload.friends,
 				pendingFriends : action.payload.pendingFriends,
-				requests: action.payload.requests
+				requests       : action.payload.requests,
 			};
 
 		case 'DENY':
 			return {
 				...state,
-				pendingFriends: action.payload.pendingFriends,
-				requests: action.payload.requests,
-			}
-			
-			case 'ACCEPTED':
-				return {
-					...state,
-					friends: action.payload.friends,
-				}
+				friends        : [...state.friends],
+				pendingFriends : action.payload.pendingFriends,
+				requests       : [...state.requests],
+			};
 
-			case 'REQUEST':
-				return {
-					...state,
-					pendingFriends: action.payload.friends,
-				}
+		case 'ACCEPTED':
+			return {
+				...state,
+				friends        : action.payload.friends,
+				pendingFriends : [...state.pendingFriends],
+				requests       : [...state.requests],
+			};
+
+		case 'REQUEST':
+			return {
+				...state,
+				friends        : [...state.friends],
+				pendingFriends : action.payload.pendingFriends,
+				requests       : [...state.requests],
+			};
 
 		default:
-					return state;
-			}
+			return state;
+	}
 };
 
 export default friendsReducer;
