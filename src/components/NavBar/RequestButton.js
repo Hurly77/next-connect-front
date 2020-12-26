@@ -1,8 +1,8 @@
 import React from 'react'
 
-export const RequestButton = ({request, aU, pU, history}) => {
+export const RequestButton = ({request, aU, pU}) => {
   return (
-      <button onClick={() => request(aU, pU, history)}>add Friend</button>
+      <button onClick={() => request(aU, pU)}>add Friend</button>
   )
 }
 
