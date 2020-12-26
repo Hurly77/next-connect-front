@@ -24,20 +24,20 @@ export const request = (active_user, passive_user) => {
 
 export const accept_request = (passive_user, active_user) => {
 	return (dispatch) => {
-		fetch(`${apiUrl}`, {
-			method      : 'PATCH',
+		fetch(`${apiUrl}/friendships`, {
+			method      : 'POST',
 			headers     : {'Content-Type': 'application/json'},
 			credentials : 'include',
 			body        : JSON.stringify({
-				passive_user_id : passive_user.id,
-				active_user_id  : active_user.id,
+				passive_user_id :passive_user,
+				active_user_id  : active_user,
 				status          : 'ACCEPTED',
 			}),
 		})
 			.then((r) => r.json())
 			.then((data) => {
 				dispatch({
-					type    : 'FRIENDS',
+					type    : 'ACCEPTED',
 					payload : {
 						friends        : data.friends,
 					},
@@ -65,7 +65,6 @@ export const deny = (active_user, passive_user) => {
 					type    : 'DENY',
 					payload : {
 						pendingFriends : data.pending_friends,
-						requests			 : data.requests
 					},
 				});
 			});
