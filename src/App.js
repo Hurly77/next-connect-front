@@ -46,7 +46,7 @@ class App extends Component {
 						<Route path="/results" 
 							render={(props) => {
 								if(this.props.results.length !== 0){
-									return <SearchPage {...props} /> 
+									return <SearchPage {...props}/> 
 								} else {
 									return <Redirect to="/feed" />
 								}
