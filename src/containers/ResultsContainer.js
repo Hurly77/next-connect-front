@@ -1,22 +1,32 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {withRouter} from 'react-router';
+import {withRouter} from 'react-router'
 import Result from '../components/NavBar/Result';
 import CancelButton from '../components/NavBar/CancelButton';
 import RequestButton from '../components/NavBar/RequestButton';
 import Unfriend from '../components/NavBar/Unfriend';
 import AcceptFriend from '../components/NavBar/AcceptFriend';
+import _ from 'lodash'
+import isEqual from 'lodash.isequal'
 import {checkFriends, deny, request, accept_request} from '../Redux/actions/friendActions';
 
 class ResultsContainer extends Component {
-
 	componentDidMount = () => {
-		this.props.checkFriends(this.props.currentUser.id);
-		
-	};
+		this.props.checkFriends(this.props.currentUser.id)
+	}
+
+  componentDidUpdate = (prevProps) => {
+		const props = this.props, prev = prevProps;
+		const r = props.requests, p = props.pending, f = props.friends;
+		const r2 = prev.requests, p2 = prev.pending, f2 = prev.friends;
+	
+		console.log(isEqual(r, r2), isEqual(p, p2), isEqual(f, f2))
+		if(!isEqual(r, r2) || !isEqual(p, p2) || !isEqual(f, f2)){
+			this.props.checkFriends(props.currentUser.id)
+		}
+	}
 
 	isPending = (id) => {
-		debugger
 		const ids = this.props.pending.map((user) => {
 			return user.id;
 		});
@@ -53,15 +63,7 @@ class ResultsContainer extends Component {
 					<Result
 						key={user.id}
 						user={user}
-						button={
-							<AcceptFriend
-								deny={this.props.deny}
-								accept={this.props.accept_request}
-								aU={aU}
-								pU={pU}
-								history={this.props.history}
-							/>
-						}
+						button={<AcceptFriend deny={this.props.deny} accept={this.props.accept_request} aU={aU} pU={pU} />}
 					/>
 				);
 			}
@@ -93,10 +95,7 @@ const mapStateToProps = (state) => {
 		friends     : state.friends.friends,
 		requests    : state.friends.requests,
 		currentUser : state.auth.currentUser,
-		all         : state.friends,
 	};
 };
 
-export default withRouter(
-	connect(mapStateToProps, {checkFriends, deny, request, accept_request})(ResultsContainer),
-);
+export default withRouter(connect(mapStateToProps, {checkFriends, deny, request, accept_request})(ResultsContainer))
