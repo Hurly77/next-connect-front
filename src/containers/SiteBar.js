@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 })
 
 const SiteBar = () => {
-
     const classes = useStyles()
     return (
       <AppBar className={classes.root} >
