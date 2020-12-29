@@ -6,7 +6,6 @@ import CancelButton from '../components/NavBar/CancelButton';
 import RequestButton from '../components/NavBar/RequestButton';
 import Unfriend from '../components/NavBar/Unfriend';
 import AcceptFriend from '../components/NavBar/AcceptFriend';
-import _ from 'lodash'
 import isEqual from 'lodash.isequal'
 import {checkFriends, deny, request, accept_request} from '../Redux/actions/friendActions';
 
