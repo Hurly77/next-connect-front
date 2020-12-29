@@ -1,4 +1,18 @@
   /* search */
+  @media screen and (max-width: 400px){
+    .nav-link {
+      padding: 0;
+      padding-left:1%;
+      padding-right: 1%;
+      margin: 1%;
+    }
+
+    .nav{
+      margin: 0;
+    }
+  }
+
+
 .search {
   margin: 10px;
   color: #CBF7ED;

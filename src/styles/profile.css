@@ -1,4 +1,15 @@
 /* Profile Avatar */
+@media only screen and (min-width: 400px){
+  .profile-banner{
+    margin: 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .profile-page{
+    padding: auto;
+  }
+}
 .Avatar {
   transform: translate(-20px, 175px);
   border: solid #CBF7ED 5px;
@@ -225,5 +236,26 @@
 }
 
 /* friends */
+.friends-container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.friend-card{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #23395B;
+  border-radius: 5px;
+  padding: 20px
+}
+
+.friend-avatar{
+  width: 100px;
+  height: 100px;
+}
 
 /* profile-Posts */

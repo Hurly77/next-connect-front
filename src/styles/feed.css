@@ -1,4 +1,17 @@
-  
+@media only screen and (mid-width: 320px){
+  .posted {
+    width: 0;
+    margin: 0;
+  }
+
+  .post-text > img {
+    margin-left: 0;
+    max-width: 100%;
+  height: auto;
+  }  
+}
+
+
   /* post*/
 .posted {
   width: fit-content;
