@@ -10,11 +10,10 @@ class Inbox extends Component {
 	}
 
 	render() {
-		debugger;
 		if (this.props.requests.length > 0) {
 			return this.props.requests.map((r) => {
 				return (
-					<div className="search-card">
+					<div key={r.id} className="search-card">
 						<h1>{r.first_name}</h1>
 						helo
 						<AcceptFriend
