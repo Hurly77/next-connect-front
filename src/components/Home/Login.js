@@ -3,7 +3,6 @@ import {login} from '../../Redux/actions/authActions';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import SignupButton from './SignupButton';
-import { friends } from '../../Redux/actions/friendActions';
 
 class Login extends Component {
 	state = {
