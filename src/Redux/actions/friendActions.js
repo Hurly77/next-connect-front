@@ -2,12 +2,13 @@ const apiUrl = 'http://localhost:3000/api/v1';
 
 export const request = (active_user, passive_user) => {
 	return (dispatch) => {
-		fetch('http://localhost:3000/api/v1/friendships', {
+		fetch(`${apiUrl}/friend_request`, {
 			method  : 'POST',
 			headers : {'Content-Type': 'application/json'},
 			body    : JSON.stringify({
 				active_user_id  : active_user,
 				passive_user_id : passive_user,
+				status          : 'PENDING',
 			}),
 		})
 			.then((res) => res.json())
@@ -24,14 +25,14 @@ export const request = (active_user, passive_user) => {
 
 export const accept_request = (passive_user, active_user) => {
 	return (dispatch) => {
-		fetch(`${apiUrl}/friendships`, {
+		fetch(`${apiUrl}/accept`, {
 			method      : 'POST',
 			headers     : {'Content-Type': 'application/json'},
 			credentials : 'include',
 			body        : JSON.stringify({
-				passive_user_id :passive_user,
+				passive_user_id : passive_user,
 				active_user_id  : active_user,
-				status          : 'ACCEPTED',
+				status          : 'FRIENDS',
 			}),
 		})
 			.then((r) => r.json())
@@ -39,7 +40,7 @@ export const accept_request = (passive_user, active_user) => {
 				dispatch({
 					type    : 'ACCEPTED',
 					payload : {
-						friends        : data.friends,
+						friends : data.friends,
 					},
 				});
 			})
@@ -79,7 +80,7 @@ export const checkFriends = (id) => {
 				payload : {
 					friends        : data.friends,
 					pendingFriends : data.pending_friends,
-					requests			 : data.requests
+					requests       : data.requests,
 				},
 			});
 		});
