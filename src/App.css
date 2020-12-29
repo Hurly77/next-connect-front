@@ -1,5 +1,8 @@
  @media (min-width: 992px){
-	}
+  }
+  *{
+    box-sizing: border-box;
+  }
 	
 	html,
 	body {
