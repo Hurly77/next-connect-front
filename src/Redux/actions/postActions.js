@@ -20,9 +20,9 @@ export const createPost = (post) => {
 	};
 };
 
-export const fetchPosts = () => {
+export const fetchPosts = (id) => {
 	return (dispatch) => {
-		fetch(`${apiUrl}/posts`).then((res) => res.json()).then((data) => {
+		fetch(`${apiUrl}/posts?id=${id}`).then((res) => res.json()).then((data) => {
 			dispatch({
 				type    : 'POSTS',
 				payload : {posts: data},
