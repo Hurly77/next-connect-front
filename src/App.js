@@ -35,6 +35,7 @@ class App extends Component {
 							path="/feed"
 							render={(props) => {
 								if (this.props.loggedIn) {
+									this.props.checkFriends(this.props.currentUser.id)
 									return <FeedPage {...props} />;
 								} else {
 									return <Redirect to="/" />;
