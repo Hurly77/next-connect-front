@@ -8,6 +8,7 @@ import Unfriend from '../components/NavBar/Unfriend';
 import AcceptFriend from '../components/NavBar/AcceptFriend';
 import isEqual from 'lodash.isequal'
 import {checkFriends, deny, request, accept_request} from '../Redux/actions/friendActions';
+import { LinkToProfile } from '../components/NavBar/LinkToProfile';
 
 class ResultsContainer extends Component {
 	componentDidMount = () => {
@@ -52,6 +53,13 @@ class ResultsContainer extends Component {
 		const aU = this.props.currentUser.id;
 		return users.map((user) => {
 			const pU = user.id;
+
+			if(user.id === this.props.currentUser.id){
+				return (
+					<Result key={user.id} user={user} button={<LinkToProfile />}/>
+				)
+			}
+
 			if (this.isFriend(user.id)) {
 				return (
 					<Result key={user.id} user={user} button={<Unfriend unfriend={this.props.deny} aU={aU} pU={pU} />} />
