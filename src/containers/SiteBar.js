@@ -5,6 +5,7 @@ import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'
 import PrimarySearchBar from '../components/NavBar/PrimarySearchBar'
 import { makeStyles } from '@material-ui/core/styles'
+import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
   root: {
@@ -27,5 +28,4 @@ const SiteBar = () => {
       </AppBar>
     )
   }
-
-export default (SiteBar)
+export default SiteBar
