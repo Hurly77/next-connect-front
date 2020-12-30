@@ -12,6 +12,13 @@ const authReducer = (
 				loggedIn    : action.payload.loggedIn,
 				currentUser : action.payload.currentUser,
 			};
+
+		case 'UPDATE_USER':
+			return {
+				...state,
+				currentUser: action.payload.currentUser
+			}
+
 		case 'LOGOUT':
 			return {
 				...state,
