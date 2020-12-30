@@ -20,6 +20,7 @@ export const signup = (user, history) => {
 };
 
 export const updateUser = (user, history) => {
+	debugger
 	return (dispatch) => {
 		fetch(`${apiUrl}/api/v1/users/${user.id}`, {
 			method      : 'PUT',
@@ -30,8 +31,8 @@ export const updateUser = (user, history) => {
 			.then(
 				(data) =>
 					dispatch({
-						type    : 'AUTH_SUCCESS',
-						payload : {loggedIn: data.logged_in, currentUser: data.user},
+						type    : 'UPDATE_USER',
+						payload : {currentUser: data.user},
 					}),
 				history.push('/profile')
 			);
