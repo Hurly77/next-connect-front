@@ -6,7 +6,7 @@ import {fetchPosts} from '../Redux/actions/postActions';
 class Posted extends Component {
 
 	componentDidMount() {
-		this.props.fetchPosts();
+		this.props.fetchPosts(this.props.id);
 	}
 
 	render() {
@@ -24,6 +24,7 @@ class Posted extends Component {
 const mapStateToProps = (state) => {
 	return {
 		posts : state.post.posts,
+		id: state.auth.currentUser.id
 	};
 };
 
