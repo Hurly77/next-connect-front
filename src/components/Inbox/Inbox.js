@@ -3,10 +3,19 @@ import {connect} from 'react-redux';
 import checkFriends from '../../Redux/actions/friendActions';
 import AcceptFriend from '../NavBar/AcceptFriend';
 import {accept_request, deny} from '../../Redux/actions/friendActions';
+import isEqual from 'lodash.isequal'
 
 class Inbox extends Component {
 	componentDidMount() {
 		checkFriends(this.props.currentUser.id);
+	}
+
+	componentDidUpdate = (prevProps) => {
+		if(!isEqual(this.props, prevProps)){
+			console.log("not")
+		} else {
+			console.log("equal")
+		}
 	}
 
 	render() {
