@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 
-export const Profile = ({loggedIn, user}) => {
-  console.log(loggedIn)
+export const Profile = ({user}) => {
   return (
     <>
         <h1 className="profile-name">{user.first_name} {user.last_name}</h1>
@@ -13,7 +12,6 @@ export const Profile = ({loggedIn, user}) => {
 
 const mapStateToProps = state => {
   return {
-    loggedIn: state.auth.loggedIn,
     user: state.auth.currentUser
   }
 }
