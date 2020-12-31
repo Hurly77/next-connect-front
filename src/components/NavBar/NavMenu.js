@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 import {logout} from '../../Redux/actions/authActions';
 import {withRouter} from 'react-router-dom'
 import Logout from './Logout'
-import InboxButton from '../Inbox/InboxButton'
+import InboxButton from '../ModalButtons/InboxButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faHome} from '@fortawesome/free-solid-svg-icons'
 

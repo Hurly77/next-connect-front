@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/home.css'
+import '../styles/homePage.css'
 import { connect } from 'react-redux'
 import Login from '../components/Home/Login'
 import Home from '../components/Home/Home'

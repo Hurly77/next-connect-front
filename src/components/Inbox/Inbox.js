@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import checkFriends from '../../Redux/actions/friendActions';
-import AcceptFriend from '../NavBar/AcceptFriend';
+import AcceptFriend from '../Result/AcceptFriend';
 import {accept_request, deny} from '../../Redux/actions/friendActions';
 import isEqual from 'lodash.isequal'
 

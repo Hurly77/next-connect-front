@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import EditAbout from '../Profile/EditAbout'
+import EditAbout from './EditAbout'
 
 export const editModal = ({open, children, onClose}) => {
   if (!open) return null

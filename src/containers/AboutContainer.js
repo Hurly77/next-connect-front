@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import About from '../components/Profile/About';
+import './about.css'
 
 export default class AboutContainer extends Component {
 	render() {
