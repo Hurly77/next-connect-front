@@ -10,7 +10,6 @@ class ProfileImage extends Component {
   fileSelectAvatar = (e) => {
     let newInfo = {...this.props.currentUser}
     newInfo.avatar = URL.createObjectURL(e.target.files[0])
-    this.props.updateUser(newInfo, this.props.history)
   }
   
   render() {
