@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/search.css'
+import './searchPage.css'
 import ResultsContainer from '../containers/ResultsContainer'
 
 export const SearchPage = () => {
