@@ -1,0 +1,21 @@
+/* friends */
+.friend-card{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: #23395B;
+  border-radius: 5px;
+  padding: 20px
+}
+
+.friend-avatar{
+  width: 100px;
+  height: 100px;
+}
+
+@media(max-width: 425px){
+  .friend-card{
+    width: 100%;
+  }
+}
