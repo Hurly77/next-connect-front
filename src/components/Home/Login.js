@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {login} from '../../Redux/actions/authActions';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
-import SignupButton from './SignupButton';
+import SignupButton from '../ModalButtons/SignupButton';
 
 class Login extends Component {
 	state = {
