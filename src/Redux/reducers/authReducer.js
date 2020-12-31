@@ -4,8 +4,8 @@ const authReducer = (
 		currentUser    : {},
 	},
 	action,
-) => {
-	switch (action.type) {
+	) => {
+		switch (action.type) {
 		case 'AUTH_SUCCESS':
 			return {
 				...state,
