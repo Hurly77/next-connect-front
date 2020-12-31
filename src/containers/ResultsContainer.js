@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router'
-import Result from '../components/NavBar/Result';
-import CancelButton from '../components/NavBar/CancelButton';
-import RequestButton from '../components/NavBar/RequestButton';
-import Unfriend from '../components/NavBar/Unfriend';
-import AcceptFriend from '../components/NavBar/AcceptFriend';
+import Result from '../components/Result/Result';
+import CancelButton from '../components/Result/CancelButton';
+import RequestButton from '../components/Result/RequestButton';
+import Unfriend from '../components/Result/Unfriend';
+import AcceptFriend from '../components/Result/AcceptFriend';
 import isEqual from 'lodash.isequal'
 import {checkFriends, deny, request, accept_request} from '../Redux/actions/friendActions';
-import { LinkToProfile } from '../components/NavBar/LinkToProfile';
+import { LinkToProfile } from '../components/Result/LinkToProfile';
 
 class ResultsContainer extends Component {
 	componentDidMount = () => {
