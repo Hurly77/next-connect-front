@@ -1,4 +1,5 @@
 import React from 'react';
+import './about.css'
 import {connect} from 'react-redux';
 import {EditButton} from '../ModalButtons/EditButton';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
