@@ -1,6 +1,6 @@
 import Posted from '../containers/Posted'
 import NewPost from '../components/Feed/NewPost'
-import '../styles/feedPage.css'
+import './feedPage.css'
 
 const FeedPage = () => {
   return (
