@@ -1,11 +1,10 @@
 import React from 'react'
-import '../styles/navbar.css'
+import './SiteBar.css'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'
 import PrimarySearchBar from '../components/NavBar/PrimarySearchBar'
 import { makeStyles } from '@material-ui/core/styles'
-import { connect } from 'react-redux'
 
 const useStyles = makeStyles({
   root: {
