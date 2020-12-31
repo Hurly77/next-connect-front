@@ -2,7 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CommentCard from '../Feed/CommentCard'
 
-const mapPosts = (posts) => {
+const mapPosts = ({posts, currentUser}) => {
+  debugger
   return posts.map(post => {
     if (post.id === currentUser.id){
       return (<div className="posted">
