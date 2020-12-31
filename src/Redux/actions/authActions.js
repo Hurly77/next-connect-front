@@ -20,21 +20,22 @@ export const signup = (user, history) => {
 };
 
 export const updateUser = (user, history) => {
-	debugger
 	return (dispatch) => {
 		fetch(`${apiUrl}/api/v1/users/${user.id}`, {
 			method      : 'PUT',
 			headers     : {'Content-Type': 'application/json'},
+			credentials : 'include',
 			body        : JSON.stringify({user: user}),
 		})
-			.then((res) => res.json())
-			.then(
-				(data) =>
-					dispatch({
-						type    : 'UPDATE_USER',
-						payload : {currentUser: data.user},
-					}),
-				history.push('/profile')
+		.then((res) => res.json())
+		.then(
+			(data) =>
+			dispatch({
+				type    : 'UPDATE_USER',
+				payload : {currentUser: data.user},
+				
+			}),
+			history.push('/profile')
 			);
 	};
 };
