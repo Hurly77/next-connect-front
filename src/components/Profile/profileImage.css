@@ -1,0 +1,48 @@
+.Avatar {
+  transform: translate(-20px, 175px);
+  border: solid #CBF7ED 5px;
+  background-color: #406E8E;
+  width:150px;
+  background-size: cover;
+  height:150px;
+  overflow: hidden;
+  border-radius:50%;
+}
+
+#uploaded > path {
+  color: transparent;
+}
+
+.upload-avatar
+{
+  padding: 50px;
+  border-radius: 100%;
+  transform: translate(0, -150px);
+  width: 150px;
+  height: 150px;
+  align-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.upload-avatar:hover #uploaded > path {
+  background-color: #16192586;
+  color: #cbf7ed;
+}
+
+
+.upload-avatar:hover {
+  background-color: #16192586;
+}
+
+.avatar-photo {
+  object-fit: cover;
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+
+}
+
+@media only screen and (min-width: 700px){
+
+}
