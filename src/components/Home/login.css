@@ -1,0 +1,140 @@
+.logo-home > p {
+  font-size: 20px;
+  text-shadow: #23395B 2px 2px;
+}
+
+.logo-home > h1 {
+  text-shadow: #23395B 3px 3px;	
+  font-size: 50px;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 350px;
+  background-color: #23395B;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 10px;
+  margin-right: auto;
+}
+
+.login-card > form > input {
+  border: none;
+  width: 350px;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding-left: 5px;
+  color: black;
+  background-color: #CBF7ED;
+}
+
+.login-btn {
+  width: 350px;
+  height: 50px;
+  background-color: #4891c5;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* sign up popup form */
+.open-popup {
+  width: 350px;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid #CBF7ED 1px;
+  background-color: #161925;
+  text-decoration: none;
+  color: #CBF7ED;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.signup-modal {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.signup-modal > form > input {
+  margin-top: 10px;
+  height: 50px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: none;
+  color: #161925;
+  font-size: 18px;
+  background-color: #CBF7ED;
+}
+
+.signup-modal > form {
+  display: grid;
+  grid-gap: 10px;
+  color: #CBF7ED;
+  
+}
+
+.first-name {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.last-name {
+  grid-column: 2;
+  grid-row: 1;
+
+}
+
+.email {
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.password {
+  grid-row: 3;
+}
+
+.password-confirm {
+  grid-column: 1;
+  grid-row: 3;
+  
+}
+
+.btn-submit-signup {
+  grid-row: 5;
+  grid-column: 1 /span 2;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  height: 50px;
+  width: 455px;
+  background-color: rgb(31, 165, 31);
+}
+
+.btn-submit-signup:focus {
+  margin-top: 4px;
+  margin-left: 3px;
+  height: 49px;
+  width: 454px;
+  background-color: rgb(31, 165, 31);
+}
+
+.disclaimer  {
+  grid-row: 4;
+  grid-column: 1 /span 2;
+}
+
+.disclaimer > p {
+font-size: 12px;
+color: #CBF7ED;
+}
+
+@media(max-width: 768px){
+  #main{
+    margin: 0;
+  }
+}

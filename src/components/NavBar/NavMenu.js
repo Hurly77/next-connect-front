@@ -1,4 +1,5 @@
 import React from 'react';
+import './navMenu.css'
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {logout} from '../../Redux/actions/authActions';
@@ -10,8 +11,9 @@ import {faUser, faHome} from '@fortawesome/free-solid-svg-icons'
 
 
 const NavMenu = ({loggedIn}) => {
-	const profile = <FontAwesomeIcon size="2x" icon={faUser} />
-	const home = <FontAwesomeIcon size="2x" icon={faHome}/>
+	let i = '2x'
+	const profile = <FontAwesomeIcon size={i} icon={faUser} />
+	const home = <FontAwesomeIcon size={i} icon={faHome}/>
 		if (loggedIn) {
 			return (
 			<>

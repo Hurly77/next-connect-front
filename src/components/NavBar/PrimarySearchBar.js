@@ -1,25 +1,13 @@
 import React, { Component } from 'react'
+import './primarySearch.css'
 import { connect } from 'react-redux'
 import query from '../../Redux/actions/queryActions'
 import {withRouter} from 'react-router-dom'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faSearch} from '@fortawesome/free-solid-svg-icons'
 
 class PrimarySearchBar extends Component {
 
   state = {
-    query: '',
-    hidden: false
-  }
-
-  handleClick = (e) => {
-    console.log('clicked')
-    this.setState(prevState => {
-      return {
-        ...this.state,
-        hidden: !prevState.hidden
-      }
-    })
+    query: ''
   }
 
   handleChange = (e) => {
@@ -36,12 +24,10 @@ class PrimarySearchBar extends Component {
   
   render() {
     return (
-      <div>
         <form onSubmit={this.handleSubmit}>
-          <FontAwesomeIcon icon={faSearch} onClick={this.handleClick}/>
-          <input type="text" name="search" placeholder="Search" className={this.state.hidden ? 'hidden' : 'search'} onChange={this.handleChange} value={this.state.query}/>
+          <input type="search" name="search" className='search' onChange={this.handleChange} value={this.state.query}>
+          </input>
         </form>
-      </div>
     )
   }
 }

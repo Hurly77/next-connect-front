@@ -20,7 +20,6 @@ const About = ({user}) => {
 	const from = <FontAwesomeIcon size="2x" icon={faHome} />;
 	const joined = <FontAwesomeIcon size="2x" icon={faClock} />;
 
-	console.log(user);
 	return (
 		<div className="about-wrapper">
 			<h2 className="about-title">About</h2>

@@ -1,4 +1,5 @@
 import React from 'react'
+import './posts.css'
 import CommentCard from './CommentCard'
 
 const Posts = ({post}) => {

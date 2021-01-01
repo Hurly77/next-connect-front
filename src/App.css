@@ -1,7 +1,8 @@
 	html,
 	body {
-		height: 100%;
-	}
+    height: 100%;
+    background-color: #406E8E;
+  }
 
 	body.blocked {
 		overflow: hidden;
@@ -9,8 +10,11 @@
 	
 	#wrap {
 		min-height: 100%;
-	}
-	
+  }
+  
+  ::placeholder {
+    color: #487697
+  }
 	
 	.footer {
 		position: relative;
@@ -49,11 +53,6 @@
 	padding: 0;
 	box-sizing: border-box;
 	color: #CBF7ED;
-}
-
-
-body {
-	background-color: #406E8E;
 }
 
 #main {
@@ -158,7 +157,5 @@ button[type=submit]:hover {
   @media (max-width: 992px){
     
   }
-  *{
-    box-sizing: border-box;
-  }
+
 	

@@ -1,11 +1,10 @@
 import React from 'react'
 import './homePage.css'
-import { connect } from 'react-redux'
 import Login from '../components/Home/Login'
 import Home from '../components/Home/Home'
 
 
-const HomePage = ({state}) => {
+const HomePage = () => {
   return (
   <> 
     <div className="home-login-container">
@@ -18,6 +17,4 @@ const HomePage = ({state}) => {
   )
 }
 
-const mapStatetoProps = state => ({state})
-
-export default connect(mapStatetoProps)(HomePage)
+export default HomePage

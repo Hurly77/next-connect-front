@@ -1,5 +1,4 @@
 import React from 'react'
-import './SiteBar.css'
 import AppBar from '@material-ui/core/AppBar'
 import ToolBar from '@material-ui/core/Toolbar'
 import NavMenu from '../components/NavBar/NavMenu'

@@ -1,14 +1,16 @@
 import React from 'react'
 import Profile from '../components/Profile/Profile'
 import ProfileImage from '../components/Profile/ProfileImage'
+import Banner from '../components/Profile/Banner'
 
 
 
 export default function ProfileHead() {
   return (
-    <div className="profile-banner">
-      <Profile />
+    <>
+      <Banner />
       <ProfileImage />
-    </div>
+      <Profile />
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './result.css'
 
 const Result = ({user, button}) => {
 	return (
