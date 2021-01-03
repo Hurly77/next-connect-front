@@ -8,49 +8,32 @@
 	body.blocked {
 		overflow: hidden;
 	}
-	
-	#wrap {
-    width: 100%;
-    height: 100%;
-  }
   
   ::placeholder {
     color: #487697
   }
 	
-	.footer {
-		position: relative;
-    margin-top: relative;
-    background-color: #23395B;
-		/* negative value of footer height */
-		clear: both;
-	}
-	
-	
 	footer.footer {
-    box-shadow: 3px 4px 8px 3px rgba(0, 0, 0, 0.2), 0px 6px 20px 1px rgba(0, 0, 0, 0.849);
-		height: fit-content;
+    position: relative;
+    height: 300px;
     width: 100%;
+    background-color: #23395B;
 	}
+
 	
 	p.copyright {
-    margin: 0;
-		color: #cbf7ed;
-		line-height: 1px;
-    font-size: 0.9em;
-    padding: 20px;
-    padding-top: 20px;
-	}
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 0.7em;
+    text-align: center;
+    bottom:0;
+}
 	
-	.overlay {
-		position: absolute;
-		background-color: rgba(0, 0, 0, .6);
-		width: 100%;
-		height: 100%;
-	}
-	
-	#portal {
-		height: 0;
+
+	#portal{
+		height: fit-content;
 	}
 
 
@@ -62,7 +45,8 @@
 }
 
 #main {
-	margin-top: 93px;
+  margin-top: 93px;
+  margin-bottom: 20%;
 }
 
 /* buttons */
@@ -140,6 +124,7 @@ button[type=submit]:hover {
     border-radius: 5px;
     background-color: #23395B;
     padding: 10px;
+    z-index: 2000;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
   
@@ -160,8 +145,168 @@ button[type=submit]:hover {
     outline: none;
   }
 
-  @media (max-width: 768px){
-    
+  .nav {
+    margin: auto;
+    margin-left: 10px;
+    width: auto;
+    align-items: center;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #CBF7ED;
+    float: right;
+    padding: 10px;
+    padding-left:15px;
+    padding-right: 15px;
+    margin: 20px;
+  }
+  
+  .nav-link:hover {
+    color: #CBF7ED;
+  }
+  
+    /* search */
+ input {
+  outline: none;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+ display: none; 
+}
+
+
+input[type=search] {
+ background: #CBF7ED url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+ padding: 9px 10px 9px 32px;
+ 
+ -webkit-border-radius: 10em;
+ -moz-border-radius: 10em;
+ border-radius: 10em;
+ 
+ -webkit-transition: all .5s;
+ -moz-transition: all .5s;
+ transition: all .5s;
+}
+
+input[type=search]:focus {
+ width: 130px;
+ background-color: #CBF7ED;
+ border-color: #66CC75;
+ 
+ -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+ -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+ box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+.search input[type=search] {
+ width: 100px;
+ padding-left: 10px;
+ cursor: pointer;
+}
+
+.search input[type=search]:hover {
+ background-color: #CBF7ED;
+}
+
+.search input[type=search]:focus {
+ width: 130px;
+ padding-left: 32px;
+ color: #000;
+ background-color: #CBF7ED;
+ cursor: auto;
+}
+
+ .search {
+   width: 10px;
+   color: #050c0a;
+   background-color: #CBF7ED;
+   border: none;
+ }
+
+ .search:hover {
+   border: none;
+   border-bottom: solid #CBF7ED 1px;
+ }
+
+ .search:hover {
+   border: none;
+   border-bottom: solid #CBF7ED 1px;
+ }
+
+ .search:focus{
+   width: 100px;
+ }
+
+ @media(max-width: 538px){
+  #nav-bar{
+    display: grid;
+  }
+
+  .search{
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  #nav-bar > a{
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .nav{
+    grid-column: 1 / span 3;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 100px;
+    padding: 0;
+  }
+  
+  .nav > a:nth-child(1) {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    padding-bottom: 0;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .nav-link:nth-child(2){
+    margin: 0;
+    padding: 0;
+    width: 0;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .inbox-button {
+    width: 0;
+    margin: 0;
+    padding: 0;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .open-inbox{
+    margin: 0;
+    width: 0;
+    padding: 0;
+  }
+}
+
+  @media (max-height: 360px){
+    .footer{
+      position: relative;
+      top: 50%;
+    }
+  }
+
+  @media(max-width: 768){
+    #main{
+      margin-top: 0;
+      margin-bottom: 30%;
+    }
   }
 
 	
