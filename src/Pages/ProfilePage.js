@@ -3,7 +3,7 @@ import './profilePage.css'
 import ProfileHead from '../containers/ProfileHead';
 import {Link, useLocation, Switch, Route, useRouteMatch} from 'react-router-dom';
 import AboutContainer from '../containers/AboutContainer'
-import Posted from '../containers/Posted'
+import Posts from '../components/Posts/Posts'
 import FriendsContainer from '../containers/FriendsContainer';
 
 const NavLink = ({to, className, activeClassName, inactiveClassName, ...rest}) => {
@@ -39,7 +39,7 @@ const ProfilePage = () => {
 				<Switch>
           <Route exact path={`${path}`} component={AboutContainer} />
 					<Route path={`${path}/friends`} component={FriendsContainer} />
-					<Route path={`${path}/posts`} component={Posted} />
+					<Route path={`${path}/posts`} component={Posts} />
 				</Switch>
 			</div>
 		</>
