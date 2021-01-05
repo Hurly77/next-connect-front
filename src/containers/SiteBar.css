@@ -1,0 +1,8 @@
+  #siteBar {
+    display: flex;
+    width: 100%;
+    background-color: #161925;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+  }

@@ -1,5 +1,6 @@
 .Avatar {
-  margin-left: 11%;
+  margin-left: 15%;
+  transform:translateY(-120px);
   border: solid #CBF7ED 5px;
   background-color: #406E8E;
   width:150px;
