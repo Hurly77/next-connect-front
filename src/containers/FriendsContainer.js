@@ -2,12 +2,15 @@ import React, {Component} from 'react';
 import './friendsContainer.css';
 import {connect} from 'react-redux';
 import {checkFriends} from '../Redux/actions/friendActions';
+import isEqual from 'lodash.isequal'
 import Friend from '../components/Friends/Friend';
 
 class FriendsContainer extends Component {
-	componentDidMount = () => {
-		this.props.checkFriends(this.props.currentUser.id);
-	};
+	componentDidUpdate = (prevProps) => {
+		const props = this.props
+		const userId = props.currentUser.id
+		!isEqual(props.friends, prevProps.friends) ? props.checkFriends(userId) : console.log("friends updated");
+	}
 
 	mapFriends = (friends) => {
 		return friends.map((friend) => {
