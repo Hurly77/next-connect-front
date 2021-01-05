@@ -1,20 +1,24 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Posts from '../components/Feed/Posts';
-import {fetchPosts} from '../Redux/actions/postActions';
+import Post from '../components/Feed/Post';
+import {fetchAllPosts} from '../Redux/actions/postActions';
 
 class Posted extends Component {
 
 	componentDidMount() {
-		this.props.fetchPosts(this.props.id);
+		this.props.fetchAllPosts(this.props.id);
+	}
+
+	componentDidUpdate(){
+		
 	}
 
 	render() {
-		const posts = this.props.posts;
+		const posts = this.props.allPosts;
 		return posts.map((post) => {
 		 return (
 			 <div key={post.id} className="posted">
-				 <Posts post={post}/>
+				 <Post post={post}/>
 			 </div>
 		 )
 	 });
@@ -23,9 +27,9 @@ class Posted extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		posts : state.post.posts,
+		allPosts : state.post.allPosts,
 		id: state.auth.currentUser.id
 	};
 };
 
-export default connect(mapStateToProps, {fetchPosts})(Posted);
+export default connect(mapStateToProps, {fetchAllPosts})(Posted);
