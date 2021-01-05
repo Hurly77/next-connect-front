@@ -1,6 +1,7 @@
 /* post*/
 .posted {
 width: fit-content;
+width: 750px;
 border-radius: 10px;
 margin-left: auto;
 margin-right: auto;
@@ -37,7 +38,7 @@ margin-bottom: 10px;
 border: solid #161925 .06px;
 margin-left: 0;
 width: 750px;
-height: 800px;
+height: 500px;
 justify-content: center;
 align-content: center;
 }
@@ -105,13 +106,23 @@ border-radius: 10px;
 @media(max-width: 768px){
   .new-post-card{
     width: 100%;
+    margin-top: 95px;
+    border-radius: 0;
   }
-
+  
   .posted{
     width: 100%;
+    border-radius: 0;
   }
   
   .post-text > img {
     width: 100%;
+    height: 300px;
+  }
+}
+
+@media(max-width: 440px){
+  .new-post-card{
+    margin-top: 153px;
   }
 }

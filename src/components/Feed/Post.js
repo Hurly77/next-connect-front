@@ -1,8 +1,8 @@
 import React from 'react'
-import './posts.css'
+import './post.css'
 import CommentCard from './CommentCard'
 
-const Posts = ({post}) => {
+const Post = ({post}) => {
     return (
       <div className="post-text">
         <div className="posted-by">
@@ -22,4 +22,4 @@ const Posts = ({post}) => {
     )
 }
 
-export default Posts
+export default Post
