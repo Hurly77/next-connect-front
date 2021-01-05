@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
-import UploadImageButton from './UploadImageButton'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faVideo} from '@fortawesome/free-solid-svg-icons'
+import UploadImageButton from './UploadImageButton';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faVideo} from '@fortawesome/free-solid-svg-icons';
 
 class NewPost extends Component {
 	state = {
-		text    : '',
-		img     : null,
-		user_id : this.props.user,
+		text            : '',
+		img             : null,
+		user_id         : this.props.user.id,
+		users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
+		users_avatar    : this.props.user.avatar,
 	};
 
 	handleChange = (e) => {
@@ -27,7 +29,9 @@ class NewPost extends Component {
 				...this.state,
 				text    : '',
 				img     : null,
-				user_id : this.props.user,
+				user_id : this.props.user.id,
+				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
+				users_avatar    : this.props.user.avatar
 			},
 			() => console.log(this.state),
 		);
@@ -37,14 +41,14 @@ class NewPost extends Component {
 		return (
 			<div className="new-post-card">
 				<h4>Whats on Your Mind?</h4>
-        <form onSubmit={this.handleSubmit}>
-
-          <input 
-          className="text-for-new-post" 
-          type="text" 
-          placeholder="how are you feeling" 
-          onChange={this.handleChange} 
-          value={this.state.text} />
+				<form onSubmit={this.handleSubmit}>
+					<input
+						className="text-for-new-post"
+						type="text"
+						placeholder="how are you feeling"
+						onChange={this.handleChange}
+						value={this.state.text}
+					/>
 
 					<button type="submit" className="btn-none" />
 				</form>
@@ -63,7 +67,7 @@ class NewPost extends Component {
 
 const mapPropsToState = (state) => {
 	return {
-		user : state.auth.currentUser.id,
+		user : state.auth.currentUser,
 	};
 };
 
