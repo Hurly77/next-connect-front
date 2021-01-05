@@ -33,7 +33,7 @@
   height: 200px;
   padding: 10px;
   padding-left: 20px;
-  padding-right: 20pxpx;
+  padding-right: 20px;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -43,7 +43,7 @@
 }
 
 .search-card > button {
-  transform: translate(-20px, -40px);
+  transform: translate(-20px, 0px);
   text-decoration: none;
   background-color: #4891c5;
   width: 75px;
@@ -68,4 +68,15 @@
 
 .search-card > button:focus {
   outline: none;
+}
+
+
+@media(max-width: 532px){
+  .search-card{
+    width: 100%;
+    margin: 0;
+    margin-top: 2px;
+    border-radius: 0;
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 1), 0 0px 0px 0 rgb(0, 0, 0);
+  }
 }

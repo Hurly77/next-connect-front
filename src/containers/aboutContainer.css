@@ -17,6 +17,12 @@
   background-color: #457597;
 }
 
-.about-details {
-  display: block;
+@media(max-width: 768px){
+  .about-main{
+    padding: 0;
+  }
+
+  .about-contain-1{
+    width: 100%;
+  }
 }
