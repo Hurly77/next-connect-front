@@ -75,6 +75,23 @@ export const checkLoggedIn = (callback) => {
 	};
 };
 
+export const uploadAvatar = (user, file) => {
+  return (dispatch) => {
+    fetch(`${apiUrl}/api/v1/photos/${user.id}`,{
+			method      : 'PATCH',
+			headers     : {'Content-Type': 'application/json'},
+			credentials : 'include',
+			body        : JSON.stringify({file: file})
+		}).then(r => r.json())
+		.then((data) => {
+			dispatch({
+				type: "UPLOAD_AVATAR",
+				payload: {currentUser: data}
+			})
+		})
+  }
+}
+
 export const logout = (history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/logout`, {
