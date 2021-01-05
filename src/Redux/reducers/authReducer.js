@@ -18,6 +18,12 @@ const authReducer = (
 				...state,
 				currentUser: action.payload.currentUser
 			}
+			
+			case 'UPLOAD_AVATAR':
+				return {
+					...state,
+					currentUser: action.payload.currentUser
+				}
 
 		case 'LOGOUT':
 			return {
