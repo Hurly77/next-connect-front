@@ -1,36 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import CommentCard from '../Feed/CommentCard'
+import isEqual from 'lodash.isequal'
+import Post from '../Feed/Post'
 
-const mapPosts = ({posts, currentUser}) => {
-  debugger
-  return posts.map(post => {
-    if (post.id === currentUser.id){
-      return (<div className="posted">
-        <div className="post-text">
-            <p>{post.text}</p>
-            <CommentCard />
-        </div>
-    </div>)
-    }
-    
-  })
+class Posts extends Component {
+
+componentDidUpdate = (prevProps) => {
+  if(!isEqual(prevProps.userPosts, this.props.userPosts)){
+  }
 }
 
-
-export const Posts = ({posts}) => {
-  console.log(posts)
-  return (
-    <>
-      {mapPosts(posts)}
-    </>
-  )
+render() {
+  return this.props.userPosts.map(post => {
+    return (
+      <div key={post.id} className="posted">
+        <Post post={post}/>
+      </div>
+    )
+  })
+}
 }
 
 const mapStateToProps = state => {
   return {
-    posts: state.post.posts,
-    currentUser: state.auth.currentUser
+    userPosts: state.post.userPosts,
   }
 }
 
