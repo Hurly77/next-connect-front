@@ -1,5 +1,4 @@
 import React from 'react';
-import './navMenu.css'
 import {connect} from 'react-redux';
 import {NavLink} from 'react-router-dom';
 import {logout} from '../../Redux/actions/authActions';

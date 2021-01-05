@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './primarySearch.css'
 import { connect } from 'react-redux'
 import query from '../../Redux/actions/queryActions'
 import {withRouter} from 'react-router-dom'
