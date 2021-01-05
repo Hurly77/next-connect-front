@@ -20,13 +20,36 @@ export const createPost = (post) => {
 	};
 };
 
-export const fetchPosts = (id) => {
+export const fetchUserPosts = (id) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/posts?id=${id}`).then((res) => res.json()).then((data) => {
 			dispatch({
-				type    : 'POSTS',
+				type    : 'USER_POSTS',
 				payload : {posts: data},
 			});
 		});
 	};
 };
+
+export const fetchFriendsPosts = (id) => {
+	return (dispatch) => {
+		fetch(`${apiUrl}/users/${id}/friends`).then((res) => res.json()).then((data) => {
+			dispatch({
+				type    : 'FRIENDS_POSTS',
+				payload : {posts: data},
+			});
+		});
+	};
+};
+
+export const fetchAllPosts = (id) => {
+	return (dispatch) => {
+		fetch(`${apiUrl}/users/${id}/all_posts`).then((res) => res.json()).then((data) => {
+			dispatch({
+				type    : 'ALL_POSTS',
+				payload : {posts: data},
+			});
+		});
+	};
+};
+
