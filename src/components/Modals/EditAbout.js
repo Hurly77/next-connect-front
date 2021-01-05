@@ -4,9 +4,13 @@ import {updateUser} from '../../Redux/actions/authActions';
 import {withRouter} from 'react-router-dom';
 
 class EditAbout extends Component {
-	state = {
-		currentUser : this.props.currentUser ? this.props.currentUser : {},
-	};
+
+	constructor(props){
+		super(props)
+		this.state = {
+			currentUser : this.props.currentUser ? this.props.currentUser : {},
+		};
+	}
 
 	handleChange = (e) => {
 		this.setState((prevState) => {
@@ -23,6 +27,7 @@ class EditAbout extends Component {
 	handleSubmit = (e) => {
     e.preventDefault();
 		this.props.updateUser(this.state.currentUser, this.props.history)
+		this.props.onClose() 
 	};
 
 	render() {
@@ -32,7 +37,7 @@ class EditAbout extends Component {
 					onChange={this.handleChange}
 					name="work"
 					value={this.state.work}
-					id="about-item-1"
+					id="edit-about-1"
 					type="text"
 					placeholder="what work do you do"
 				/>
@@ -40,7 +45,7 @@ class EditAbout extends Component {
 					onChange={this.handleChange}
 					name="education"
 					value={this.state.education}
-					id="about-item-2"
+					id="edit-about-2"
 					type="text"
 					placeholder="where did you go to school education"
 				/>
@@ -48,7 +53,7 @@ class EditAbout extends Component {
 					onChange={this.handleChange}
 					name="relationship"
 					value={this.state.relationship}
-					id="about-item-3"
+					id="edit-about-3"
 					type="text"
 					placeholder="are you in a relationship"
 				/>
@@ -56,7 +61,7 @@ class EditAbout extends Component {
 					onChange={this.handleChange}
 					name="lives"
 					value={this.state.lives}
-					id="about-item-4"
+					id="edit-about-4"
 					type="text"
 					placeholder="where do you live"
 				/>
@@ -64,7 +69,7 @@ class EditAbout extends Component {
 					onChange={this.handleChange}
 					name="from"
 					value={this.state.from}
-					id="about-item-5"
+					id="edit-about-5"
 					type="text"
 					placeholder="where are you from"
 				/>
