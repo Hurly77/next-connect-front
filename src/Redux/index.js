@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
   comment: commentReducer,
   post: postReducer,
   search: searchReducer,
-  friends: friendsReducer
+  friends: friendsReducer,
 })
 
 const middleware = [thunk, reduxLogger]
