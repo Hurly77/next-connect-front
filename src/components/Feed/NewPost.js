@@ -11,7 +11,7 @@ class NewPost extends Component {
 		img             : null,
 		user_id         : this.props.user.id,
 		users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
-		users_avatar    : this.props.user.avatar,
+		users_avatar    : this.props.user.photo_url,
 	};
 
 	handleChange = (e) => {
@@ -31,7 +31,7 @@ class NewPost extends Component {
 				img     : null,
 				user_id : this.props.user.id,
 				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
-				users_avatar    : this.props.user.avatar
+				users_avatar    : this.props.user.photo_url
 			},
 			() => console.log(this.state),
 		);
