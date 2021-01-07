@@ -14,7 +14,7 @@ export const signup = (user, history) => {
 						type    : 'AUTH_SUCCESS',
 						payload : {loggedIn: data.logged_in, currentUser: data.user},
 					}),
-				history.push('/profile')
+				history.push('/profile'),
 			);
 	};
 };
@@ -27,15 +27,14 @@ export const updateUser = (user, history) => {
 			credentials : 'include',
 			body        : JSON.stringify({user: user}),
 		})
-		.then((res) => res.json())
-		.then(
-			(data) =>
-			dispatch({
-				type    : 'UPDATE_USER',
-				payload : {currentUser: data.user},
-				
-			}),
-			history.push('/profile')
+			.then((res) => res.json())
+			.then(
+				(data) =>
+					dispatch({
+						type    : 'UPDATE_USER',
+						payload : {currentUser: data.user},
+					}),
+				history.push('/profile'),
 			);
 	};
 };
@@ -52,7 +51,12 @@ export const login = (user, history) => {
 			.then((data) => {
 				dispatch({
 					type    : 'AUTH_SUCCESS',
-					payload : {loggedIn: data.logged_in, currentUser: data.user, friends: data.friends, pendingFriends: data.pendingFriends},
+					payload : {
+						loggedIn       : data.logged_in,
+						currentUser    : data.user,
+						friends        : data.friends,
+						pendingFriends : data.pendingFriends,
+					},
 				});
 				history.push('/feed');
 			});
@@ -75,22 +79,41 @@ export const checkLoggedIn = (callback) => {
 	};
 };
 
-export const uploadAvatar = (user, file) => {
-  return (dispatch) => {
-    fetch(`${apiUrl}/api/v1/photos/${user.id}`,{
-			method      : 'PATCH',
-			headers     : {'Content-Type': 'application/json'},
-			credentials : 'include',
-			body        : JSON.stringify({file: file})
-		}).then(r => r.json())
-		.then((data) => {
+export const uploadAvatar = (user, data) => {
+return (dispatch) => {	
+	fetch(`${apiUrl}/api/v1/photos/${user.id}`, {
+		method : 'PATCH',
+		body   : data,
+	})
+		.then((r) => r.json())
+		.then((stuff) => {
 			dispatch({
-				type: "UPLOAD_AVATAR",
-				payload: {currentUser: data}
+				type: 'UPLOAD_AVATAR',
+				payload: {currentUser: stuff}
 			})
 		})
-  }
-}
+		.catch((error) => {
+			console.log(error);
+		});}
+};
+
+export const updateProps = (id) => {
+	return (dispatch) => {
+		fetch(`${apiUrl}/api/v1/photos/${id}`, {
+			credentials : 'include',
+		})
+			.then((r) => r.json())
+			.then((data) => {
+				dispatch({
+					type: "UPDATE_PROPS",
+					payload: {currentUser: data}
+				})
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+};
 
 export const logout = (history) => {
 	return (dispatch) => {
