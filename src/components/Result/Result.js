@@ -10,7 +10,7 @@ const Result = ({user, button}) => {
 				{user.joined}
 			</p>
         {button}
-			<img src={user.avatar} alt="1" className="search-avatar" />
+			<img src={user.photo_url} alt="1" className="search-avatar" />
 		</div>
 	);
 };
