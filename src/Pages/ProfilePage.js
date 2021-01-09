@@ -22,7 +22,7 @@ const ProfilePage = () => {
 			<div className="profile-page">
 				<ProfileHead />
 				<div className="profile-tabs">
-					<NavLink to="/profile" className="tab-link" inactiveClassName="tab-inactive" activeClassName="tab-active">
+					<NavLink to={`${url}`} className="tab-link" inactiveClassName="tab-inactive" activeClassName="tab-active">
 						About
 					</NavLink>
 
