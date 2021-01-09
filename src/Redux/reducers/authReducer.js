@@ -24,6 +24,12 @@ const authReducer = (
 					...state,
 					currentUser: action.payload.currentUser
 				}
+
+			case 'UPLOAD_BANNER':
+				return {
+					...state,
+					currentUser: action.payload.currentUser
+				}
 			
 			case 'UPDATE_PROPS':
 				return{
