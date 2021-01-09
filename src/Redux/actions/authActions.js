@@ -34,7 +34,7 @@ export const updateUser = (user, history) => {
 						type    : 'UPDATE_USER',
 						payload : {currentUser: data.user},
 					}),
-				history.push('/profile'),
+				history.push(`/${user.c_id}`),
 			);
 	};
 };
@@ -96,6 +96,24 @@ return (dispatch) => {
 			console.log(error);
 		});}
 };
+
+export const uploadBanner = (user, data) => {
+	return (dispatch) => {	
+		fetch(`${apiUrl}/api/v1/photos/${user.id}`, {
+			method : 'PATCH',
+			body   : data,
+		})
+			.then((r) => r.json())
+			.then((stuff) => {
+				dispatch({
+					type: 'UPLOAD_BANNER',
+					payload: {currentUser: stuff}
+				})
+			})
+			.catch((error) => {
+				console.log(error);
+			});}
+	};
 
 export const updateProps = (id) => {
 	return (dispatch) => {
