@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faUser, faHome} from '@fortawesome/free-solid-svg-icons'
 
 
-const NavMenu = ({loggedIn}) => {
+const NavMenu = ({loggedIn, currentUser}) => {
 	let i = '2x'
 	const profile = <FontAwesomeIcon size={i} icon={faUser} />
 	const home = <FontAwesomeIcon size={i} icon={faHome}/>
@@ -18,7 +18,7 @@ const NavMenu = ({loggedIn}) => {
 			<>
 				<div className="nav">
 					<NavLink to="/feed" className="nav-link">{home}</NavLink>
-					<NavLink to="/profile" className="nav-link">{profile}</NavLink>
+					<NavLink to={`/${currentUser.c_id}`} className="nav-link">{profile}</NavLink>
 					<InboxButton />
 				</div>
 					<Logout />
@@ -30,6 +30,7 @@ const NavMenu = ({loggedIn}) => {
 const mapStateToProps = (state) => {
 	return {
 		loggedIn : state.auth.loggedIn,
+		currentUser : state.auth.currentUser,
 	};
 };
 
