@@ -2,7 +2,7 @@
 	body {
     height: 100%;
     width: 100%;
-    background-color: #406E8E;
+    background-color: #8ea8c3;
   }
 
 	body.blocked {
@@ -115,7 +115,7 @@ button[type=submit]:hover {
 	
 	.inbox-modal {
     position: fixed;
-    overflow: hidden;
+    overflow-y: scroll;
     margin: auto;
     height: 500px;
     width: 400px;
