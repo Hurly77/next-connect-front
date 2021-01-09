@@ -4,8 +4,9 @@ import './friend.css'
 const Friend = ({props}) => {
 	return (
 		<div key={props.id} className="friend-card">
-			<h1>{props.first_name} {props.last_name}</h1>
-			<img src={props.avatar} alt="avatar" className="friend-avatar"/>
+			<img src={props.photo_url} alt="avatar" className="friend-avatar"/>
+			<h2 className="friend-name">{props.first_name} {props.last_name}</h2>
+			<button className="friend-profile">•••</button>
 		</div>
 	)
 }
