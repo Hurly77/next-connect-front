@@ -16,7 +16,7 @@ export const MessageModal = ({open, children, onClose}) => {
     <> 
       <div className="inbox-modal">
         <button style={BUTTON_STYLE} onClick={()=> onClose()}>↓</button>
-          <h1>hello</h1>
+          <h3>notifications</h3>
         <Inbox />
         {children}
       </div>
@@ -26,3 +26,5 @@ export const MessageModal = ({open, children, onClose}) => {
 }
 
 export default MessageModal
+
+
