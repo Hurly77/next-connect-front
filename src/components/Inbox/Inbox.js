@@ -24,7 +24,6 @@ class Inbox extends Component {
 				return (
 					<div key={r.id} className="search-card">
 						<h1>{r.first_name}</h1>
-						helo
 						<AcceptFriend
 							aU={this.props.currentUser.id}
 							pU={r.id}
