@@ -2,6 +2,12 @@ import React from 'react'
 import './post.css'
 import CommentCard from './CommentCard'
 
+const mapImages = ({images}) => {
+  return images.map((image) => {
+    return  <img src={image} alt="img post" />
+  })
+}
+
 const Post = ({post}) => {
     return (
       <div className="post">
@@ -12,10 +18,11 @@ const Post = ({post}) => {
           <p id="time-posted">{post.posted_at}</p>
         </div>
           <p className="post-caption">{post.text}</p>
-        <div class="img-container">
-          {!post.img ? <img src={process.env.PUBLIC_URL + "cookie.jpg"} alt="cookie" /> : <img src={post.img} alt="img post" />}
+        <div className="img-container">
+         
         </div>
         <div className="posted-text">
+          <br />
            <p>Like |  comments</p>
           --------------------------------
           <CommentCard />
