@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
-import UploadImageButton from './UploadImageButton';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faVideo} from '@fortawesome/free-solid-svg-icons';
+import {faImage} from '@fortawesome/free-solid-svg-icons'
 
 class NewPost extends Component {
 	state = {
 		text            : '',
-		img             : null,
+		photos					: [],
 		user_id         : this.props.user.id,
 		users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
 		users_avatar    : this.props.user.photo_url,
@@ -20,6 +19,21 @@ class NewPost extends Component {
 			text : e.target.value,
 		});
 	};
+	
+	toggelImg = () => {
+		const files = this.state.files;
+		if (files)
+		{return files.map(file => <img src={URL.createObjectURL(file)} alt="hello" className="new-post-img" />)}
+	 }
+ 
+ 
+	 selectPhotos = (e) => {
+		 this.setState({
+			 ...this.state,
+			 photos: [...this.state.files.concat(e.target.files[0])]
+		 })
+	 }
+	
 
 	handleSubmit = (e) => {
 		e.preventDefault();
@@ -28,7 +42,7 @@ class NewPost extends Component {
 			{
 				...this.state,
 				text    : '',
-				img     : null,
+				photos  : [],
 				user_id : this.props.user.id,
 				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
 				users_avatar    : this.props.user.photo_url
@@ -49,17 +63,15 @@ class NewPost extends Component {
 						onChange={this.handleChange}
 						value={this.state.text}
 					/>
-
 					<button type="submit" className="btn-none" />
 				</form>
-				<div>
-					<div className="multi-media-select">
-						<UploadImageButton />
-						<button id="fa-video">
-							<FontAwesomeIcon icon={faVideo} size="2x" />
-						</button>
-					</div>
-				</div>
+				<div className="new-phot">
+      {this.toggelImg()}
+      </div>
+        <div>
+          <label className="new-photo" htmlFor="file-btn"><FontAwesomeIcon size="2x" icon={faImage} id="new-photo-upload" /></label>
+          <input id="file-btn" type="file" accept="image/*" onChange={this.selectPhotos} hidden />
+        </div>
 			</div>
 		);
 	}
