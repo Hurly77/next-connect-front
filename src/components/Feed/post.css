@@ -64,6 +64,7 @@ grid: 30px / auto auto auto
 
 /* new post */
 .new-post-card {
+display: block;
 border-radius: 10px;
 margin-top: 120px;
 margin-left: auto;
@@ -73,6 +74,25 @@ padding-bottom: 3px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 background-color: #406E8E;
 width:  675px;	
+}
+
+#new-photo-upload{
+  cursor: pointer;
+}
+
+.new-photo{
+  cursor: pointer;
+}
+
+.new-post-img{
+  width: 25%;
+  height: 30%;
+}
+
+.new-photos-container{
+  display: flex-wrap;
+  width: 100%;
+  background-color: black;
 }
 
 /* post multi-media selected */
@@ -109,15 +129,18 @@ padding-right: 40px;
 /* comments */
 .comment-card {
 padding-left: 5px;
-background-color: transparent;
+background-color: #8ea8c3;
 border: none;
 }
 
 .comment {
 height: 30px;
+width: 90%;
 margin-top: 10px;
-background-color: #406E8E;
-padding: 0px;
+margin-left: 5%;
+margin-right: 5%;
+background-color: #8ea8c3;
+padding-left: 10px;
 border-radius: 10px;
 }
 
