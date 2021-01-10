@@ -19,6 +19,10 @@ class ProfileImage extends Component {
     }
   }
 
+  toggeleImg = () => {
+    
+  }
+
 
   fileSelectAvatar = (e) => {
     this.setState({
@@ -33,13 +37,11 @@ class ProfileImage extends Component {
   render() {
     const avatar = this.state.avatar
     return (
-      <>
       <div className="Avatar">
           <input type="file" name="newPhoto" accept="image/*" multiple={false} onChange={this.fileSelectAvatar} id="actual-btn" hidden />
           <img id="fileUpload" src={avatar ? avatar : "https://treepress.net/wp-content/plugins/treepress/public/imgs/no-avatar.png"} alt='0' className="avatar-photo"/>
           <label className="upload-avatar" htmlFor="actual-btn"><FontAwesomeIcon icon={faPencilAlt} size="2x" id="uploaded"/></label>
         </div>
-      </>
     )
   }
 }
