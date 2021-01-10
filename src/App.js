@@ -9,18 +9,26 @@ import SiteBar from './containers/SiteBar'
 import {checkLoggedIn} from './Redux/actions/authActions';
 import {checkFriends} from './Redux/actions/friendActions'
 import {SearchPage} from './Pages/SearchPage'
+import isEqual from 'lodash.isequal';
 
 class App extends Component {
 	state = {
 		loading : true,
 	};
 
+	
 	toggleLoading = () => {
 		this.setState({loading: !this.state.loading});
 	};
-
+	
 	componentDidMount() {
 		this.props.checkLoggedIn(this.toggleLoading);
+	}
+
+	profileRoute = (user) => {
+		if (user){
+			return <Route path={`/${user.c_id}`} component={ProfilePage} />
+		}
 	}
 	
 	render() {
@@ -43,7 +51,7 @@ class App extends Component {
 							}}
 						/>
 						<Route exact path="/" component={HomePage} />
-						<Route path={`/${this.props.currentUser.c_id}`} component={ProfilePage} />
+						{this.profileRoute(this.props.currentUser)}
 						<Route path="/results" 
 							render={(props) => {
 								if(this.props.results.length !== 0){
