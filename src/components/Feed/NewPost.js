@@ -1,54 +1,49 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faImage} from '@fortawesome/free-solid-svg-icons'
+import ImageUploader from 'react-images-upload'
 
 class NewPost extends Component {
-	state = {
-		text            : '',
-		photos					: [],
-		user_id         : this.props.user.id,
-		users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
-		users_avatar    : this.props.user.photo_url,
-	};
+	constructor(props) {
+		super(props);
+		this.initState = {
+			pictures : [],
+			post   : {
+				text            : '',
+				user_id         : this.props.user.id,
+				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
+				users_avatar    : this.props.user.photo_url,
+			},
+		};
+		this.state = this.initState;
+	}
 
 	handleChange = (e) => {
 		this.setState({
-			...this.state,
-			text : e.target.value,
+			post : {
+				...this.state.post,
+				text : e.target.value,
+			},
 		});
 	};
-	
-	toggelImg = () => {
-		const files = this.state.files;
-		if (files)
-		{return files.map(file => <img src={URL.createObjectURL(file)} alt="hello" className="new-post-img" />)}
-	 }
- 
- 
-	 selectPhotos = (e) => {
-		 this.setState({
-			 ...this.state,
-			 photos: [...this.state.files.concat(e.target.files[0])]
-		 })
-	 }
-	
+
+	selectPhotos = (picture) => {
+		this.setState(
+			{
+				...this.state,
+				pictures : [...this.state.pictures.concat(picture[0])],
+			});
+	};
 
 	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.createPost(this.state);
+		console.log(this.initState)
+		
 		this.setState(
 			{
-				...this.state,
-				text    : '',
-				photos  : [],
-				user_id : this.props.user.id,
-				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
-				users_avatar    : this.props.user.photo_url
-			},
-			() => console.log(this.state),
-		);
+				...this.initState,
+			}, () => console.log(this.state));
 	};
 
 	render() {
@@ -61,17 +56,21 @@ class NewPost extends Component {
 						type="text"
 						placeholder="how are you feeling"
 						onChange={this.handleChange}
-						value={this.state.text}
+						value={this.state.post.text}
 					/>
 					<button type="submit" className="btn-none" />
-				</form>
-				<div className="new-phot">
-      {this.toggelImg()}
-      </div>
-        <div>
-          <label className="new-photo" htmlFor="file-btn"><FontAwesomeIcon size="2x" icon={faImage} id="new-photo-upload" /></label>
-          <input id="file-btn" type="file" accept="image/*" onChange={this.selectPhotos} hidden />
-        </div>
+				<div>
+						<ImageUploader
+						withIcon={true}
+						button="Choose Images"
+						buttonStyles={{bacgroundColor: 'black'}}
+						withPreview={true}
+						onChange={this.selectPhotos}
+						withPreview={true}
+						imgExtension={['.jpg', '.gif', '.png', '.jpeg']}
+						/>
+				</div>
+						</form>
 			</div>
 		);
 	}
