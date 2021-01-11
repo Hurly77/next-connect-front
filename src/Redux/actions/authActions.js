@@ -7,14 +7,15 @@ export const signup = (user, history) => {
 			credentials : 'include',
 			body        : JSON.stringify({user: user}),
 		})
-			.then((res) => res.json())
-			.then(
-				(data) =>
-					dispatch({
-						type    : 'AUTH_SUCCESS',
-						payload : {loggedIn: data.logged_in, currentUser: data.user},
-					}),
-				history.push('/profile'),
+		.then((res) => res.json())
+		.then(
+			(data) =>{
+			dispatch({
+				type    : 'AUTH_SUCCESS',
+				payload : {loggedIn: data.logged_in, currentUser: data.user},
+			}) 
+			history.push(`/${data.user.c_id}`)
+			}
 			);
 	};
 };
