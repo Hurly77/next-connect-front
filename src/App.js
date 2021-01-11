@@ -9,7 +9,6 @@ import SiteBar from './containers/SiteBar'
 import {checkLoggedIn} from './Redux/actions/authActions';
 import {checkFriends} from './Redux/actions/friendActions'
 import {SearchPage} from './Pages/SearchPage'
-import isEqual from 'lodash.isequal';
 
 class App extends Component {
 	state = {
