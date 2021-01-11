@@ -27,7 +27,6 @@ const useOnClickOutside = (ref, handler) => {
 };
 
 export const EditButton = () => {
-  const doc = document.querySelector('.edit-modal')
   const myRef = useRef();
 	const [isOpen, setIsOpen] = useState(false);
 	const Edit = <FontAwesomeIcon size="2x" icon={faEdit} />;
