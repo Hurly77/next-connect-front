@@ -6,7 +6,7 @@ export const createPost = (post) => {
 			method      : 'POST',
 			headers     : {'Content-Type': 'application/json'},
 			credentials : 'include',
-			body        : JSON.stringify({post: post}),
+			body        : JSON.stringify({post: post})
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -19,6 +19,15 @@ export const createPost = (post) => {
 			});
 	};
 };
+
+export const postImages = (data) => {
+		fetch(`${apiUrl}/posts`, {
+			method      : 'POST',
+			credentials : 'include',
+			body        : data
+		})
+	};
+
 
 export const fetchUserPosts = (id) => {
 	return (dispatch) => {
