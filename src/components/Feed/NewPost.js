@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {createPost} from '../../Redux/actions/postActions';
-import ImageUploader from 'react-images-upload'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faImage} from '@fortawesome/free-solid-svg-icons';
 
 class NewPost extends Component {
 	constructor(props) {
 		super(props);
 		this.initState = {
-			pictures : [],
-			post   : {
+			post : {
 				text            : '',
 				user_id         : this.props.user.id,
 				users_full_name : this.props.user.first_name + ' ' + this.props.user.last_name,
@@ -27,23 +27,14 @@ class NewPost extends Component {
 		});
 	};
 
-	selectPhotos = (picture) => {
-		this.setState(
-			{
-				...this.state,
-				pictures : [...this.state.pictures.concat(picture[0])],
-			});
-	};
-
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.createPost(this.state);
-		console.log(this.initState)
-		
-		this.setState(
-			{
-				...this.initState,
-			}, () => console.log(this.state));
+		const post = this.state.post;
+
+		this.props.createPost(post);
+		this.setState({
+			...this.initState,
+		});
 	};
 
 	render() {
@@ -59,18 +50,8 @@ class NewPost extends Component {
 						value={this.state.post.text}
 					/>
 					<button type="submit" className="btn-none" />
-				<div>
-						<ImageUploader
-						withIcon={true}
-						button="Choose Images"
-						buttonStyles={{bacgroundColor: 'black'}}
-						withPreview={true}
-						onChange={this.selectPhotos}
-						withPreview={true}
-						imgExtension={['.jpg', '.gif', '.png', '.jpeg']}
-						/>
-				</div>
-						</form>
+				</form>
+				<div className="new-photos-container">{this.toggelImg()}</div>
 			</div>
 		);
 	}
