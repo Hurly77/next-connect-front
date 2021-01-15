@@ -4,13 +4,14 @@ import ProfileImage from '../components/Profile/ProfileImage'
 import Banner from '../components/Profile/Banner'
 import { connect } from 'react-redux'
 import {checkFriends} from '../Redux/actions/friendActions'
-import {fetchUserPosts} from '../Redux/actions/postActions'
+import {fetchUserPosts, fetchPhotos} from '../Redux/actions/postActions'
 
 
  class ProfileHead extends Component {
    componentDidMount(){
      this.props.checkFriends(this.props.currentUser.id)
      this.props.fetchUserPosts(this.props.currentUser.id)
+     this.props.fetchPhotos(this.props.currentUser.id)
    }
 
   render = () => {
@@ -30,4 +31,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {checkFriends, fetchUserPosts})(ProfileHead)
+export default connect(mapStateToProps, {checkFriends, fetchUserPosts, fetchPhotos})(ProfileHead)
