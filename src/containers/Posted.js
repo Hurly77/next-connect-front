@@ -15,10 +15,12 @@ class Posted extends Component {
 
 	render() {
 		const posts = this.props.allPosts;
+		console.log(posts)
 		return posts.map((post) => {
+			console.log(post)
 		 return (
-			 <div key={post.id} className="posted">
-				 <Post post={post}/>
+			 <div key={post.post.id} className="posted">
+				 <Post post={post.post} photos={post.photos}/>
 			 </div>
 		 )
 	 });
