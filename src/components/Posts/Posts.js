@@ -13,8 +13,8 @@ componentDidUpdate = (prevProps) => {
 render() {
   return this.props.userPosts.map(post => {
     return (
-      <div key={post.id} className="posted">
-        <Post post={post}/>
+      <div key={post.post.id} className="posted">
+        <Post post={post.post} photos={post.photos}/>
       </div>
     )
   })
