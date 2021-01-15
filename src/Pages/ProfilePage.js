@@ -5,6 +5,7 @@ import {Link, useLocation, Switch, Route, useRouteMatch} from 'react-router-dom'
 import AboutContainer from '../containers/AboutContainer'
 import Posts from '../components/Posts/Posts'
 import FriendsContainer from '../containers/FriendsContainer';
+import PhotosContainer from '../containers/PhotosContainer';
 
 const NavLink = ({to, className, activeClassName, inactiveClassName, ...rest}) => {
 	let location = useLocation();
@@ -33,6 +34,10 @@ const ProfilePage = () => {
 					<NavLink to={`${url}/posts`} className="tab-link" inactiveClassName="tab-inactive" activeClassName="tab-active">
 						Posts
 					</NavLink>
+
+					<NavLink to={`${url}/photos`} className="tab-link" inactiveClassName="tab-inactive" activeClassName="tab-active">
+						Photos
+					</NavLink>
 				</div>
 			</div>
 			<div>
@@ -40,6 +45,7 @@ const ProfilePage = () => {
           <Route exact path={`${path}`} component={AboutContainer} />
 					<Route path={`${path}/friends`} component={FriendsContainer} />
 					<Route path={`${path}/posts`} component={Posts} />
+					<Route path={`${path}/photos`} component={PhotosContainer} />
 				</Switch>
 			</div>
 		</>
