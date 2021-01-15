@@ -3,10 +3,6 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faImage} from '@fortawesome/free-solid-svg-icons';
 
 export default class UploadImages extends Component {
-
-  constructor(props){
-    this.
-  }
   initState = {
     photos : [],
   };
