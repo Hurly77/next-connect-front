@@ -6,7 +6,7 @@ import {fetchAllPosts} from '../Redux/actions/postActions';
 class Posted extends Component {
 
 	componentDidMount() {
-		this.props.fetchAllPosts(this.props.id);
+		this.props.fetchAllPosts(this.props.currentUser.id);
 	}
 
 	componentDidUpdate(){
@@ -20,7 +20,7 @@ class Posted extends Component {
 			console.log(post)
 		 return (
 			 <div key={post.post.id} className="posted">
-				 <Post post={post.post} photos={post.photos}/>
+				 <Post post={post.post} photos={post.photos} comments={post.comments}/>
 			 </div>
 		 )
 	 });
@@ -30,7 +30,7 @@ class Posted extends Component {
 const mapStateToProps = (state) => {
 	return {
 		allPosts : state.post.allPosts,
-		id: state.auth.currentUser.id
+		currentUser: state.auth.currentUser
 	};
 };
 
