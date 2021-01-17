@@ -1,5 +1,4 @@
 export const createPost = (state = {userPosts: [], friendsPosts: [], allPosts: [], userPhotos: []}, action) => {
-  console.log(action)
   switch(action.type){
     case 'NEW_POST':
       const newpost = action.payload
