@@ -1,10 +1,10 @@
 .profile-name {
   margin: inherit;
+
 }
 
 @media(min-width: 768px){
   .profile-name{
     margin-left: 15%;
-    transform: translateY(100px);
   }
 }
