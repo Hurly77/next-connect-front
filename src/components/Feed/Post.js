@@ -1,6 +1,7 @@
 import React from 'react'
 import './post.css'
 import CommentCard from './CommentCard'
+import Comments from './Comments'
 
 const mapImages = (photos) => {
   return photos.map((image) => {
@@ -20,7 +21,7 @@ const image = (photos) => {
   )}
 }
 
-const Post = ({post, photos}) => {
+const Post = ({post, photos, comments}) => {
   const single = "img-container-single"
   const container = "img-container"
     return (
@@ -35,12 +36,12 @@ const Post = ({post, photos}) => {
         <div className={photos.length > 1 ? container : single}>
           {photos.length > 1 ? mapImages(photos) : image(photos)}
         </div>
-        <div className="posted-text">
-          <br />
-           <p>Like |  comments</p>
-          --------------------------------
+          {comments.length > 0 ? <Comments comments={comments}/> : null}
+          <div className="Like-Comment">
+            <h5 id="sec-1">↕ Comment</h5>
+            <h5 id="sec-2"><span id="heart">♥</span> Like</h5>
+          </div>
           <CommentCard />
-        </div>
       </div>
     )
 }
