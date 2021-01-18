@@ -41,7 +41,7 @@ const Post = ({post, photos, comments}) => {
             <h5 id="sec-1">↕ Comment</h5>
             <h5 id="sec-2"><span id="heart">♥</span> Like</h5>
           </div>
-          <CommentCard />
+          <CommentCard postId={post.id}/>
       </div>
     )
 }
