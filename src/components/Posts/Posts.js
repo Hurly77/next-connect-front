@@ -14,7 +14,7 @@ render() {
   return this.props.userPosts.map(post => {
     return (
       <div key={post.post.id} className="posted">
-        <Post post={post.post} photos={post.photos}/>
+        <Post post={post.post} photos={post.photos} comments={post.comments}/>
       </div>
     )
   })
