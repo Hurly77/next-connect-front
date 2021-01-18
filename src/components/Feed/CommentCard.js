@@ -1,11 +1,15 @@
 
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import comment from '../../Redux/actions/commentActions'
 
 
 class CommentCard extends Component {
   state = {
-    post_id: null,
+    user_id: this.props.currentUser.id,
+    post_id: this.props.postId,
+    users_avatar: this.props.currentUser.photo_url,
+    users_full_name: this.props.currentUser.first_name + " " + this.props.currentUser.last_name,
     text: ''
   }
 
@@ -18,7 +22,7 @@ class CommentCard extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("submit")
+    this.props.comment(this.state)
   }
 
   render() {
@@ -40,4 +44,4 @@ const mapStateToProps = state => {
     currentUser: state.auth.currentUser,
   }
 }
-export default connect(mapStateToProps)(CommentCard)
+export default connect(mapStateToProps, {comment})(CommentCard)
