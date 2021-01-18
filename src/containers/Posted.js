@@ -2,15 +2,21 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Post from '../components/Feed/Post';
 import {fetchAllPosts} from '../Redux/actions/postActions';
+import isEqual from 'lodash.isequal'
 
 class Posted extends Component {
 
 	componentDidMount() {
-		this.props.fetchAllPosts(this.props.currentUser.id);
+		console.log(!!this.props)
+		if(this.props.allPosts.length < 1){
+			this.props.fetchAllPosts(this.props.currentUser.id);
+		}
 	}
 
-	componentDidUpdate(){
-		
+	componentDidUpdate(prevProps){
+		if(!isEqual(prevProps, this.props)){
+			this.props.fetchAllPosts(this.props.currentUser.id);
+		}
 	}
 
 	render() {
