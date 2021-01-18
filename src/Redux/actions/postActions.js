@@ -29,7 +29,7 @@ export const createPost = (post, photos) => {
 					console.log(photos)
 					dispatch({
 						type : 'NEW_POST',
-						payload: {post: data.post, photos: []}
+						payload: {post: data.post, photos: [], comments: []}
 					})
 				}
 			});
