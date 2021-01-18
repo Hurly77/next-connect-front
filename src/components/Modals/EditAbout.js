@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {updateUser} from '../../Redux/actions/authActions';
-import {withRouter} from 'react-router-dom';
 
 class EditAbout extends Component {
 
@@ -25,8 +24,8 @@ class EditAbout extends Component {
 	};
 
 	handleSubmit = (e) => {
-    e.preventDefault();
-		this.props.updateUser(this.state.currentUser, this.props.history)
+		e.preventDefault();
+		this.props.updateUser(this.state.currentUser)
 		this.props.onClose() 
 	};
 
@@ -85,4 +84,4 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default withRouter(connect(mapStateToProps, {updateUser})(EditAbout));
+export default connect(mapStateToProps, {updateUser})(EditAbout);
