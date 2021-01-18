@@ -35,7 +35,6 @@ export const updateUser = (user, history) => {
 						type    : 'UPDATE_USER',
 						payload : {currentUser: data.user},
 					}),
-				history.push('/feed'),
 			);
 	};
 };
