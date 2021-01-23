@@ -254,11 +254,27 @@ border-radius: 10px;
 #sec-1 {
 grid-row: 1;
 grid-column: 5/20;
+background-color: transparent;
+border: none;
 }
 
 #sec-2 {
   grid-row: 1;
   grid-column: 14/20;
+  background-color: transparent;
+  border: none;
+}
+
+#sec-1:hover, #sec-2:hover {
+  background-color: #487697;
+  border: solid #5d829c 1px;
+  border-radius: 10px;
+  margin: 0;
+  height: 100%;
+}
+
+#sec-1:focus, #sec-2:focus {
+  outline: none;
 }
 
 @media(max-width: 768px){
