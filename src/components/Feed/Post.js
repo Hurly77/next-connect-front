@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import './post.css'
 import CommentCard from './CommentCard'
 import Comments from './Comments'
@@ -24,6 +24,8 @@ const image = (photos) => {
 const Post = ({post, photos, comments}) => {
   const single = "img-container-single"
   const container = "img-container"
+  const [isLiked, setLiked] = useState(false)
+  const like = () => setLiked(!isLiked)
     return (
       <div key={post.id} className="post">
         <div className="posted-by">
@@ -38,8 +40,8 @@ const Post = ({post, photos, comments}) => {
         </div>
           {comments.length > 0 ? <Comments comments={comments}/> : null}
           <div className="Like-Comment">
-            <h5 id="sec-1">↕ Comment</h5>
-            <h5 id="sec-2"><span id="heart">♥</span> Like</h5>
+            <button onClick={() => document.getElementById(post.id).focus()} id="sec-1">↕ Comment</button>
+            <button id="sec-2" onClick={() => like()}>{!isLiked ? "like" : "unlike"}</button>
           </div>
           <CommentCard postId={post.id}/>
       </div>
