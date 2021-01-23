@@ -12,7 +12,7 @@ const HomePage = () => {
       <Home />
       <Login  />
       </div>
-      <p>Please DO NOT share any personal information this website is for demonstration purposes only, don't put your real email or password when signing up user</p>
+      <p>Please DO NOT share any personal information this website</p>
     </div>
   </>
   )
