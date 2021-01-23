@@ -31,7 +31,7 @@ class CommentCard extends Component {
         <img src={this.props.currentUser.photo_url}/>
       <div className="comment">
         <form onSubmit={this.handleSubmit} id="comment-form">
-        <input type="text" className="comment-input" placeholder="comment" value={this.state.text} onChange={this.handleChange}/>
+        <input id={this.props.postId} type="text" className="comment-input" placeholder="comment" value={this.state.text} onChange={this.handleChange}/>
         </form>
       </div>
     </div>
