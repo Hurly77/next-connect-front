@@ -1,9 +1,13 @@
-const apiUrl = 'http://localhost:3000';
+const apiUrl = 'https://next-connect-back.herokuapp.com';
 export const signup = (user, history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/registrations`, {
 			method      : 'POST',
+			mode: 'cors',
+			cache: 'no-cache',
 			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 			body        : JSON.stringify({user: user}),
 		})
@@ -24,7 +28,11 @@ export const updateUser = (user, history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/api/v1/users/${user.id}`, {
 			method      : 'PUT',
+			mode: 'cors',
+			cache: 'no-cache',
 			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 			body        : JSON.stringify({user: user}),
 		})
@@ -43,9 +51,13 @@ export const login = (user, history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/sessions`, {
 			method      : 'POST',
+			mode: 'cors',
+			cache: 'no-cache',
 			headers     : {'Content-Type': 'application/json'},
-			credentials : 'include',
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			body        : JSON.stringify({user: user}),
+			credentials : 'include',
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -66,7 +78,13 @@ export const login = (user, history) => {
 export const checkLoggedIn = (callback) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/logged_in`, {
-			credentials : 'include',
+			method: 'GET',
+			mode: 'cors',
+			headers: {'Content-Type': 'application/json'},
+			cache: 'no-cache',
+			redirect: 'follow',
+			referrer: 'no-referrer',
+			credentials: 'include'
 		})
 			.then((res) => res.json())
 			.then((data) => {
@@ -83,6 +101,10 @@ export const uploadAvatar = (user, data) => {
 return (dispatch) => {	
 	fetch(`${apiUrl}/api/v1/photos/${user.id}`, {
 		method : 'PATCH',
+		mode: 'cors',
+		cache: 'no-cache',
+		redirect: 'follow',
+		referrer: 'no-referrer',
 		body   : data,
 	})
 		.then((r) => r.json())
@@ -118,6 +140,12 @@ export const uploadBanner = (user, data) => {
 export const updateProps = (id) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/api/v1/photos/${id}`, {
+			method: 'GET',
+			mode: 'cors',
+			cache: 'no-cache',
+			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 		})
 			.then((r) => r.json())
@@ -137,6 +165,11 @@ export const logout = (history) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/logout`, {
 			method      : 'DELETE',
+			mode: 'cors',
+			cache: 'no-cache',
+			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 		})
 			.then((res) => res.json())

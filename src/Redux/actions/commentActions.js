@@ -1,10 +1,14 @@
-const apiUrl = 'http://localhost:3000/api/v1'
+const apiUrl = 'https://next-connect-back.herokuapp.com/api/v1'
 
 export const comment = (comment) => {
  return (dispatch) => {
    fetch(`${apiUrl}/posts/${comment.post_id}/comments`, {
     method      : 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
     headers     : {'Content-Type': 'application/json'},
+    redirect: 'follow',
+    referrer: 'no-referrer',
     credentials : 'include',
     body        : JSON.stringify({comment: comment})
    })

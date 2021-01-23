@@ -1,10 +1,14 @@
-const apiUrl = 'http://localhost:3000/api/v1';
+const apiUrl = 'https://next-connect-back.herokuapp.com/api/v1';
 
 export const request = (active_user, passive_user) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/friend_request`, {
 			method  : 'POST',
-			headers : {'Content-Type': 'application/json'},
+			mode: 'cors',
+			cache: 'no-cache',
+			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			body    : JSON.stringify({
 				active_user_id  : active_user,
 				passive_user_id : passive_user,
@@ -27,7 +31,11 @@ export const accept_request = (passive_user, active_user) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/accept`, {
 			method      : 'POST',
+			mode: 'cors',
+			cache: 'no-cache',
 			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 			body        : JSON.stringify({
 				passive_user_id : passive_user,
@@ -52,7 +60,11 @@ export const deny = (active_user, passive_user) => {
 	return (dispatch) => {
 		fetch(`${apiUrl}/users/${passive_user}`, {
 			method      : 'DELETE',
+			mode: 'cors',
+			cache: 'no-cache',
 			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
 			credentials : 'include',
 			body        : JSON.stringify({
 				active_user_id  : active_user,
@@ -74,7 +86,15 @@ export const deny = (active_user, passive_user) => {
 
 export const checkFriends = (id) => {
 	return (dispatch) => {
-		fetch(`http://localhost:3000/api/v1/users/${id}`).then((r) => r.json()).then((data) => {
+		fetch(`${apiUrl}/users/${id}`, {
+			method: 'GET',
+			mode: 'cors',
+			cache: 'no-cache',
+			headers     : {'Content-Type': 'application/json'},
+			redirect: 'follow',
+			referrer: 'no-referrer',
+			credentials: 'include'
+		}).then((r) => r.json()).then((data) => {
 			dispatch({
 				type    : 'FRIENDS',
 				payload : {
