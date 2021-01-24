@@ -1,5 +1,6 @@
 import './App.css';
 import React, {Component} from 'react';
+import Helmet from 'react-helmet'
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import HomePage from './Pages/HomePage'
@@ -34,6 +35,7 @@ class App extends Component {
 		if (this.state.loading) return <h1>Loading...</h1>;
 		return (
 			<div className="App">
+				<Helmet title="You Are Doing Great" />
 				<Router>
 					{this.props.loggedIn ? <SiteBar /> : null}
 				<div id="main">
