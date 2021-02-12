@@ -32,7 +32,7 @@ class App extends Component {
 	}
 	
 	render() {
-		if (this.state.loading) return <h1>Loading...</h1>;
+		if (this.state.loading) return <h1>Loading..., Hosted on heroku could take up to 15secs</h1>;
 		return (
 			<div className="App">
 				<Helmet title="You Are Doing Great" />
