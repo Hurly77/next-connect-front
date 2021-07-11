@@ -1,0 +1,69 @@
+.Avatar {
+  margin-left: 12%;
+  transform:translateY(-100px);
+  border: solid #CBF7ED 5px;
+  background-color: #CBF7ED;
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  overflow: hidden;
+  border-radius:50%;
+  z-index: 1000;
+}
+
+#uploaded > path {
+  color: transparent;
+}
+
+.upload-avatar
+{
+  padding: 50px;
+  border-radius: 100%;
+  transform:translateY(-140px);
+  object-fit: cover;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.upload-avatar:hover #uploaded > path {
+  background-color: #16192586;
+  color: #cbf7ed;
+}
+
+.upload-avatar:hover {
+  background-color: #16192586;
+}
+
+.avatar-photo {
+  object-fit: cover;
+  border-radius: 100%;
+  width: 100%;
+  height: 100%;
+
+}
+
+@media(max-width: 768px){
+  .Avatar{
+    transform: translateY(-50px);
+    margin: 0;
+    width: 90px;
+    height: 90px;
+  }
+
+  .upload-avatar {
+    transform: translate(-10px, -160px);
+    width: 60px;
+    height: 60px;
+  }
+
+  .avatar-photo {
+    object-fit: cover;
+    border-radius: 100%;
+    width: 100%;
+    height: 100%;
+  }
+}

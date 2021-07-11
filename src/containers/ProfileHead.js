@@ -1,34 +1,31 @@
-import React, {Component} from 'react'
-import Profile from '../components/Profile/Profile'
-import ProfileImage from '../components/Profile/ProfileImage'
-import Banner from '../components/Profile/Banner'
-import { connect } from 'react-redux'
-import {checkFriends} from '../Redux/actions/friendActions'
-import {fetchUserPosts, fetchPhotos} from '../Redux/actions/postActions'
+import Profile from '../components/Profile/Profile';
+import ProfileImage from '../components/Profile/ProfileImage';
+import Banner from '../components/Profile/Banner';
+import { connect } from 'react-redux';
+import { checkFriends } from '../Redux/actions/friendActions';
+import {
+	fetchUserPosts,
+	fetchPhotos,
+} from '../Redux/actions/postActions';
 
+const ProfileHead = () => {
+	return (
+		<>
+			<Banner />
+			<ProfileImage />
+			<Profile />
+		</>
+	);
+};
 
- class ProfileHead extends Component {
-   componentDidMount(){
-     this.props.checkFriends(this.props.currentUser.id)
-     this.props.fetchUserPosts(this.props.currentUser.id)
-     this.props.fetchPhotos(this.props.currentUser.id)
-   }
+const mapStateToProps = (state) => {
+	return {
+		currentUser: state.auth.currentUser,
+	};
+};
 
-  render = () => {
-  return (
-    <>
-      <Banner />
-      <ProfileImage />
-      <Profile />
-    </>
-  )
-  }
-}
-
-const mapStateToProps = state => {
-  return {
-    currentUser: state.auth.currentUser,
-  }
-}
-
-export default connect(mapStateToProps, {checkFriends, fetchUserPosts, fetchPhotos})(ProfileHead)
+export default connect(mapStateToProps, {
+	checkFriends,
+	fetchUserPosts,
+	fetchPhotos,
+})(ProfileHead);

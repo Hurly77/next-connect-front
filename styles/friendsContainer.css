@@ -1,0 +1,10 @@
+@media only screen and (min-width: 700px){
+}
+
+.friends-container{
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}

@@ -1,0 +1,65 @@
+.profile-banner {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.profile-banner > img {
+  object-fit: contain;
+  margin: auto;
+  width: 66.6%;
+  max-height: 300px;
+  background-color: #161925;
+  border-radius: 10px;
+}
+
+.upload-banner {
+  background-color: #8ea8c310;
+  width: fit-content;
+  height: 50px;
+  padding: 4%;
+  padding-right: 2%;
+  border-radius: 10px;
+  border-top-left-radius: 100%;
+  margin-right: 16.7%;
+  cursor: pointer;
+  float: right;
+  transform: translate(0, -100%);
+}
+
+.upload-banner:hover{
+  background-color: rgba(255, 255, 255, 0.534);
+}
+
+#ban-i > path {
+  float:right
+}
+
+@media(max-width: 768px){
+  .profile-banner{
+    background-size: contain;
+    margin-top: 93px;
+    width: 100%;
+    height: auto;
+  }
+
+  .profile-banner > img {
+    width: 100%;
+    border-radius: 0;
+    height: auto;
+  }
+
+  .upload-banner {
+    margin-right: 0;
+    border-radius: 0;
+    border-top-left-radius: 100%;
+  }
+}
+
+@media(max-width: 440px){
+  .profile-banner{
+    margin-top: 92px;
+  }
+}
