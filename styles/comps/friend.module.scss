@@ -1,0 +1,40 @@
+/* friends */
+.friendCard {
+	width: 40%;
+	display: flex;
+	position: relative;
+	background-color: #406e8e;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 20px;
+}
+
+.friendAvatar {
+	width: 75px;
+	height: 75px;
+	border-radius: 100%;
+	margin-right: 20px;
+}
+
+.friendName {
+	margin-top: 0;
+}
+
+.friendProfile {
+	width: 50px;
+	height: 10px;
+	border: none;
+	font-weight: 999;
+	margin-left: auto;
+	background-color: transparent;
+}
+
+.friendProfile:focus {
+	outline: none;
+}
+
+@media (max-width: 425px) {
+	.friendCard {
+		width: 100%;
+	}
+}

@@ -1,0 +1,9 @@
+.profileName {
+	margin: inherit;
+}
+
+@media (min-width: 768px) {
+	.profileName {
+		margin-left: 15%;
+	}
+}

@@ -1,10 +1,23 @@
-const Home = () => {
+import React from 'react';
+import styles from '@/styles/pages/homePage.module.scss';
+import Login from '@/layout/login';
+import Home from '@/components/home';
+
+const HomePage = () => {
 	return (
-		<div className="logo-home">
-			<h1>Next Connect</h1>
-			<p>Find a good connection</p>
-		</div>
+		<>
+			<div className={styles.homeLoginContainer}>
+				<div className={styles.homeLogin}>
+					<Home />
+					<Login />
+				</div>
+				<p>
+					Please DO NOT share any personal information this
+					website
+				</p>
+			</div>
+		</>
 	);
 };
 
-export default Home;
+export default HomePage;

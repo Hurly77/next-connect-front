@@ -16,17 +16,7 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html lang="en">
-				<Head>
-					<link
-						href="https://fonts.googleapis.com/icon?family=Material+Icons"
-						rel="stylesheet"
-					/>
-					<script
-						src="https://kit.fontawesome.com/7fe238b80c.js"
-						crossOrigin="anonymous"
-					/>
-					<meta charSet="utf-8" />
-				</Head>
+				<Head />
 				<body>
 					<div id="portal"></div>
 					<Main />

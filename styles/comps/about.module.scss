@@ -1,4 +1,4 @@
-.edit-modal {
+.editModal {
 	position: fixed;
 	margin: auto;
 	height: fit-content;
@@ -13,13 +13,13 @@
 		0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.edit-about-modal {
+.editAboutModal {
 	padding: 25px;
 	display: grid;
 	grid-gap: 10px;
 }
 
-.edit-about-modal > input {
+.editAboutModal > input {
 	margin-top: 10px;
 	height: 50px;
 	padding-left: 5px;
@@ -30,7 +30,7 @@
 	background-color: #cbf7ed;
 }
 
-.edit-about-modal > button {
+.editAboutModal > button {
 	grid-row: 6;
 	background-color: forestgreen;
 	border-radius: 10px;
@@ -39,77 +39,77 @@
 	border: none;
 }
 
-.open-edit-btn {
+.openEditBtn {
 	background-color: transparent;
 	border: none;
 	width: fit-content;
 }
 
-.edit-modal-btn {
+.editModalBtn {
 	background-color: transparent;
 	border: none;
 	width: fit-content;
 	height: fit-content;
 }
 
-.about-details {
+.aboutDetails {
 	display: grid;
 	grid-gap: 50px;
-}
 
-.about-item-1 {
-	grid-column: 1;
-	grid-row: 1;
-}
+	.aboutItem1 {
+		grid-column: 1;
+		grid-row: 1;
+	}
 
-.about-item-3 {
-	grid-column: 1;
-	grid-row: 2;
-}
+	.aboutItem3 {
+		grid-column: 1;
+		grid-row: 2;
+	}
 
-.about-item-5 {
-	grid-column: 1;
-	grid-row: 3;
-}
+	.aboutItem5 {
+		grid-column: 1;
+		grid-row: 3;
+	}
 
-.about-item-7 {
-	grid-column: 1;
-	grid-row: 4;
-}
+	.aboutItem7 {
+		grid-column: 1;
+		grid-row: 4;
+	}
 
-.about-item-9 {
-	grid-row: 5;
-}
+	.aboutItem9 {
+		grid-row: 5;
+	}
 
-/* even */
+	/* even */
 
-.about-item-2 {
-	grid-column: 2;
-	grid-row: 1;
-}
+	.aboutItem2 {
+		grid-column: 2;
+		grid-row: 1;
+	}
 
-.about-item-4 {
-	grid-column: 2;
-	grid-row: 2;
-}
+	.aboutItem4 {
+		grid-column: 2;
+		grid-row: 2;
+	}
 
-.about-item-6 {
-	grid-column: 2;
-	grid-row: 3;
-}
+	.aboutItem6 {
+		grid-column: 2;
+		grid-row: 3;
+	}
 
-.about-item-8 {
-	grid-column: 2;
-	grid-row: 4;
-}
+	.aboutItem8 {
+		grid-column: 2;
+		grid-row: 4;
+	}
 
-.about-item-10 {
-	grid-column: 2;
-	grid-row: 5;
+	.aboutItem10 {
+		grid-column: 2;
+		grid-row: 5;
+	}
 }
 
 @media (max-width: 768px) {
-	.edit-modal {
+	.editModal {
 		margin: auto;
 		width: 100%;
 		bottom: 0;

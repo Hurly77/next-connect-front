@@ -6,7 +6,11 @@
 			"@/layout/*": ["components/layout/*"],
 			"@/styles/*": ["styles/*"],
 			"@/page-styles/*": ["styles/pages/*"],
-			"@/utils/*": ["utils/*"]
+			"@/feed/*": ["components/feed/*"],
+			"@/profile/*": ["components/profile/*"],
+			"@/about/*": ["components/about/*"],
+			"@/ui/*": ["components/ui/*"],
+			"@/actions/*": ["store/redux/actions/*"]
 		}
 	}
 }
