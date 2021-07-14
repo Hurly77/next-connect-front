@@ -1,30 +1,16 @@
 import { useState, useEffect } from 'react';
-import Image from 'next/image1';
-import { connect } from 'react-redux';
-import isEqual from 'lodash.isequal';
+import Image from 'next/image';
+import styles from '@/styles/comps/banner.module.scss';
 
 const Banner = (props) => {
-	const [banner, setBanner] = useState(
-		props.currentUser.banner,
-	);
-
-	useEffect((prevProps) => {
-		if (
-			!isEqual(props.currentUser, prevProps.currentUser)
-		) {
-			props.updateProps(props.currentUser.id);
-		}
-	}, []);
-
-	handleChange = (e) => {
+	const handleChange = (e) => {
 		setBanner(URL.createObjectURL(e.target.files[0]));
 		const files = e.target.files;
 		const data = new FormData();
 		data.append('banner', files[0]);
-		props.uploadBanner(props.currentUser, data);
 	};
 
-	const bannerUrl = props.currentUser.banner_url;
+	const bannerUrl = '/images/json-borne.png';
 	const backUp =
 		'https://www.thefilmagazine.com/wp-content/uploads/2016/07/bourne-banner.jpg';
 
@@ -50,13 +36,4 @@ const Banner = (props) => {
 	);
 };
 
-const mapStateToProps = (state) => {
-	return {
-		currentUser: state.auth.currentUser,
-	};
-};
-
-export default connect(mapStateToProps, {
-	updateProps,
-	uploadBanner,
-})(Banner);
+export default Banner;

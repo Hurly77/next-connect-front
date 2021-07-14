@@ -1,34 +1,26 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import query from '../../Redux/actions/queryActions'
-import {withRouter} from 'react-router-dom'
+import { useState } from 'react';
+import styles from '@/styles/layout.module.scss';
 
-class PrimarySearchBar extends Component {
+const PrimarySearchBar = () => {
+	const [query, setQuery] = useState('');
 
-  state = {
-    query: ''
-  }
+	const handleChange = (e) => {
+		setQuery(e.target.value);
+	};
 
-  handleChange = (e) => {
-    this.setState({
-      ...this.state,
-      query: e.target.value
-    })
-  }
+	const handleSubmit = (e) => {
+		e.preventDefault();
+	};
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    this.props.query(this.state.query, this.props.history)
-  }
-  
-  render() {
-    return (
-        <form onSubmit={this.handleSubmit}>
-          <input type="search" name="search" className='search' onChange={this.handleChange} value={this.state.query}>
-          </input>
-        </form>
-    )
-  }
-}
+	return (
+		<form className={styles.search} onSubmit={handleSubmit}>
+			<input
+				type="search"
+				name="search"
+				onChange={handleChange}
+				value={query}></input>
+		</form>
+	);
+};
 
-export default withRouter(connect(null, {query})(PrimarySearchBar))
+export default PrimarySearchBar;

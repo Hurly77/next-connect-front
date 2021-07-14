@@ -1,89 +1,169 @@
-.homeLoginContainer {
-	margin-top: 100px;
-	padding-left: 100px;
-	padding-right: 100px;
+.home {
+	display: flex;
+	flex-direction: column;
+	height: 86vh;
+}
+
+.homeContent {
+	display: flex;
+	height: 100%;
+	align-items: center;
 }
 
 .homeLogin {
-	padding-left: 20px;
-	padding-right: 20px;
+	width: 100vw;
 	display: flex;
-	justify-content: center;
+	align-self: center;
+	justify-content: space-evenly;
+	h1 {
+		width: 100%;
+		justify-items: flex-start;
+		font-size: 80px;
+	}
+	p {
+		justify-items: flex-start;
+		width: 100%;
+		padding-left: 10px;
+		font-size: 26px;
+	}
+
+	@media screen and (max-width: 900px) {
+		flex-flow: row wrap;
+		text-align: center;
+	}
 }
 
 .logoHome {
-	margin-right: 20%;
-	margin-left: auto;
-}
-
-.logoHome > p {
-	font-size: 20px;
-	text-shadow: #23395b 2px 2px;
-}
-
-.logoHome > h1 {
-	text-shadow: #23395b 3px 3px;
-	font-size: 50px;
-}
-
-.loginCard {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 400px;
-	height: 350px;
-	background-color: #23395b;
-	border-radius: 5px;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-		0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	padding: 10px;
-	margin-right: auto;
 }
 
-.loginCard > form > input {
-	border: none;
-	width: 100%;
-	height: 50px;
-	margin-bottom: 10px;
+.loginCard {
+	height: 400px;
+	width: 420px;
+	display: flex;
+	flex-direction: column;
+	background-color: $dark;
 	border-radius: 5px;
-	padding-left: 5px;
-	color: black;
-	background-color: #cbf7ed;
-}
+	padding: $spcG;
+	box-shadow: $shad-4;
 
-.loginBtn {
-	width: 350px;
-	height: 50px;
-	background-color: #4891c5;
-	border: none;
-	border-radius: 5px;
-	outline: none;
-	cursor: pointer;
+	@media screen and (max-width: 600px) {
+		width: 100%;
+	}
+
+	form {
+		height: 60%;
+	}
+
+	input {
+		width: 100%;
+		height: 33.33%;
+		margin-bottom: 2%;
+		border-radius: 5px;
+		padding: $spcG;
+		background-color: $light;
+	}
+
+	.loginBtn {
+		width: 100%;
+		height: 33.33%;
+		background-color: $info;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	.openPopup {
+		width: 100%;
+		height: 20%;
+		margin-top: 15%;
+		background-color: #161925;
+		color: $text;
+		border-radius: 5px;
+	}
 }
 
 .signupModal {
-	position: fixed;
+	position: relative;
 	border-radius: 5px;
-	width: 500px;
-	background-color: #23395b;
-	padding-top: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 40px;
-	z-index: auto;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-		0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 600px;
+	height: 600px;
+	background-color: $dark;
+	box-shadow: $shad-5;
+	padding: $spcF $spcG $spcH $spcG;
+
+	h1,
+	p {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		color: $paper;
+	}
+
+	form {
+		height: 100%;
+	}
+
+	input {
+		display: flex;
+		width: 100%;
+		height: 75px;
+		padding-left: $spcG;
+		margin: $spcC;
+		background-color: $light;
+		border-radius: 10px;
+	}
+
+	@media screen and (max-width: 600px) {
+		width: 100%;
+	}
+
+	.btnSubmitSignup {
+		border-radius: 5px;
+		height: 50px;
+		width: 100%;
+		background-color: $btnSuccess;
+	}
+
+	.btnSubmitSignup:focus {
+		margin-top: 4px;
+		margin-left: 5px;
+		height: 49px;
+		width: 99%;
+		background-color: rgb(31, 165, 31);
+	}
+
+	.disclaimer {
+		grid-row: 4;
+		grid-column: 1 / span 2;
+	}
+
+	.disclaimer > p {
+		font-size: 12px;
+		color: #cbf7ed;
+	}
+
+	button:nth-child(1) {
+		height: 20px;
+		width: 20px;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 15px 20px;
+		background: white;
+		border-radius: 100%;
+	}
 }
 
 .overlayStyle {
 	position: fixed;
-	transform: translateY(-100px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
 	width: 100%;
-	padding-top: 100px;
-	padding-left: 33.3%;
-	padding-right: 33.3%;
-	background-color: #23395bb2;
+	background-color: rgba(21, 36, 53, 0.753);
 	z-index: 100;
 }
 
@@ -96,165 +176,3 @@
 }
 
 /* sign up popup form */
-.openPopup {
-	width: 350px;
-	height: 50px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: solid #cbf7ed 1px;
-	background-color: #161925;
-	text-decoration: none;
-	color: #cbf7ed;
-	border: none;
-	border-radius: 5px;
-	outline: none;
-}
-
-.signupModal > form > input {
-	margin-top: 10px;
-	height: 50px;
-	padding-left: 5px;
-	border-radius: 5px;
-	border: none;
-	color: #161925;
-	font-size: 18px;
-	background-color: #cbf7ed;
-}
-
-.signupModal > form {
-	display: grid;
-	grid-gap: 10px;
-	color: #cbf7ed;
-}
-
-.firstName {
-	grid-column: 1;
-	grid-row: 1;
-}
-
-.lastName {
-	grid-column: 2;
-	grid-row: 1;
-}
-
-.email {
-	grid-column: 1 / span 2;
-	grid-row: 2;
-}
-
-.password {
-	grid-row: 3;
-}
-
-.passwordConfirm {
-	grid-column: 1;
-	grid-row: 3;
-}
-
-.btnSubmitSignup {
-	grid-row: 5;
-	grid-column: 1 / span 2;
-	border: none;
-	outline: none;
-	border-radius: 5px;
-	height: 50px;
-	width: 100%;
-	background-color: rgb(31, 165, 31);
-}
-
-.btnSubmitSignup:focus {
-	margin-top: 4px;
-	margin-left: 5px;
-	height: 49px;
-	width: 99%;
-	background-color: rgb(31, 165, 31);
-}
-
-.disclaimer {
-	grid-row: 4;
-	grid-column: 1 / span 2;
-}
-
-.disclaimer > p {
-	font-size: 12px;
-	color: #cbf7ed;
-}
-
-@media (max-width: 768px) {
-	#main {
-		margin-top: 0;
-	}
-
-	div.loginCard > * {
-		width: 100%;
-	}
-
-	.signupModal > form > * {
-		width: 100%;
-	}
-
-	.loginBtn {
-		width: 100%;
-	}
-
-	.loginCard {
-		width: 98%;
-		margin-left: 1%;
-		margin-right: 1%;
-	}
-
-	.openPopup {
-		width: 100%;
-	}
-
-	.signupModal {
-		top: 10%;
-		bottom: 0;
-		width: 94%;
-		height: fit-content;
-		padding-left: 2%;
-		padding-right: 2%;
-		box-shadow: 0 4px 8px 0 #000c0967,
-			0 6px 20px 0 #0000005d;
-	}
-
-	.signupModal > form {
-		display: block;
-		height: auto;
-		grid-gap: 10px;
-		color: #cbf7ed;
-	}
-
-	.overlayStyle {
-		transform: translateY(0);
-		position: absolute;
-		height: 100%;
-		padding-left: 3%;
-		padding-right: 3%;
-		background-color: #23395bbc;
-	}
-}
-
-@media (max-height: 360px) {
-	.overlayStyle {
-		height: 150%;
-	}
-}
-
-@media (max-width: 768px) {
-	.logoHome {
-		margin: 0;
-	}
-}
-
-@media (max-width: 768px) {
-	.homeLogin {
-		padding: 0;
-		display: block;
-	}
-
-	.homeLoginContainer {
-		margin: 0;
-		padding: 0;
-	}
-}

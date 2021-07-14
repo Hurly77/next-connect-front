@@ -1,10 +1,13 @@
 import Link from 'next/link';
+import styles from '@/styles/layout.module.scss';
 
-const NavLink = ({ name, location }) => {
+const NavLink = ({ name, location, key }) => {
 	return (
-		<Link href={location}>
-			<a className={styles.navLink}>{name}</a>
-		</Link>
+		<li key={key} className={styles.navLink}>
+			<Link href={location}>
+				<a className={styles.navLinkText}>{name}</a>
+			</Link>
+		</li>
 	);
 };
 

@@ -1,75 +1,74 @@
 /* profile nav */
-.profile-page {
-  background-image: linear-gradient(#161925, #457597);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 10px 0 rgba(0, 0, 0, 0.2);
+.profilePage {
+	background-image: linear-gradient(#161925, #457597);
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1),
+		0 1px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.profile-tabs {	
-  background-color: transparent;
-  border-top: solid #CBF7ED 1px;
-  margin-right: 110px;
-  margin-left: 110px;
-  padding-top: 10px;
-  display: flex;
+.profileTabs {
+	background-color: transparent;
+	border-top: solid #cbf7ed 1px;
+	margin-right: 110px;
+	margin-left: 110px;
+	padding-top: 10px;
+	display: flex;
 }
 
-.profile-tabs > a {
-  padding: 15px;
-  align-content: center;
-  align-items: center;
+.profileTabs > a {
+	padding: 15px;
+	align-content: center;
+	align-items: center;
 }
 
-.profile-tabs > a {
-  text-decoration: none;
-  font-size: 20px;
-  color: #CBF7ED;
-
+.profileTabs > a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #cbf7ed;
 }
 
-.profile-tabs > a:active {
-  text-decoration: none;
-  background-color: #3b6888
+.profileTabs > a:active {
+	text-decoration: none;
+	background-color: #3b6888;
 }
 
-.tab-link-tab-active {
-  border-bottom: solid #4891c5 3px;
+.tabLinkTabActive {
+	border-bottom: solid #4891c5 3px;
 }
 
-.profile-tabs > a.tab-link-tab-inactive:hover {
-  border-radius: 5px;
-  background-color: #457597;
+.profileTabs > a.tabLinkTabInactive:hover {
+	border-radius: 5px;
+	background-color: #457597;
 }
 
 .link:hover {
-  text-decoration: none;
-  color: #CBF7ED;
+	text-decoration: none;
+	color: #cbf7ed;
 }
 
 .link:focus {
-  border-bottom: solid #161925 3px;
+	border-bottom: solid #161925 3px;
 }
 /* about modal */
 
+@media (max-width: 768px) {
+	.profilePage {
+		padding-left: 0;
+		padding-right: 0;
+	}
 
-@media(max-width: 768px){
-  .profile-page {
-    padding-left: 0;
-    padding-right: 0;
-  }
+	.profileTabs {
+		margin: 0;
+	}
 
-  .profile-tabs {
-    margin: 0;
-  }
-
-  .profile-tabs > a {
-    margin: 0;
-    padding: 10px;
-  }
+	.profileTabs > a {
+		margin: 0;
+		padding: 10px;
+	}
 }
 
-@media(min-width: 1000px){
-  .profile-tabs{
-    margin-right: 15%;
-    margin-left: 15%;
-  }
+@media (min-width: 1000px) {
+	.profileTabs {
+		margin-right: 15%;
+		margin-left: 15%;
+	}
 }

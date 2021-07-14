@@ -1,51 +1,37 @@
-import React from 'react';
-import ProfileHead from '../store/containers/ProfileHead';
-import AboutContainer from '../containers/AboutContainer';
-import Posts from '../components/Posts/Posts';
-import FriendsContainer from '../containers/FriendsContainer';
-import PhotosContainer from '../containers/PhotosContainer';
-
-const ProfilePage = () => {
+import ProfileHead from '@/profile/profile-head';
+import NavLink from '@/layout/navbar/nav-link';
+import styles from '@/styles/pages/profilePage.module.scss';
+const ProfilePage = ({ user }) => {
 	return (
 		<>
-			<div className="profile-page">
-				<ProfileHead />
-				<div className="profile-tabs">
+			<div className={styles.profilePage}>
+				<ProfileHead user={user} />
+				<div className={styles.profileTabs}>
+					<NavLink location="/profile/about" name="about" />
 					<NavLink
-						to={`${url}`}
-						className="tab-link"
-						inactiveClassName="tab-inactive"
-						activeClassName="tab-active">
-						About
-					</NavLink>
-
+						location="/profile/friends"
+						name="friends"
+					/>
+					<NavLink location="/profile/posts" name="posts" />
 					<NavLink
-						to={`${url}/friends`}
-						className="tab-link"
-						inactiveClassName="tab-inactive"
-						activeClassName="tab-active">
-						Friends
-					</NavLink>
-
-					<NavLink
-						to={`${url}/posts`}
-						className="tab-link"
-						inactiveClassName="tab-inactive"
-						activeClassName="tab-active">
-						Posts
-					</NavLink>
-
-					<NavLink
-						to={`${url}/photos`}
-						className="tab-link"
-						inactiveClassName="tab-inactive"
-						activeClassName="tab-active">
-						Photos
-					</NavLink>
+						location="/profile/photos"
+						name="photos"
+					/>
 				</div>
 			</div>
 		</>
 	);
+};
+
+export const getStaticProps = async () => {
+	return {
+		props: {
+			user: {
+				first_name: 'Chester',
+				last_name: 'Tester',
+			},
+		},
+	};
 };
 
 export default ProfilePage;

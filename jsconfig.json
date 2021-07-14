@@ -8,9 +8,11 @@
 			"@/page-styles/*": ["styles/pages/*"],
 			"@/feed/*": ["components/feed/*"],
 			"@/profile/*": ["components/profile/*"],
-			"@/about/*": ["components/about/*"],
+			"@/inbox/*": ["components/inbox/*"],
+			"@/profileSections/*": ["components/profile/about/*"],
 			"@/ui/*": ["components/ui/*"],
-			"@/actions/*": ["store/redux/actions/*"]
+			"@/actions/*": ["store/redux/actions/*"],
+			"@/data/*": ["DATA/*"]
 		}
 	}
 }

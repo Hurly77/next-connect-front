@@ -1,0 +1,104 @@
+.portal {
+	height: fit-content;
+}
+
+.layout {
+	.navbar {
+		position: sticky;
+		top: 0;
+		width: 100%;
+		height: 100px;
+		background-color: $main;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+
+		.navMap li {
+			color: $text;
+		}
+
+		.navMap {
+			display: inherit;
+			width: 20vw;
+		}
+
+		.navLink {
+			display: inherit;
+			align-items: center;
+			justify-items: center;
+			height: 100%;
+			width: 100%;
+		}
+
+		.navLink:hover {
+			background-color: $light;
+		}
+
+		.navLink a {
+			color: $text;
+			width: 100%;
+		}
+	}
+
+	.search input {
+		width: 100px;
+		padding-left: 10px;
+		cursor: pointer;
+	}
+
+	.search input:focus {
+		width: 130px;
+		background-color: $grey-800;
+		cursor: pointer;
+	}
+
+	.search input {
+		width: 100px;
+		height: 20px;
+		background-color: $dark;
+	}
+	.search {
+		display: flex;
+		align-items: center;
+	}
+
+	.main {
+		min-height: 80vh;
+		background-color: $grey-300;
+	}
+
+	.footer {
+		position: relative;
+		height: 300px;
+		width: 100%;
+		background-color: $dark;
+	}
+
+	.footer .copyright {
+		position: absolute;
+		width: 100%;
+		color: $text;
+		text-align: center;
+		bottom: 0;
+	}
+}
+
+/* Inbox */
+.inboxModal {
+	position: fixed;
+	overflow-y: scroll;
+	margin: auto;
+	height: 500px;
+	width: 400px;
+	right: 100px;
+	bottom: 0;
+	border-radius: 5px;
+	background-color: $dark;
+	color: $text;
+	padding: 10px;
+	z-index: 2000;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+		0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* search */
