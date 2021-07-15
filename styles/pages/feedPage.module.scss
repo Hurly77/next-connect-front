@@ -1,0 +1,44 @@
+/* new post */
+.feed {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1vh 20% 0 20%;
+
+	@media screen and (max-width: 600px) {
+		padding: 0;
+	}
+
+	.newPost span {
+		color: $paper;
+		font-size: $mdIcon;
+	}
+
+	.newPost,
+	.posts {
+		width: $bxr-1;
+		height: auto;
+		padding: $spc-6;
+		margin: $spc-6 0 $spc-8 0;
+		border-radius: $sharp;
+		box-shadow: $shad-3;
+		background-color: $light;
+
+		h4 {
+			font-family: 'Roboto';
+			font-size: 20px;
+		}
+
+		@media screen and (max-width: $sm) {
+			width: $bxr-4;
+		}
+
+		@media screen and (min-width: $lg) {
+			width: $bx-xl;
+		}
+	}
+
+	.comments {
+		float: right;
+	}
+}

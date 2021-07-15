@@ -1,11 +1,14 @@
 import Link from 'next/link';
 import styles from '@/styles/layout.module.scss';
+import Icon from '@/ui/icon';
 
-const NavLink = ({ name, location, key }) => {
+const NavLink = ({ name, location, icon = false }) => {
 	return (
-		<li key={key} className={styles.navLink}>
+		<li className={styles.navLink}>
 			<Link href={location}>
-				<a className={styles.navLinkText}>{name}</a>
+				<a className={styles.navLinkText}>
+					{icon ? <Icon name={name} /> : name}
+				</a>
 			</Link>
 		</li>
 	);

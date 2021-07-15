@@ -4,62 +4,128 @@
 
 .layout {
 	.navbar {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		position: sticky;
 		top: 0;
+		z-index: $z-hightest;
 		width: 100%;
 		height: 100px;
 		background-color: $main;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
 
-		.navMap li {
-			color: $text;
+		@media screen and (min-width: 1260px) {
+			padding-left: 20%;
+			padding-right: 20%;
+		}
+
+		.topbar {
+			display: flex;
+			align-items: center;
+			padding: 0 $spc-8 0 $spc-8;
+			width: 100%;
+			height: 50%;
+
+			@media screen and (max-width: 600px) {
+				padding: 0;
+			}
+		}
+
+		span {
+			display: flex;
+			color: $paper;
+			justify-items: center;
+			align-items: center;
+			border-radius: 100%;
+			background-color: $main;
+		}
+
+		.logout {
+			width: 20%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+
+			@media screen and (max-width: 600px) {
+			}
+		}
+
+		.logout span {
+			font-size: $lgIcon;
+			height: 100%;
 		}
 
 		.navMap {
-			display: inherit;
-			width: 20vw;
-		}
-
-		.navLink {
-			display: inherit;
-			align-items: center;
-			justify-items: center;
 			height: 100%;
-			width: 100%;
+			width: 50%;
+			display: flex;
+			justify-content: center;
+			flex-basis: 3;
+
+			@media screen and (max-width: 600px) {
+				height: 50%;
+				width: 100%;
+				justify-content: space-evenly;
+			}
 		}
 
-		.navLink:hover {
-			background-color: $light;
+		.navMap span {
+			font-size: $lgIcon;
+			color: $paper;
 		}
 
-		.navLink a {
-			color: $text;
-			width: 100%;
+		.navMap li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100px;
+			height: 100%;
+
+			@media screen and (max-width: 600px) {
+				height: 100%;
+			}
 		}
-	}
 
-	.search input {
-		width: 100px;
-		padding-left: 10px;
-		cursor: pointer;
-	}
+		.searchWrap {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			width: 80%;
+			height: 100%;
+			@media screen and (max-width: 600px) {
+				padding: 0;
+				margin: 0;
+			}
+		}
 
-	.search input:focus {
-		width: 130px;
-		background-color: $grey-800;
-		cursor: pointer;
-	}
+		.search {
+			display: flex;
+			align-items: center;
+			height: 30px;
+			width: fit-content;
+			border: 1px solid $light;
+			border-radius: 50px;
+		}
 
-	.search input {
-		width: 100px;
-		height: 20px;
-		background-color: $dark;
-	}
-	.search {
-		display: flex;
-		align-items: center;
+		.search input {
+			height: 100%;
+			width: 30px;
+			transition: width 500ms;
+			transition-timing-function: cubic-bezier(
+				0.4,
+				0,
+				0.2,
+				1
+			);
+			border-radius: 50px;
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		.search input:active,
+		input:focus {
+			width: 200px;
+		}
 	}
 
 	.main {

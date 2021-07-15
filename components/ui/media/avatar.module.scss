@@ -1,0 +1,23 @@
+.avatar {
+	border-radius: $circle;
+	width: fit-content;
+	overflow: hidden;
+}
+
+.smallAvatar {
+	border-radius: $circle;
+	width: fit-content;
+	overflow: hidden;
+}
+
+.hero {
+	position: relative;
+	display: flex;
+	justify-self: center;
+	margin-left: $spc-8;
+	border-radius: $circle;
+	border: $spc-3 solid $light;
+	width: fit-content;
+	overflow: hidden;
+	background-color: $paper;
+}

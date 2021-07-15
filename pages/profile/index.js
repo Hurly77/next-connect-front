@@ -1,29 +1,14 @@
-import ProfileHead from '@/profile/profile-head';
-import NavLink from '@/layout/navbar/nav-link';
-import styles from '@/styles/pages/profilePage.module.scss';
-const ProfilePage = ({ user }) => {
-	return (
-		<>
-			<div className={styles.profilePage}>
-				<ProfileHead user={user} />
-				<div className={styles.profileTabs}>
-					<NavLink location="/profile/about" name="about" />
-					<NavLink
-						location="/profile/friends"
-						name="friends"
-					/>
-					<NavLink location="/profile/posts" name="posts" />
-					<NavLink
-						location="/profile/photos"
-						name="photos"
-					/>
-				</div>
-			</div>
-		</>
-	);
-};
+import ProfileLayout from '@/profile/profile-layout';
+import About from '@/profile/about/index';
 
-export const getStaticProps = async () => {
+export default function Profile(props) {
+	return <About {...props} />;
+}
+Profile.NestedLayout = ProfileLayout;
+
+export const getStaticProps = async (context) => {
+	console.log(context);
+
 	return {
 		props: {
 			user: {
@@ -33,5 +18,3 @@ export const getStaticProps = async () => {
 		},
 	};
 };
-
-export default ProfilePage;

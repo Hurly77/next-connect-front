@@ -46,7 +46,7 @@
 	flex-direction: column;
 	background-color: $dark;
 	border-radius: 5px;
-	padding: $spcG;
+	padding: $spc-7;
 	box-shadow: $shad-4;
 
 	@media screen and (max-width: 600px) {
@@ -62,7 +62,7 @@
 		height: 33.33%;
 		margin-bottom: 2%;
 		border-radius: 5px;
-		padding: $spcG;
+		padding: $spc-7;
 		background-color: $light;
 	}
 
@@ -91,7 +91,7 @@
 	height: 600px;
 	background-color: $dark;
 	box-shadow: $shad-5;
-	padding: $spcF $spcG $spcH $spcG;
+	padding: $spc-6 $spc-7 $spc-8 $spc-7;
 
 	h1,
 	p {
@@ -109,8 +109,8 @@
 		display: flex;
 		width: 100%;
 		height: 75px;
-		padding-left: $spcG;
-		margin: $spcC;
+		padding-left: $spc-7;
+		margin: $spc-3;
 		background-color: $light;
 		border-radius: 10px;
 	}

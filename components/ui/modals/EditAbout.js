@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { connect } from 'react-redux';
-import { updateUser } from '../../Redux/actions/authActions';
 
 const EditAbout = (props) => {
 	const [currentUser, setCurrentUser] = useState({

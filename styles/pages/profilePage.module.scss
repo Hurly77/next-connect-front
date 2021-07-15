@@ -1,74 +1,27 @@
-/* profile nav */
 .profilePage {
-	background-image: linear-gradient(#161925, #457597);
+	background-image: linear-gradient($dark 20%, $main 80%);
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1),
 		0 1px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .profileTabs {
 	background-color: transparent;
-	border-top: solid #cbf7ed 1px;
-	margin-right: 110px;
-	margin-left: 110px;
-	padding-top: 10px;
 	display: flex;
 }
 
-.profileTabs > a {
-	padding: 15px;
-	align-content: center;
+.hero label {
+	cursor: pointer;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	align-items: center;
 }
 
-.profileTabs > a {
-	text-decoration: none;
-	font-size: 20px;
-	color: #cbf7ed;
-}
-
-.profileTabs > a:active {
-	text-decoration: none;
-	background-color: #3b6888;
-}
-
-.tabLinkTabActive {
-	border-bottom: solid #4891c5 3px;
-}
-
-.profileTabs > a.tabLinkTabInactive:hover {
-	border-radius: 5px;
-	background-color: #457597;
-}
-
-.link:hover {
-	text-decoration: none;
-	color: #cbf7ed;
-}
-
-.link:focus {
-	border-bottom: solid #161925 3px;
-}
-/* about modal */
-
-@media (max-width: 768px) {
-	.profilePage {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	.profileTabs {
-		margin: 0;
-	}
-
-	.profileTabs > a {
-		margin: 0;
-		padding: 10px;
-	}
-}
-
-@media (min-width: 1000px) {
-	.profileTabs {
-		margin-right: 15%;
-		margin-left: 15%;
-	}
+.profileNav {
+	display: flex;
+	width: $bx-full;
+	justify-content: center;
+	align-items: center;
 }

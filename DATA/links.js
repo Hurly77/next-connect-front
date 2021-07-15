@@ -1,13 +1,17 @@
 export const links = [
-	{ name: 'feed', location: '/feed' },
-	{ name: 'profile', location: '/profile' },
+	{ name: 'home', location: '/feed', icon: true },
+	{
+		name: 'account_circle',
+		location: '/profile',
+		icon: true,
+	},
 ];
 
 export const profileLinks = [
-	{ name: 'about', location: '/profile/about' },
-	{ name: 'friends', location: '/profile/friends' },
-	{ name: 'photos', location: '/profile/photos' },
-	{ name: 'posts', location: '/profile/posts' },
+	{ name: 'About', location: '/profile' },
+	{ name: 'Friends', location: '/profile/friends' },
+	{ name: 'Photos', location: '/profile/photos' },
+	{ name: 'Posts', location: '/profile/posts' },
 ];
 
 export default links;

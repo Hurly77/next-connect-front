@@ -1,7 +1,7 @@
 import Post from '@/feed/post';
 import styles from '@/styles/comps/post.module.scss';
 
-const Posted = ({ posts }) => {
+const UserPosts = ({ posts }) => {
 	return posts.map((post) => {
 		return (
 			<div key={post.id} className={styles.posted}>
@@ -15,4 +15,4 @@ const Posted = ({ posts }) => {
 	});
 };
 
-export default Posted;
+export default Posts;

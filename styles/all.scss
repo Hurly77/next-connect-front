@@ -15,6 +15,12 @@ $sndDark: #087f23;
 $btnSuccess: #43a047;
 $btnWarn: #c62828;
 
+$black: rgb(40, 41, 49);
+
+$smIcon: 20px;
+$mdIcon: 30px;
+$lgIcon: 40px;
+
 $grey-50: #fafafa;
 $grey-100: #f5f5f5;
 $grey-200: #eeeeee;
@@ -46,15 +52,53 @@ $shad-5: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
 	0px 5px 8px 0px rgba(0, 0, 0, 0.14),
 	0px 1px 14px 0px rgba(0, 0, 0, 0.12);
 
-$spcA: 1px;
-$spcB: 2px;
-$spcC: 3px;
-$spcD: 4px;
-$spcE: 5px;
-$spcF: 10px;
-$spcG: 20px;
-$spcH: 30px;
-$spcI: 40px;
-$spcJ: 50px;
+$spc-1: 1px;
+$spc-2: 2px;
+$spc-3: 3px;
+$spc-4: 4px;
+$spc-5: 5px;
+$spc-6: 10px;
+$spc-7: 20px;
+$spc-8: 40px;
 
-$black: rgb(40, 41, 49);
+$spc-sm: 50px;
+$spc-md: 100px;
+$spc-lg: 150px;
+$spc-xl: 300px;
+
+$p-ten: 10%;
+$p-twn: 20%;
+$p-thr: 30%;
+$p-fr: 40%;
+$p-hlf: 50%;
+
+$bx-xs: 300px;
+$bx-sm: 400px;
+$bx-md: 400px;
+$bx-lg: 600px;
+$bx-xl: 800px;
+
+$bxr-1: 70vw;
+$bxr-2: 75vw;
+$bxr-3: 85vw;
+$bxr-4: 95vw;
+$bx-full: 100%;
+
+$xs: 0px;
+$sm: 600px;
+$md: 960px;
+$lg: 1260px;
+$xl: 1500px;
+$full: 1080px;
+
+$z-lowest: 10;
+$z-low: 20;
+$z-mid: 30;
+$z-high: 40;
+$z-hightest: 50;
+
+$sharp: 2px;
+$dulled: 5px;
+$round: 10px;
+$rounder: 15px;
+$circle: 100%;

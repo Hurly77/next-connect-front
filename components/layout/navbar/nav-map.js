@@ -1,6 +1,5 @@
 import links from '@/data/links';
 import NavLink from './nav-link';
-import Logout from './Logout';
 import InboxButton from '@/ui/modal-btn/InboxButton';
 import styles from '@/styles/layout.module.scss';
 
@@ -13,11 +12,13 @@ const NavMap = () => {
 						key={idx}
 						name={link.name}
 						location={link.location}
+						icon={link.icon}
 					/>
 				);
 			})}
-			<InboxButton />
-			<Logout />
+			<li>
+				<InboxButton />
+			</li>
 		</ul>
 	);
 };

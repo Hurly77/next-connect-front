@@ -1,12 +1,13 @@
-import Posted from '@/components/profile/posts/posted';
+import Posts from '@/feed/posts';
 import NewPost from '@/feed/new-post';
+import styles from '@/styles/pages/feedPage.module.scss';
 
 const FeedPage = (props) => {
 	return (
-		<>
-			<NewPost />
-			<Posted posts={props.posts} />
-		</>
+		<div className={styles.feed}>
+			<NewPost user={props.user} />
+			<Posts posts={props.posts} />
+		</div>
 	);
 };
 
@@ -32,6 +33,9 @@ export const getStaticProps = async () => {
 					],
 				},
 			],
+			user: {
+				id: 1,
+			},
 		},
 	};
 };

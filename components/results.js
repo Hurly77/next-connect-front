@@ -1,4 +1,4 @@
-import styles from '@/styles/result.module.scss';
+import styles from '@/styles/pages/result.module.scss';
 
 const Results = ({ user, button }) => {
 	return (

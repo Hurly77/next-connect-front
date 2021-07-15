@@ -1,21 +1,13 @@
-import React from 'react';
+import styles from '@/styles/pages/feedPage.module.scss';
+import SmallAvatar from '../ui/media/small -avatar';
 
 const Comment = ({ comment }) => {
 	return (
-		<div className={styles.postedCommentContainer}>
-			<img
-				className={styles.postedCommentAvatar}
-				src={comment.users_avatar}
-				alt="avatar"
-			/>
-
-			<div className={styles.postedCommentComment}>
-				<p className={styles.postedCommentName}>
-					{comment.users_full_name}
-				</p>
-				<p className={styles.postedCommentText}>
-					{comment.text}
-				</p>
+		<div className={styles.comment}>
+			<SmallAvatar />
+			<div>
+				<p>{comment.users_full_name}</p>
+				<p>{comment.text}</p>
 			</div>
 		</div>
 	);

@@ -2,27 +2,23 @@ import React, { useState } from 'react';
 import Comment from './comment';
 import styles from '@/styles/comps/post.module.scss';
 
-const evalComments = (props, isToggled) => {
-	if (props.length > 0 && isToggled) {
-		return props.map((comment) => {
-			return <Comment comment={comment} key={comment.id} />;
-		});
-	} else {
-		return <></>;
-	}
-};
-
 const Comments = ({ comments }) => {
-	const [isToggled, setToggled] = useState(false);
-	const toggled = () => setToggled(!isToggled);
-	console.log(isToggled);
+	const [hideComments, setHideComments] = useState(true);
+
 	return (
-		<div className={styles.commentBody}>
-			<button onClick={toggled} className={styles.toggle}>
-				{comments.length} Comments
+		<>
+			<button
+				onClick={() => setHideComments(!hideComments)}>
+				Comments
 			</button>
-			{isToggled ? evalComments(comments, toggled) : null}
-		</div>
+			<div
+				hidden={hideComments}
+				className={styles.comments}>
+				{comments.map((comment, idx) => {
+					return <Comment id={idx} comment={comment} />;
+				})}
+			</div>
+		</>
 	);
 };
 

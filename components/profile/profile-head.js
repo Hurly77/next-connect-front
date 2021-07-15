@@ -1,13 +1,15 @@
 import UserName from '@/profile/user-name';
-import Photos from '@/profile/photos/index';
+import UserHero from '@/profile/user-hero';
 import Banner from '@/profile/banner';
+import ProfileNav from '@/profile/profile-nav';
 
-const ProfileHead = ({ user }) => {
+const ProfileHead = (props) => {
 	return (
 		<>
 			<Banner />
-			<Photos />
-			<UserName user={user} />
+			<UserHero />
+			<UserName user={props} />
+			<ProfileNav />
 		</>
 	);
 };
