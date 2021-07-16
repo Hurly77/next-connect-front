@@ -1,9 +1,9 @@
 import styles from '@/styles/pages/feedPage.module.scss';
 import SmallAvatar from '../ui/media/small -avatar';
 
-const Comment = ({ comment }) => {
+const Comment = ({ comment, id }) => {
 	return (
-		<div className={styles.comment}>
+		<div key={id} className={styles.comment}>
 			<SmallAvatar />
 			<div>
 				<p>{comment.users_full_name}</p>

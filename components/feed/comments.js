@@ -15,7 +15,9 @@ const Comments = ({ comments }) => {
 				hidden={hideComments}
 				className={styles.comments}>
 				{comments.map((comment, idx) => {
-					return <Comment id={idx} comment={comment} />;
+					return (
+						<Comment key={idx} id={idx} comment={comment} />
+					);
 				})}
 			</div>
 		</>

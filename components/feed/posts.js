@@ -6,7 +6,7 @@ const Posts = (props) => {
 		return (
 			<div key={post.id} className={styles.posts}>
 				<Post
-					post={post.post}
+					post={post}
 					photos={post.photos}
 					comments={post.comments}
 				/>

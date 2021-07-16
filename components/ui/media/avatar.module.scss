@@ -10,14 +10,25 @@
 	overflow: hidden;
 }
 
-.hero {
-	position: relative;
+.heroWrap {
 	display: flex;
-	justify-self: center;
-	margin-left: $spc-8;
+	justify-content: center;
+	position: relative;
+	height: 65px;
+	display: flex;
+}
+
+.hero {
+	position: absolute;
+	display: flex;
+	transform: translate(0, -65px);
 	border-radius: $circle;
 	border: $spc-3 solid $light;
 	width: fit-content;
 	overflow: hidden;
 	background-color: $paper;
+
+	@media screen and (max-width: $sm) {
+		transform: translate(0, -100px);
+	}
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import styles from '@/styles/comps/about.module.scss';
 import EditAbout from './EditAbout';
 
 export const editModal = ({
@@ -16,8 +17,8 @@ export const editModal = ({
 
 	if (!open && isDoc) return null;
 	return createPortal(
-		<>
-			<div ref={myRef} className={editModal}>
+		<div className={styles.overlay}>
+			<div ref={myRef} className={styles.editModal}>
 				<button
 					className={styles.editModalBtn}
 					onClick={() => onClose()}>
@@ -26,7 +27,7 @@ export const editModal = ({
 				<EditAbout open={open} onClose={onClose} />
 				{children}
 			</div>
-		</>,
+		</div>,
 		document.getElementById('portal'),
 	);
 };

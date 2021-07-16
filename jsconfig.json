@@ -12,7 +12,8 @@
 			"@/profileSections/*": ["components/profile/about/*"],
 			"@/ui/*": ["components/ui/*"],
 			"@/actions/*": ["store/redux/actions/*"],
-			"@/data/*": ["DATA/*"]
+			"@/data/*": ["DATA/*"],
+			"@/utils/*": ["utils/*"]
 		}
 	}
 }

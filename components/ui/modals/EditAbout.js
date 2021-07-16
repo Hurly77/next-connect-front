@@ -1,21 +1,25 @@
 import { useState } from 'react';
+import styles from '@/styles/comps/about.module.scss';
 
 const EditAbout = (props) => {
-	const [currentUser, setCurrentUser] = useState({
-		currentUser: props.currentUser ? props.currentUser : {},
+	const [about, setAbout] = useState({
+		work: '',
+		education: '',
+		relationship: '',
+		lives: '',
+		from: '',
 	});
 
-	handleChange = (e) => {
-		setState({
-			...currentUser,
+	const handleChange = (e) => {
+		setAbout({
+			...about,
 			[e.target.name]: e.target.value,
 		});
 	};
 
-	handleSubmit = (e) => {
+	const handleSubmit = (e) => {
 		e.preventDefault();
-		props.updateUser(currentUser);
-		props.onClose();
+		console.log(about);
 	};
 
 	return (
@@ -25,40 +29,40 @@ const EditAbout = (props) => {
 			<input
 				onChange={handleChange}
 				name="work"
-				value={state.work}
-				id="edit-about-1"
+				value={about.work}
+				id={styles.editAbout1}
 				type="text"
 				placeholder="what work do you do"
 			/>
 			<input
 				onChange={handleChange}
 				name="education"
-				value={state.education}
-				id="edit-about-2"
+				value={about.education}
+				id={styles.editAbout2}
 				type="text"
 				placeholder="where did you go to school education"
 			/>
 			<input
 				onChange={handleChange}
 				name="relationship"
-				value={state.relationship}
-				id="edit-about-3"
+				value={about.relationship}
+				id={styles.editAbout3}
 				type="text"
 				placeholder="are you in a relationship"
 			/>
 			<input
 				onChange={handleChange}
 				name="lives"
-				value={state.lives}
-				id="edit-about-4"
+				value={about.lives}
+				id={styles.editAbout4}
 				type="text"
 				placeholder="where do you live"
 			/>
 			<input
 				onChange={handleChange}
 				name="from"
-				value={state.from}
-				id="edit-about-5"
+				value={about.from}
+				id={styles.editAbout5}
 				type="text"
 				placeholder="where are you from"
 			/>
@@ -67,9 +71,9 @@ const EditAbout = (props) => {
 	);
 };
 
-const mapStateToProps = (state) => {
+const mapaboutToProps = (about) => {
 	return {
-		currentUser: state.auth.currentUser,
+		currentUser: about.auth.currentUser,
 	};
 };
 

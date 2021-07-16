@@ -7,12 +7,14 @@ const ProfileNav = () => {
 		<ul className={styles.profileNav}>
 			{profileLinks.map((link, idx) => {
 				return (
-					<li key={idx}>
+					<div className={styles.tab}>
 						<NavLink
+							key={idx}
+							id={idx}
 							location={link.location}
 							name={link.name}
 						/>
-					</li>
+					</div>
 				);
 			})}
 		</ul>

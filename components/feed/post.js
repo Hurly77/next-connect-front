@@ -10,7 +10,7 @@ const Post = ({ post, comments }) => {
 			<div>
 				<Avatar />
 				<h4>{post.users_full_name}</h4>
-				<caption>{post.posted_at}</caption>
+				<small>{post.posted_at}</small>
 			</div>
 			<p>{post.text}</p>
 			<Comments comments={comments} />

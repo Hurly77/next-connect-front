@@ -17,12 +17,16 @@ const RegisterPopup = () => {
 
 	const handleChange = (e) => {
 		setUser({
+			...user,
 			[e.target.name]: e.target.value,
 		});
 	};
 
 	const handleSubmit = (e) => {
-		console.log('submit: modals/reg');
+		fetch('api/users', {
+			method: 'Post',
+			body: JSON.stringify(user),
+		});
 	};
 
 	return (

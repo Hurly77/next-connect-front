@@ -1,6 +1,7 @@
 import Posts from '@/feed/posts';
 import NewPost from '@/feed/new-post';
 import styles from '@/styles/pages/feedPage.module.scss';
+import main from '@/utils/DB/db';
 
 const FeedPage = (props) => {
 	return (
@@ -14,13 +15,16 @@ const FeedPage = (props) => {
 export default FeedPage;
 
 export const getStaticProps = async () => {
+	await main();
 	return {
 		props: {
 			posts: [
 				{
 					id: 1,
 					user_id: 1,
-					post: 'Hello World',
+					users_full_name: 'Cameron Leverett',
+					posted_at: 'today',
+					text: 'Hello World',
 					photos: [],
 					comments: [
 						{

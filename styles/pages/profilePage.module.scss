@@ -1,27 +1,70 @@
-.profilePage {
+.profileHead {
 	background-image: linear-gradient($dark 20%, $main 80%);
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1),
 		0 1px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.profileTabs {
-	background-color: transparent;
-	display: flex;
-}
-
 .hero label {
 	cursor: pointer;
 	position: absolute;
-	height: 100%;
-	width: 100%;
+	height: $bx-full;
+	width: $bx-full;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
 .profileNav {
+	background-color: $light;
 	display: flex;
-	width: $bx-full;
 	justify-content: center;
-	align-items: center;
+	background-color: $main;
+	height: 75px;
+	width: $bx-full;
+
+	.tab {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: $bx-full;
+	}
+
+	.tab li {
+		height: $bx-full;
+		width: $bx-full;
+		background-color: $light;
+	}
+
+	li a {
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		width: $bx-full;
+		height: $bx-full;
+	}
+	li div {
+		background-color: green;
+	}
+
+	li:hover {
+		background-color: $accent;
+	}
+
+	.inactiveBar {
+		background-color: inherit;
+		width: $bx-full;
+		height: $spc-6;
+	}
+
+	.activeBar {
+		width: $bx-full;
+		height: 10px;
+		background-color: green;
+	}
+}
+
+.profileBody {
+	position: relative;
+	padding: $spc-8;
+	min-height: 100vh;
 }

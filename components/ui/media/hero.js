@@ -6,9 +6,11 @@ const Hero = ({
 	children,
 }) => {
 	return (
-		<div className={styles.hero}>
-			<Image src={url} width={100} height={100} />
-			{children}
+		<div className={styles.heroWrap}>
+			<div className={styles.hero}>
+				<Image src={url} width={130} height={130} />
+				{children}
+			</div>
 		</div>
 	);
 };

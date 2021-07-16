@@ -7,8 +7,6 @@ export default function Profile(props) {
 Profile.NestedLayout = ProfileLayout;
 
 export const getStaticProps = async (context) => {
-	console.log(context);
-
 	return {
 		props: {
 			user: {
