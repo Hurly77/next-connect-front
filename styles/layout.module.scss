@@ -9,7 +9,7 @@
 		align-items: center;
 		position: sticky;
 		top: 0;
-		z-index: $z-high;
+		z-index: $z-3;
 		width: 100%;
 		height: 100px;
 		background-color: $main;
@@ -162,7 +162,7 @@
 	background-color: $dark;
 	color: $text;
 	padding: 10px;
-	z-index: 2000;
+	z-index: $z-5;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
 		0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

@@ -87,8 +87,8 @@
 .signupModal {
 	position: relative;
 	border-radius: 5px;
-	width: 600px;
-	height: 600px;
+	width: $bx-md;
+	height: $bx-lg;
 	background-color: $dark;
 	box-shadow: $shad-5;
 	padding: $spc-6 $spc-7 $spc-8 $spc-7;
@@ -108,11 +108,11 @@
 	input {
 		display: flex;
 		width: 100%;
-		height: 75px;
+		height: $spc-sm;
 		padding-left: $spc-7;
 		margin: $spc-3;
 		background-color: $light;
-		border-radius: 10px;
+		border-radius: $round;
 	}
 
 	@media screen and (max-width: 600px) {
@@ -164,7 +164,7 @@
 	height: 100%;
 	width: 100%;
 	background-color: rgba(21, 36, 53, 0.753);
-	z-index: 100;
+	z-index: $z-4;
 }
 
 .btnStyles {

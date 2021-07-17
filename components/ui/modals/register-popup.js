@@ -1,18 +1,14 @@
 import { useState } from 'react';
+import { signup } from '@/helpers/actions';
 import styles from '@/styles/pages/homePage.module.scss';
 
 const RegisterPopup = () => {
 	const [user, setUser] = useState({
-		first_name: '',
-		last_name: '',
-		work: '',
-		education: '',
-		relationship: '',
-		lives: '',
-		from: '',
+		firstName: '',
+		lastName: '',
 		email: '',
 		password: '',
-		password_confirmation: '',
+		passwordConfirmation: '',
 	});
 
 	const handleChange = (e) => {
@@ -23,10 +19,13 @@ const RegisterPopup = () => {
 	};
 
 	const handleSubmit = (e) => {
-		fetch('api/users', {
-			method: 'Post',
-			body: JSON.stringify(user),
-		});
+		e.preventDefault();
+		if (user.password === user.passwordConfirmation) {
+			return signup(user);
+		} else {
+			alert('password need to match');
+			return;
+		}
 	};
 
 	return (
@@ -37,18 +36,17 @@ const RegisterPopup = () => {
 				<input
 					className={styles.gridFirstName}
 					type="text"
-					name="first_name"
-					placeholder="first name"
-					value={user.first_name}
+					name="firstName"
+					placeholder="First Name"
+					value={user.firstName}
 					onChange={handleChange}
 				/>
-				{console.log('hello12')}
 				<input
 					className={styles.lastName}
 					type="text"
-					name="last_name"
+					name="lastName"
 					placeholder="last name"
-					value={user.last_name}
+					value={user.lastName}
 					onChange={handleChange}
 				/>
 
@@ -76,9 +74,9 @@ const RegisterPopup = () => {
 					className={styles.passwordConfirm}
 					autoComplete="password"
 					type="password"
-					name="password_confirmation"
+					name="passwordConfirmation"
 					placeholder="Confirm Password"
-					value={user.password_confirmation}
+					value={user.passwordConfirmation}
 					onChange={handleChange}
 					required
 				/>

@@ -1,7 +1,6 @@
 import Posts from '@/feed/posts';
 import NewPost from '@/feed/new-post';
 import styles from '@/styles/pages/feedPage.module.scss';
-import main from '@/utils/DB/db';
 
 const FeedPage = (props) => {
 	return (

@@ -1,12 +1,12 @@
 const { MongoClient } = require('mongodb');
-const uri = process.env.API_URL;
+const uri = process.env.DB;
 
 export const connectDB = async () => {
-	const client = await MongoClient.connect(uri, {
+	const client = await new MongoClient(uri, {
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	});
-	return client;
+	return client.connect();
 };
 
 export const insertDocument = async (

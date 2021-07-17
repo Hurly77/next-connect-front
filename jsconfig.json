@@ -13,7 +13,7 @@
 			"@/ui/*": ["components/ui/*"],
 			"@/actions/*": ["store/redux/actions/*"],
 			"@/data/*": ["DATA/*"],
-			"@/utils/*": ["utils/*"]
+			"@/helpers/*": ["helpers/*"]
 		}
 	}
 }
