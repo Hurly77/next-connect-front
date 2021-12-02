@@ -14,7 +14,6 @@ const FeedPage = (props) => {
 export default FeedPage;
 
 export const getStaticProps = async () => {
-	await main();
 	return {
 		props: {
 			posts: [

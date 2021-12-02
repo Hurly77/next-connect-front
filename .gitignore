@@ -1,13 +1,13 @@
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 .vscode
-
 # testing
 /coverage
-
+.next/*
 # next.js
-/.next/
+/.next
+.next
 /out/
 
 # production

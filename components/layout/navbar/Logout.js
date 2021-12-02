@@ -8,7 +8,7 @@ const Logout = (props) => {
 			onClick={() => {
 				router.push('/');
 			}}
-			className={styles.logout}>
+			className="navbar-end">
 			<Icon name="logout" />
 		</button>
 	);

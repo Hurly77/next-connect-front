@@ -1,41 +1,50 @@
 import { useState } from 'react';
 import Icon from '@/ui/icon';
-import styles from '@/styles/pages/feedPage.module.scss';
+import Avatar from '@/ui/media/avatar';
 
 const NewPost = (props) => {
-	const [text, setText] = useState('');
+  const [text, setText] = useState('');
 
-	const handleChange = (e) => {
-		setText(e.target.value);
-	};
+  const handleChange = (e) => {
+    setText(e.target.value);
+  };
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-	};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-	return (
-		<div className={styles.newPost}>
-			<h4>Whats on Your Mind?</h4>
-			<form onSubmit={handleSubmit}>
-				<input
-					type="text"
-					placeholder="how are you feeling"
-					onChange={handleChange}
-					value={text}
-				/>
-				<label htmlFor="files">
-					<Icon name="image" />
-				</label>
-				<input
-					id="files"
-					type="file"
-					accept="image/*"
-					multiple={true}
-					hidden
-				/>
-			</form>
-		</div>
-	);
+  return (
+    <div className='w-full h-40 p-3 mb-10 card bg-primary'>
+      <h4>Whats on Your Mind?</h4>
+      <form
+        onSubmit={handleSubmit}
+        className='flex flex-col justify-center form-control'>
+        <div className='flex items-center w-full'>
+          <Avatar />
+          <input
+            type='text'
+            className='w-full m-3 input input-secondary'
+            placeholder='how are you feeling'
+            onChange={handleChange}
+            value={text}
+          />
+        </div>
+
+        <div className='input-group'>
+          <label htmlFor='files'>
+            <Icon name='image' />
+          </label>
+          <input
+            id='files'
+            type='file'
+            accept='image/*'
+            multiple={true}
+            hidden
+          />
+        </div>
+      </form>
+    </div>
+  );
 };
 
 export default NewPost;
